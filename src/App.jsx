@@ -4,7 +4,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Layout from "./pages/layout.jsx";
 // Страницы
 import Home from "./pages/Home.jsx";
-// import Archive from "./pages/Archive.jsx";
+import Archive from "./pages/Archive.jsx";
 // import About from "./pages/journal/About.jsx";
 // import AimsAndScope from "./pages/journal/AimsAndScope.jsx";
 // import EditorialBoard from "./pages/journal/EditorialBoard.jsx";
@@ -34,8 +34,8 @@ export default function App() {
           <Route index element={<Home />} />
 
           {/* Journal */}
-          {/* <Route path="archive" element={<Archive />} />
-          <Route path="journal/about" element={<About />} />
+          <Route path="archive" element={<Archive />} />
+          {/* <Route path="journal/about" element={<About />} />
           <Route path="journal/aims-and-scope" element={<AimsAndScope />} />
           <Route path="journal/editorial-board" element={<EditorialBoard />} />
           <Route path="journal/indexing" element={<Indexing />} />

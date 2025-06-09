@@ -61,5 +61,13 @@
       "cookiePolicy": "Cookie siyosati"
     },
     "copyright": "eISSN 2633-6537 | Tibbiy Tadqiqotlar Jurnali"
+  },
+   "archive": {
+    "title": "Arxiv",
+    "volume": "{{volume}}-tom",
+    "issue": "{{issue}}-son",
+    "labels": {
+      "inProgress": "Jarayonda"
+    }
   }
 }

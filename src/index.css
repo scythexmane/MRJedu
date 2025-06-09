@@ -21,3 +21,6 @@
   animation: card-hover 0.3s reverse forwards;
 }
 
+body{
+    background-color: #F8F8FF;
+}

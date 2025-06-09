@@ -63,6 +63,14 @@
       "cookiePolicy": "Cookie Policy"
     },
     "copyright": "eISSN 2633-6537 | Medical Research Journal"
+  },
+   "archive": {
+    "title": "Archive",
+    "volume": "Volume {{volume}}",
+    "issue": "Issue {{issue}}",
+    "labels": {
+      "inProgress": "In Progress"
+    }
   }
   
 

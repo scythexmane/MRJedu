@@ -62,6 +62,14 @@
       "cookiePolicy": "Политика использования cookie"
     },
     "copyright": "eISSN 2633-6537 | Медицинский научный журнал"
+  },
+  "archive": {
+    "title": "Архив",
+    "volume": "Том {{volume}}",
+    "issue": "Выпуск {{issue}}",
+    "labels": {
+      "inProgress": "В процессе"
+    }
   } 
 }
 
