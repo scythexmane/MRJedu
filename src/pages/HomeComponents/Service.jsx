@@ -2,12 +2,10 @@ import React, { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import {
-  FileText,
   ArrowRight,
   BookOpen,
   Percent,
   Users,
-  Award,
 } from "lucide-react";
 import { useTranslation } from "react-i18next";
 
@@ -57,8 +55,10 @@ const InfoCard = ({ icon, title, children }) => (
       {icon}
     </div>
     <div>
-      <h3 className="text-lg font-semibold text-gray-900">{title}</h3>
-      <p className="mt-1 text-base text-gray-600">{children}</p>
+      <h3 className="text-base sm:text-lg font-semibold text-gray-900">
+        {title}
+      </h3>
+      <p className="mt-1 text-sm sm:text-base text-gray-600">{children}</p>
     </div>
   </div>
 );
@@ -72,55 +72,57 @@ export default function RefreshedJournalPage() {
 
   return (
     <div className="bg-[#F8F8FF]">
-      <div className="max-w-7xl mx-auto px-6 lg:px-8 py-16 sm:py-24">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-x-12 gap-y-10">
+      {/* Hero + Intro */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-20">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
           <div data-aos="fade-right">
-            <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-gray-900">
               {t("journal.title")}
             </h1>
-            <p className="mt-6 text-lg leading-8 text-gray-700">
+            <p className="mt-6 text-base sm:text-lg leading-relaxed text-gray-700">
               {t("journal.description1")}
             </p>
-            <p className="mt-4 text-lg leading-8 text-gray-700">
+            <p className="mt-4 text-base sm:text-lg leading-relaxed text-gray-700">
               {t("journal.description2")}
             </p>
           </div>
 
           <div className="space-y-8" data-aos="fade-left" data-aos-delay="200">
-            <InfoCard icon={<BookOpen size={24} />} title={t("journal.openAccessTitle")}> 
+            <InfoCard icon={<BookOpen size={24} />} title={t("journal.openAccessTitle")}>
               {t("journal.openAccessText")}
             </InfoCard>
-            <InfoCard icon={<Users size={24} />} title={t("journal.cooperationTitle")}> 
+            <InfoCard icon={<Users size={24} />} title={t("journal.cooperationTitle")}>
               {t("journal.cooperationText")}
             </InfoCard>
-            <InfoCard icon={<Percent size={24} />} title={t("journal.acceptanceTitle")}> 
+            <InfoCard icon={<Percent size={24} />} title={t("journal.acceptanceTitle")}>
               {t("journal.acceptanceText")}
             </InfoCard>
           </div>
         </div>
-      </div>
+      </section>
 
-      <div className="bg-[#F8F8FF] py-16 sm:py-24">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="max-w-2xl" data-aos="fade-up">
-            <h2 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl">
+      {/* Current Issue */}
+      <section className="py-12 sm:py-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <header className="max-w-2xl" data-aos="fade-up">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-gray-900">
               {t("journal.currentIssue")}
             </h2>
-            <p className="mt-4 text-xl text-gray-600">
+            <p className="mt-4 text-lg sm:text-xl text-gray-600">
               {t("journal.volumeInfo")}
             </p>
-          </div>
+          </header>
 
-          <div className="mt-12 grid gap-8 sm:mt-16 grid-cols-1 lg:grid-cols-2">
+          <div className="mt-10 sm:mt-12 grid gap-6 sm:gap-8 grid-cols-1 md:grid-cols-2 xl:grid-cols-3">
             {articles.map((article, index) => (
               <article
                 key={article.doi}
-                className="group flex flex-col justify-between bg-white rounded-xl p-6 sm:p-8 border border-gray-200 shadow-sm transition-all duration-300 ease-in-out"
+                className="flex flex-col justify-between bg-white rounded-xl overflow-hidden border border-gray-200 shadow-sm hover:shadow-md transition-shadow duration-300"
                 data-aos="fade-up"
                 data-aos-delay={index * 100}
               >
-                <div>
-                  <span className="inline-block bg-blue-100 text-blue-800 text-xs font-semibold px-3 py-1 rounded-full mb-4">
+                <div className="p-6 sm:p-8 grow">
+                  <span className="inline-block bg-blue-100 text-blue-800 text-[10px] sm:text-xs font-semibold px-3 py-1 rounded-full mb-4">
                     {article.type}
                   </span>
                   <a
@@ -129,18 +131,18 @@ export default function RefreshedJournalPage() {
                     rel="noopener noreferrer"
                     className="block"
                   >
-                    <h3 className="text-xl font-bold text-gray-900 leading-snug group-hover:text-blue-600 transition-colors duration-300">
+                    <h3 className="text-lg sm:text-xl font-bold text-gray-900 leading-snug hover:text-blue-600 transition-colors duration-300">
                       {article.title}
                     </h3>
                   </a>
-                  <p className="mt-4 text-sm font-medium text-gray-700">
+                  <p className="mt-4 text-xs sm:text-sm font-medium text-gray-700">
                     {article.authors}
                   </p>
-                  <p className="mt-2 text-xs text-gray-500">
+                  <p className="mt-2 text-[10px] sm:text-xs text-gray-500">
                     {article.journalInfo}
                   </p>
                 </div>
-                <div className="mt-6">
+                <div className="px-6 sm:px-8 pb-6">
                   <a
                     href={article.doi}
                     target="_blank"
@@ -155,7 +157,7 @@ export default function RefreshedJournalPage() {
             ))}
           </div>
         </div>
-      </div>
+      </section>
     </div>
   );
 }

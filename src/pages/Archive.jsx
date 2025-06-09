@@ -1,11 +1,8 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { useTranslation } from "react-i18next";
 
-/* --------------------------------------------------------------------------
-   💾 Demo data (замени при подключении API / CMS)
--------------------------------------------------------------------------- */
 const archiveData = {
   2025: [
     { volume: 21, issue: 2, label: "inProgress" },
@@ -46,15 +43,22 @@ const archiveData = {
 
 export default function JournalArchive() {
   const { t } = useTranslation();
+  const [isMobile, setIsMobile] = useState(false);
 
-  /* ------------------------- AOS initialise ------------------------- */
   useEffect(() => {
     AOS.init({ duration: 900, once: true, offset: 120, easing: "ease-out-quart" });
+
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 640);
+    };
+
+    handleResize(); // initial check
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
   }, []);
 
   return (
     <section className="relative mx-auto max-w-7xl px-4 py-16 md:px-8 lg:py-24 bg-[#F8F8FF]">
-      {/* ----------------------- Heading ----------------------- */}
       <h2
         className="mb-14 text-center text-4xl font-extrabold tracking-tight text-black dark:text-black drop-shadow-sm"
         data-aos="fade-down"
@@ -62,32 +66,25 @@ export default function JournalArchive() {
         {t("archive.title", "Archive")}
       </h2>
 
-      {/* ----------------------- Card grid ----------------------- */}
       <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-        {Object.entries(archiveData).map(([year, issues]) => (
+        {Object.entries(archiveData).map(([year, issues], yearIdx) => (
           <article
             key={year}
             className="group relative flex flex-col overflow-hidden rounded-3xl border border-slate-300 bg-white shadow-md brightness-100 transition-transform duration-500 ease-[cubic-bezier(0.25,0.46,0.45,0.94)] hover:animate-rise hover:shadow-xl hover:brightness-95 dark:border-slate-700 dark:bg-slate-800 dark:hover:brightness-110"
-            data-aos="zoom-in-up"
+            data-aos={isMobile ? "fade-up" : "zoom-in-up"}
           >
-            {/* Декоративная лента */}
             <span className="pointer-events-none absolute -top-3 -left-3 h-14 w-14 rotate-[-6deg] bg-gradient-to-br from-teal-500 to-cyan-600 opacity-80 shadow-md transition-transform duration-500 group-hover:rotate-0 group-hover:scale-110" />
-
-            {/* Год */}
             <div className="relative z-10 p-6 pb-4">
-              <h3 className="text-3xl font-bold text-black dark:text-white">
-                {year}
-              </h3>
+              <h3 className="text-3xl font-bold text-black dark:text-white">{year}</h3>
             </div>
 
-            {/* Выпуски */}
             <ul className="relative z-10 space-y-2 px-6 pb-6">
               {issues.map((i, idx) => (
                 <li
                   key={`${i.volume}-${i.issue}`}
                   className="flex items-center justify-between rounded-xl bg-white/70 px-3 py-2 shadow-inner ring-1 ring-slate-200 backdrop-blur transition-all duration-400 ease-in-out hover:brightness-90 dark:bg-slate-700/50 dark:ring-slate-700 dark:hover:brightness-110"
-                  data-aos="fade-left"
-                  data-aos-delay={idx * 100}
+                  data-aos={isMobile ? "fade-up" : "fade-left"}
+                  data-aos-delay={isMobile ? 0 : idx * 100}
                 >
                   <span className="text-sm font-medium text-black dark:text-slate-100">
                     {t("archive.volume", { volume: i.volume })}
@@ -105,7 +102,6 @@ export default function JournalArchive() {
         ))}
       </div>
 
-      {/* ----------------------- Publication History Card ----------------------- */}
       <div
         className="mt-20 rounded-3xl bg-cyan-50 px-8 py-10 text-black shadow-md ring-1 ring-cyan-200 dark:bg-slate-700 dark:text-white dark:ring-slate-600"
         data-aos="fade-up"
@@ -122,7 +118,6 @@ export default function JournalArchive() {
         </p>
       </div>
 
-      {/* ---------------- Custom keyframes for smooth lift ---------------- */}
       <style jsx>{`
         @keyframes rise {
           0% {
