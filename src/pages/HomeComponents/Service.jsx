@@ -1,12 +1,7 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import {
-  ArrowRight,
-  BookOpen,
-  Percent,
-  Users,
-} from "lucide-react";
+import { ArrowRight, BookOpen, Percent, Users } from "lucide-react";
 import { useTranslation } from "react-i18next";
 
 const articles = [
@@ -65,9 +60,19 @@ const InfoCard = ({ icon, title, children }) => (
 
 export default function RefreshedJournalPage() {
   const { t } = useTranslation();
+  const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
     AOS.init({ duration: 800, once: true });
+
+    // Mobile detection
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth <= 640);
+    };
+
+    checkMobile(); // initial
+    window.addEventListener("resize", checkMobile);
+    return () => window.removeEventListener("resize", checkMobile);
   }, []);
 
   return (
@@ -75,7 +80,7 @@ export default function RefreshedJournalPage() {
       {/* Hero + Intro */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-20">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-          <div data-aos="fade-right">
+          <div data-aos={isMobile ? "fade-up" : "fade-right"}>
             <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-gray-900">
               {t("journal.title")}
             </h1>
@@ -87,7 +92,7 @@ export default function RefreshedJournalPage() {
             </p>
           </div>
 
-          <div className="space-y-8" data-aos="fade-left" data-aos-delay="200">
+          <div className="space-y-8" data-aos={isMobile ? "fade-up" : "fade-left"} data-aos-delay="200">
             <InfoCard icon={<BookOpen size={24} />} title={t("journal.openAccessTitle")}>
               {t("journal.openAccessText")}
             </InfoCard>
