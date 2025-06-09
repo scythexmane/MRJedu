@@ -1,0 +1,65 @@
+{
+  "navbar": {
+    "titleLine1": "Tibbiy",
+    "titleLine2": "Ilmiy jurnal",
+    "home": "Bosh sahifa",
+    "archive": "Arxiv",
+    "journalInfo": "Jurnal haqida",
+    "about": "Biz haqimizda",
+    "aims": "Maqsad va vazifalar",
+    "editorialBoard": "Tahririyat hay’ati",
+    "indexing": "Indekslash",
+    "openAccess": "Ochiq foydalanish siyosati",
+    "copyright": "Mualliflik huquqi va litsenziya",
+    "archiving": "Arxivlash siyosati",
+    "advertising": "Reklama va marketing",
+    "history": "Jurnal tarixi",
+    "cooperations": "Hamkor tashkilotlar",
+    "forAuthors": "Mualliflar uchun",
+    "ethical": "Etika bayonoti",
+    "guidelines": "Mualliflar uchun ko‘rsatmalar",
+    "policy": "Tahrir siyosati",
+    "review": "Taqriz siyosati",
+    "fee": "Nashr to‘lovi",
+    "contact": "Aloqa",
+    "search": "Qidiruv...",
+    "submit": "Maqolani yuborish"
+  },
+  "hero": {
+    "title": "Atrof-muhit va fan taʼlimi bo‘yicha fanlararo jurnal",
+    "subtitle": "Atrof-muhit va fan sohalarida tadqiqotlar, innovatsiyalar va taʼlimni qamrab oluvchi ochiq nashr etiladigan ilmiy jurnal."
+  },
+  "journal": {
+    "title": "Atrof-muhit va fan taʼlimi bo‘yicha fanlararo jurnal",
+    "description1": "Atrof-muhit va fan taʼlimi bo‘yicha fanlararo jurnal (ISSN: 2633‑6537) butun dunyodagi original ilmiy maqolalarni nashr etadi.",
+    "description2": "IJESE Budapest ochiq kirish tashabbusi (BOAI) taʼrifiga muvofiq ochiq kirish siyosatini qabul qiladi va Modestum DOO (Serbiya) tomonidan chorakda bir marotaba nashr qilinadi. Barcha nashr qilingan maqolalar Creative Commons Attribution 4.0 International litsenziyasi asosida tarqatiladi.",
+    "openAccessTitle": "Ochiq Kirish",
+    "openAccessText": "Maximum ko‘rinish va taʼsir uchun Budapest Open Access Initiative (BOAI) tashabbusiga muvofiq.",
+    "cooperationTitle": "Hamkorlik",
+    "cooperationText": "Kiprning Ekologik Tadqiqotlar va Taʼlim Markazi (CYCERE) bilan hamkorlikda.",
+    "acceptanceTitle": "Qabul ko‘rsatkichlari",
+    "acceptanceText": "2019: 23 %, 2020: 18 %, 2021: 23 %, 2022: 38 %, 2023: 32 %.",
+    "currentIssue": "Joriy Son",
+    "volumeInfo": "21‑chi jild, 2‑son, 2025",
+    "readArticle": "Maqolani o‘qish"
+  },
+  "footer": {
+    "publisher": "Nashriyot",
+    "journal": "Jurnal",
+    "terms": "Shartlar",
+    "description": "Medical Research Journal dunyo bo'ylab ilmiy jamoatchilik uchun ochiq kirishli, ilmiy maqolalarni chop etadi.",
+    "links": {
+      "home": "Bosh sahifa",
+      "journals": "Jurnallar",
+      "contact": "Aloqa",
+      "subscribe": "Obuna",
+      "archive": "Arxiv",
+      "about": "Jurnal haqida",
+      "authorGuidelines": "Mualliflar uchun qo‘llanma",
+      "termsOfUse": "Foydalanish shartlari",
+      "privacyPolicy": "Maxfiylik siyosati",
+      "cookiePolicy": "Cookie siyosati"
+    },
+    "copyright": "eISSN 2633-6537 | Tibbiy Tadqiqotlar Jurnali"
+  }
+}

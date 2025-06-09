@@ -1,0 +1,71 @@
+{
+  "navbar": {
+    "titleLine1": "Medical",
+    "titleLine2": "Research Journal",
+    "home": "Home",
+    "archive": "Archive",
+    "journalInfo": "Journal Info",
+    "about": "About",
+    "aims": "Aims & Scope",
+    "editorialBoard": "Editorial Board",
+    "indexing": "Indexing",
+    "openAccess": "Open Access Policy",
+    "copyright": "Copyright & Licensing",
+    "archiving": "Archiving Policy",
+    "advertising": "Advertisement & Marketing",
+    "history": "Journal History",
+    "cooperations": "Institutional Cooperations",
+    "forAuthors": "For Authors",
+    "ethical": "Ethical Statement",
+    "guidelines": "Author Guidelines",
+    "policy": "Editorial Policy",
+    "review": "Peer Review Policy",
+    "fee": "Publication Fee",
+    "contact": "Contact",
+    "search": "Search...",
+    "submit": "Submit Manuscript"
+  },
+  
+  "hero": {
+    "title": "Interdisciplinary Journal of Environmental and Science Education",
+    "subtitle": "A peer-reviewed open-access journal covering research, innovation, and education in environmental and science fields."
+  },
+  
+  "journal": {
+    "title": "Interdisciplinary Journal of Environmental and Science Education",
+    "description1": "The Interdisciplinary Journal of Environmental and Science Education (ISSN: 2633-6537) publishes original research articles from throughout the world in the fields of sciences education and environmental education.",
+    "description2": "IJESE adopts an Open Access policy complying with the definition laid out by the Budapest Open Access Initiative (BOAI) and is published quarterly by Modestum DOO, Serbia. All published manuscripts apply the Terms and conditions of Creative Commons Attribution 4.0 International License.",
+    "openAccessTitle": "Open Access",
+    "openAccessText": "Following the Budapest Open Access Initiative (BOAI) for maximum visibility and impact.",
+    "cooperationTitle": "Cooperation",
+    "cooperationText": "In partnership with the Cyprus Centre for Environmental Research and Education (CYCERE).",
+    "acceptanceTitle": "Acceptance Rates",
+    "acceptanceText": "2019: 23%, 2020: 18%, 2021: 23%, 2022: 38%, 2023: 32%.",
+    "currentIssue": "Current Issue",
+    "volumeInfo": "Volume 21, Issue 2, 2025",
+    "readArticle": "Read Article"
+  },
+  "footer": {
+    "publisher": "Publisher",
+    "journal": "Journal",
+    "terms": "Terms",
+    "description": "Medical Research Journal publishes peer-reviewed open-access journals for the scientific community worldwide.",
+    "links": {
+      "home": "Home",
+      "journals": "Journals",
+      "contact": "Contact",
+      "subscribe": "Subscribe",
+      "archive": "Archive",
+      "about": "About",
+      "authorGuidelines": "Author Guidelines",
+      "termsOfUse": "Terms of Use",
+      "privacyPolicy": "Privacy Policy",
+      "cookiePolicy": "Cookie Policy"
+    },
+    "copyright": "eISSN 2633-6537 | Medical Research Journal"
+  }
+  
+
+}
+
+
