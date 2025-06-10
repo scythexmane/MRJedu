@@ -15,8 +15,19 @@ export default function ContactSection() {
     <section className="relative px-4 py-16 md:px-8 lg:py-24 bg-[#F8F8FF]">
       <div
         data-aos="fade-up"
-        className="max-w-4xl mx-auto rounded-3xl bg-white shadow-xl border border-cyan-100 p-8 lg:p-12 transition hover:shadow-cyan-300"
+        className="relative max-w-4xl mx-auto rounded-3xl bg-white shadow-xl border border-cyan-100 p-6 sm:p-8 lg:p-12 transition hover:shadow-cyan-300"
       >
+        {/* QR Code */}
+        <div className="absolute hidden sm:block top-4 right-4 z-10">
+          <div className="w-20 h-20 p-1 bg-white rounded-lg shadow-md border border-cyan-100 hover:shadow-lg hover:scale-105 transition transform duration-300">
+            <img
+              src="https://api.qrserver.com/v1/create-qr-code/?size=100x100&data=https://goo.gl/maps/gMiVCevXwzzj6Pv16"
+              alt="QR Code"
+              className="w-full h-full object-contain rounded"
+            />
+          </div>
+        </div>
+
         {/* Title */}
         <h2 className="text-3xl font-extrabold text-cyan-600 text-center mb-10">
           {t("contact.title")}
@@ -25,7 +36,7 @@ export default function ContactSection() {
         <div className="space-y-6 text-gray-800 text-base leading-relaxed">
           {/* Address */}
           <div className="flex items-start gap-4 group transition">
-            <MapPin className="text-cyan-500 mt-1" />
+            <MapPin className="text-cyan-500 mt-1 shrink-0" />
             <div>
               <p className="font-semibold text-lg group-hover:text-cyan-700 transition">
                 {t("contact.office")}
@@ -44,8 +55,8 @@ export default function ContactSection() {
           </div>
 
           {/* Email */}
-          <div className="flex items-center gap-4 group">
-            <Mail className="text-cyan-500" />
+          <div className="flex items-start gap-4 group">
+            <Mail className="text-cyan-500 mt-1 shrink-0" />
             <div>
               <span className="font-semibold">{t("contact.email")}: </span>
               <a
@@ -58,8 +69,8 @@ export default function ContactSection() {
           </div>
 
           {/* Phone */}
-          <div className="flex items-center gap-4 group">
-            <Phone className="text-cyan-500" />
+          <div className="flex items-start gap-4 group">
+            <Phone className="text-cyan-500 mt-1 shrink-0" />
             <div>
               <span className="font-semibold">{t("contact.phone")}: </span>
               <a
@@ -73,7 +84,7 @@ export default function ContactSection() {
 
           {/* Support */}
           <div className="flex items-start gap-4 group">
-            <Info className="text-cyan-500 mt-1" />
+            <Info className="text-cyan-500 mt-1 shrink-0" />
             <p>
               {t("contact.supportNote")}:{" "}
               <a
@@ -87,7 +98,7 @@ export default function ContactSection() {
 
           {/* Other inquiries */}
           <div className="flex items-start gap-4 group">
-            <Info className="text-cyan-500 mt-1" />
+            <Info className="text-cyan-500 mt-1 shrink-0" />
             <p>
               {t("contact.otherInquiries")}:{" "}
               <a
@@ -100,7 +111,7 @@ export default function ContactSection() {
           </div>
         </div>
 
-        {/* Inline Google Map */}
+        {/* Google Map */}
         <div className="mt-10 rounded-xl overflow-hidden border-2 border-cyan-100 shadow-md hover:shadow-cyan-200 transition">
           <iframe
             title="Modestum Office Map"
@@ -114,9 +125,9 @@ export default function ContactSection() {
           />
         </div>
 
-        {/* QR Code in top-right corner */}
-        <div className="absolute top-4 right-4 z-10">
-          <div className="w-20 h-20 p-1 bg-white rounded-lg shadow-md border border-cyan-100 hover:shadow-lg hover:scale-105 transition transform duration-300">
+        {/* QR on mobile */}
+        <div className="mt-6 flex sm:hidden justify-center">
+          <div className="w-24 h-24 p-1 bg-white rounded-lg shadow-md border border-cyan-100 hover:shadow-lg hover:scale-105 transition transform duration-300">
             <img
               src="https://api.qrserver.com/v1/create-qr-code/?size=100x100&data=https://goo.gl/maps/gMiVCevXwzzj6Pv16"
               alt="QR Code"
