@@ -37,10 +37,10 @@ body {
   
 }
 :root {
-  --bg-color: #ffffff;
+  --bg-color: #F8F8FF;
   --text-color: #1f2937;
   --border-color: #e5e7eb;
-  --input-bg: #ffffff;
+  --input-bg: #F8F8FF;
   --hover-bg: #f3f4f6;
 }
 

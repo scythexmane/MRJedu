@@ -81,6 +81,11 @@
     }
   },
   "login": {
+     "success": {
+      "login": "Muvaffaqiyatli kirish!",
+      "register": "Ro'yxatdan muvaffaqiyatli o'tildi!",
+      "reset": "Qayta tiklash ko'rsatmalar yuborildi!"
+    },
     "welcomeTitle": "Xush kelibsiz",
     "welcomeSubtitle": "Davom etish uchun tizimga kiring",
     "emailPlaceholder": "Elektron pochta",
@@ -97,7 +102,8 @@
     "resetPasswordTitle": "Parolni tiklash",
     "resetPasswordSubtitle": "Ko‘rsatmalar uchun emailingizni kiriting",
     "sendButton": "Havolani yuborish",
-    "backToLoginLink": "Ortga"
+    "backToLoginLink": "Ortga",
+    "confirmPasswordPlaceholder": "Parol tastiqlash"
   },
   "heroSlides": [
     "Kelajak tibbiyoti shu yerdan boshlanadi",

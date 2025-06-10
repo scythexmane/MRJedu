@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import { motion, AnimatePresence } from "framer-motion";
 import { useTranslation } from "react-i18next";
 
 const archiveData = {
@@ -41,104 +42,106 @@ const archiveData = {
   2019: [{ volume: 15, issue: 1 }],
 };
 
-export default function JournalArchive() {
+export default function FuturisticJournalArchive() {
   const { t } = useTranslation();
-  const [isMobile, setIsMobile] = useState(false);
+  const [expandedYear, setExpandedYear] = useState(null);
 
   useEffect(() => {
-    AOS.init({
-      duration: 900,
-      once: true,
-      offset: 120,
-      easing: "ease-out-quart",
-    });
-    const handleResize = () => setIsMobile(window.innerWidth < 640);
-    handleResize();
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
+    AOS.init({ duration: 800, once: true, offset: 120 });
   }, []);
 
+  const sortedYears = Object.keys(archiveData).sort((a, b) => b - a);
+
   return (
-    <section className="relative mx-auto max-w-7xl px-4 py-16 md:px-8 lg:py-24 bg-[#F8F8FF]">
-      <h2
-        className="mb-14 text-center text-4xl font-extrabold tracking-tight text-black"
-        data-aos="fade-down"
+    <section className="relative px-4 py-16 md:px-8 lg:py-24 bg-gradient-to-b from-white via-[#f1f5ff] to-[#e7edff]">
+      {/* vertical center line */}
+      <div className="pointer-events-none absolute left-1/2 top-0 h-full -translate-x-1/2">
+        <div className="h-full w-px bg-gradient-to-b from-transparent via-cyan-300 to-transparent" />
+      </div>
+
+      <motion.h2
+        initial={{ opacity: 0, y: -20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8 }}
+        className="mb-14 text-center text-4xl font-extrabold tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-cyan-500 to-blue-600"
       >
         {t("archive.title", "Archive")}
-      </h2>
+      </motion.h2>
 
-      <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-3">
-        {Object.entries(archiveData).map(([year, issues], yearIdx) => (
-          <article
-            key={year}
-            className="relative flex flex-col overflow-hidden rounded-3xl bg-white shadow-lg transition-all duration-500 ease-in-out hover:shadow-xl hover:z-10 animate-card"
-            data-aos={isMobile ? "fade-up" : "zoom-in-up"}
-          >
-            <div className="absolute inset-0 rounded-3xl border border-slate-200 pointer-events-none transition-all duration-500 group-hover:border-cyan-300"></div>
-            <div className="relative z-10 p-6 pb-4">
-              <h3 className="text-3xl font-bold text-black transition-all duration-500 group-hover:text-cyan-600">
-                {year}
-              </h3>
-            </div>
+      <div className="relative space-y-12">
+        {sortedYears.map((year, i) => {
+          const issues = archiveData[year];
+          const isLeft = i % 2 === 0;
+          return (
+            <div
+              key={year}
+              data-aos="fade-up"
+              data-aos-delay={i * 80}
+              className={`relative flex w-full ${
+                isLeft ? "justify-start" : "justify-end"
+              }`}
+            >
+              {/* connector dot */}
+              <span className="absolute left-1/2 top-4 -translate-x-1/2 h-4 w-4 rounded-full bg-cyan-400 shadow-lg" />
 
-            <ul className="relative z-10 space-y-2 px-6 pb-6">
-              {issues.map((i, idx) => (
-                <li
-                  key={`${i.volume}-${i.issue}`}
-                  className="flex items-center justify-between rounded-xl bg-white/80 px-3 py-2 shadow-inner ring-1 ring-slate-200 backdrop-blur transition-all duration-400 hover:scale-[1.02] hover:ring-cyan-300"
-                  data-aos={isMobile ? "fade-up" : "fade-left"}
-                  data-aos-delay={isMobile ? 0 : idx * 100}
+              <motion.div
+                whileHover={{ scale: 1.04 }}
+                className="w-[60ch] max-w-full cursor-pointer"
+                style={{
+                  display: "flex",
+                  flexDirection: "column",
+                  alignItems: isLeft ? "flex-end" : "flex-start",
+                }}
+                onClick={() =>
+                  setExpandedYear(expandedYear === year ? null : year)
+                }
+              >
+                <motion.h3
+                  layout
+                  className="mb-3 text-2xl font-bold text-gray-800 hover:text-cyan-600 transition-colors"
                 >
-                  <span className="text-sm font-medium text-black">
-                    {t("archive.volume", { volume: i.volume })}
-                    {i.issue && `, ${t("archive.issue", { issue: i.issue })}`}
-                  </span>
-                  {i.label && (
-                    <span className="select-none rounded-full bg-amber-100 px-2 py-0.5 text-xs font-semibold text-amber-600">
-                      {t(`archive.labels.${i.label}`, i.label)}
-                    </span>
+                  {year}
+                </motion.h3>
+
+                <AnimatePresence initial={false}>
+                  {expandedYear === year && (
+                    <motion.ul
+                      initial={{ opacity: 0, height: 0 }}
+                      animate={{ opacity: 1, height: "auto" }}
+                      exit={{ opacity: 0, height: 0 }}
+                      transition={{ duration: 0.4, type: "tween" }}
+                      className="space-y-3 w-full flex flex-col items-center"
+                    >
+                      {issues.map((iss, idx) => (
+                        <li
+                          key={`${iss.volume}-${iss.issue}`}
+                          className="group relative rounded-xl border border-cyan-300/30 bg-white/60 backdrop-blur-md px-4 py-2 shadow-md hover:shadow-cyan-400/40 transition w-[200px] text-end"
+                          style={{
+                            display: "flex",
+                            flexDirection: "column",
+                            alignItems: isLeft ? "flex-end" : "flex-start",
+                          }}
+                        >
+                          <span className="text-xs font-medium text-gray-800 block">
+                            {t("archive.volume", { volume: iss.volume })}
+                            {iss.issue &&
+                              `, ${t("archive.issue", { issue: iss.issue })}`}
+                          </span>
+                          {iss.label && (
+                            <span className="mt-1 block rounded-full bg-yellow-400/20 text-yellow-600 px-2 py-0.5 text-[10px] font-semibold">
+                              {t(`archive.labels.${iss.label}`, iss.label)}
+                            </span>
+                          )}
+                        </li>
+                      ))}
+                    </motion.ul>
                   )}
-                </li>
-              ))}
-            </ul>
-          </article>
-        ))}
+                </AnimatePresence>
+              </motion.div>
+            </div>
+          );
+        })}
       </div>
-<br />
-<br />
-      <h3 className="mb-3 text-2xl font-bold">{t("archive.history.title")}</h3>
-      <p className="mb-3">
-        <strong>{t("archive.history.currentLabel")}</strong>{" "}
-        {t("archive.history.current")}
-      </p>
-      <p className="mb-6">
-        <strong>{t("archive.history.formerLabel")}</strong>{" "}
-        {t("archive.history.former")}
-      </p>
-      <p className="rounded-xl bg-cyan-100 px-4 py-3 font-medium shadow-inner">
-        {t("archive.history.note")}
-      </p>          
-
-      <style jsx>{`
-        @keyframes cardFloat {
-          0% {
-            transform: translateY(0) scale(1);
-            box-shadow: 0 0 0 rgba(0, 0, 0, 0);
-          }
-          50% {
-            transform: translateY(-5px) scale(1.015);
-            box-shadow: 0 8px 20px rgba(0, 100, 150, 0.15);
-          }
-          100% {
-            transform: translateY(-10px) scale(1.02);
-            box-shadow: 0 12px 25px rgba(0, 100, 150, 0.25);
-          }
-        }
-
-        .animate-card:hover {
-          animation: cardFloat 0.6s forwards ease-in-out;
-        }
-      `}</style>
     </section>
   );
 }

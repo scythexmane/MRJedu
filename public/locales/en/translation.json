@@ -82,6 +82,11 @@
     "copyright": "eISSN 2633-6537 | Medical Research Journal"
   },
   "login": {
+     "success": {
+      "login": "Successful login!",
+      "register": "Registration was successful!",
+      "reset": "Reset instructions have been sent!"
+    },
     "welcomeTitle": "Welcome Back",
     "welcomeSubtitle": "Please sign in to continue",
     "emailPlaceholder": "Email",
@@ -98,7 +103,8 @@
     "resetPasswordTitle": "Reset Your Password",
     "resetPasswordSubtitle": "Enter your email to receive instructions",
     "sendButton": "Send Reset Link",
-    "backToLoginLink": "Back to Login"
+    "backToLoginLink": "Back to Login",
+    "confirmPasswordPlaceholder": "Confirm password"
   },
   "heroSlides": [
     "Future-proof Medicine Starts Here",

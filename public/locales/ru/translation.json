@@ -82,6 +82,11 @@
     }
   },
   "login": {
+    "success": {
+      "login": "Успешный вход!",
+      "register": "Регистрация прошла успешно!",
+      "reset": "Инструкции по сбросу отправлены!"
+    },
     "welcomeTitle": "Добро пожаловать",
     "welcomeSubtitle": "Пожалуйста, войдите в систему",
     "emailPlaceholder": "Электронная почта",
@@ -98,7 +103,8 @@
     "resetPasswordTitle": "Сброс пароля",
     "resetPasswordSubtitle": "Введите почту для получения инструкции",
     "sendButton": "Отправить ссылку",
-    "backToLoginLink": "Назад ко входу"
+    "backToLoginLink": "Назад ко входу",
+    "confirmPasswordPlaceholder": "Подтвердите пароль"
   }
 ,
   "heroSlides": [

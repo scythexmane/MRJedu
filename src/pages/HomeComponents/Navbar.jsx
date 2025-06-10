@@ -40,7 +40,7 @@ export default function Navbar() {
 
   return (
     <header
-      className={`sticky top-0 z-50 transition-all duration-300 ${
+      className={`bg-[#F8F8FF] sticky top-0 z-50 transition-all duration-300 ${
         isScrolled ? "bg-white/50 backdrop-blur-lg shadow p-[10px]" : "bg-transparent"
       }`}
     >
