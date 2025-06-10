@@ -21,7 +21,7 @@ import Archive from "./pages/Archive.jsx";
 // import EditorialPolicy from "./pages/authors/EditorialPolicy.jsx";
 // import PeerReviewPolicy from "./pages/authors/PeerReviewPolicy.jsx";
 // import PublicationFee from "./pages/authors/PublicationFee.jsx";
-// import SubmitManuscript from "./pages/authors/SubmitManuscript.jsx";
+import Login from "./pages/Login.jsx";
 
 // import Contact from "./pages/Contact.jsx";
 
@@ -29,6 +29,7 @@ export default function App() {
   return (
     <Router>
       <Routes>
+          <Route path="login" element={<Login />} />
         <Route path="/" element={<Layout /> } >
           {/* Home */}
           <Route index element={<Home />} />
@@ -46,17 +47,15 @@ export default function App() {
           <Route path="journal/journal-history" element={<JournalHistory />} />
           <Route path="journal/institutional-cooperations" element={<InstitutionalCooperations />} /> */}
 
-          {/* Authors */}
           {/* <Route path="authors/ethical-statement" element={<EthicalStatement />} />
           <Route path="authors/author-guidelines" element={<AuthorGuidelines />} />
           <Route path="authors/editorial-policy" element={<EditorialPolicy />} />
           <Route path="authors/peer-review-policy" element={<PeerReviewPolicy />} />
-          <Route path="authors/publication-fee" element={<PublicationFee />} />
-          <Route path="authors/submit-manuscript" element={<SubmitManuscript />} /> */}
+          <Route path="authors/publication-fee" element={<PublicationFee />} /> */}
 
-          {/* Contact */}
-          {/* <Route path="contact" element={<Contact />} />
-          <Route path="submit" element={<SubmitManuscript />} /> */}
+          
+          {/* <Route path="contact" element={<Contact />} /> */}
+          {/* <Route path="submit" element={<SubmitManuscript />} />  */}
         </Route>
       </Routes>
     </Router>

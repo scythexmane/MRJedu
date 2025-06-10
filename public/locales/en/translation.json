@@ -81,7 +81,25 @@
     },
     "copyright": "eISSN 2633-6537 | Medical Research Journal"
   },
-
+  "login": {
+    "welcomeTitle": "Welcome Back",
+    "welcomeSubtitle": "Please sign in to continue",
+    "emailPlaceholder": "Email",
+    "passwordPlaceholder": "Password",
+    "loginButton": "Login",
+    "forgotPasswordLink": "Forgot Password?",
+    "createAccountLink": "Create Account",
+    "createAccountTitle": "Create Your Account",
+    "createAccountSubtitle": "Join our medical research community",
+    "firstNamePlaceholder": "First Name",
+    "lastNamePlaceholder": "Last Name",
+    "phonePlaceholder": "Phone Number",
+    "registerButton": "Register",
+    "resetPasswordTitle": "Reset Your Password",
+    "resetPasswordSubtitle": "Enter your email to receive instructions",
+    "sendButton": "Send Reset Link",
+    "backToLoginLink": "Back to Login"
+  },
   "heroSlides": [
     "Future-proof Medicine Starts Here",
     "Research that Saves Lives",

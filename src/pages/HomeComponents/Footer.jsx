@@ -37,7 +37,7 @@ export default function Footer() {
   ];
 
   return (
-    <footer className="bg-white border-t">
+    <footer className="bg-slate-700 border-t">
       <div className="mx-auto max-w-7xl px-6 py-16">
         <div className="grid gap-12 sm:grid-cols-2 lg:grid-cols-4">
           <div>
@@ -46,18 +46,18 @@ export default function Footer() {
               <span className="sr-only">Medical Research Journal</span>
             </NavLink>
 
-            <p className="mt-6 max-w-xs text-sm text-gray-600">
+            <p className="mt-6 max-w-xs text-sm text-white">
               {t('footer.description')}
             </p>
 
             <div className="mt-6 flex space-x-4">
-              <a href="#" aria-label="Facebook" className="text-gray-400 hover:text-blue-600">
+              <a href="#" aria-label="Facebook" className="text-white hover:text-blue-600">
                 <Facebook size={20} />
               </a>
-              <a href="#" aria-label="Twitter" className="text-gray-400 hover:text-blue-600">
+              <a href="#" aria-label="Twitter" className="text-white hover:text-blue-600">
                 <Twitter size={20} />
               </a>
-              <a href="#" aria-label="LinkedIn" className="text-gray-400 hover:text-blue-600">
+              <a href="#" aria-label="LinkedIn" className="text-white hover:text-blue-600">
                 <Linkedin size={20} />
               </a>
             </div>
@@ -65,7 +65,7 @@ export default function Footer() {
 
           {NAV.map((col) => (
             <nav key={col.title}>
-              <h3 className="text-lg font-semibold text-gray-900">{col.title}</h3>
+              <h3 className="text-lg font-semibold text-white">{col.title}</h3>
               <ul className="mt-4 space-y-3">
                 {col.links.map((link) => (
                   <li key={link.label}>
@@ -77,7 +77,7 @@ export default function Footer() {
                           'after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-full',
                           'after:origin-left after:scale-x-0 after:bg-blue-600 after:transition-transform after:duration-300',
                           'hover:after:scale-x-100 hover:text-blue-600',
-                          isActive ? 'text-blue-600' : 'text-gray-600',
+                          isActive ? 'text-blue-600' : 'text-white',
                         ].join(' ')
                       }
                     >

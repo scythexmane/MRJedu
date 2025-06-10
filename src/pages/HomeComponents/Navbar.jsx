@@ -258,7 +258,7 @@ export default function Navbar() {
             </Transition>
           </div>
 
-          <Link to="/submit">
+          <Link to="login">
             <button className="bg-gradient-to-r from-blue-500 to-cyan-500 text-white px-6 py-3 rounded-full shadow hover:scale-105 transition">
               {t("navbar.submit")}
             </button>
@@ -524,7 +524,7 @@ export default function Navbar() {
           </div>
 
           {/* Мобильная кнопка Submit */}
-          <Link to="/submit" onClick={() => setMobileMenuOpen(false)}>
+          <Link to="/authors/submit-manuscript" onClick={() => setMobileMenuOpen(false)}>
             <button className="w-full mt-4 bg-gradient-to-r from-blue-500 to-cyan-500 text-white px-6 py-3 rounded-full shadow hover:scale-105 transition">
               {t("navbar.submit")}
             </button>

@@ -20,6 +20,9 @@
 .reverse-card-hover {
   animation: card-hover 0.3s reverse forwards;
 }
+html {
+  transition: background-color 0.5s ease, color 0.5s ease;
+}
 
 body {
   background-color: #f8f8ff;
@@ -31,7 +34,30 @@ body {
     -ms-overflow-style: none;
     scrollbar-width: none;
   }
+  
 }
+:root {
+  --bg-color: #ffffff;
+  --text-color: #1f2937;
+  --border-color: #e5e7eb;
+  --input-bg: #ffffff;
+  --hover-bg: #f3f4f6;
+}
+
+.dark {
+  --bg-color: #1f2937;
+  --text-color: #f9fafb;
+  --border-color: #374151;
+  --input-bg: #111827;
+  --hover-bg: #374151;
+}
+
+html, body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition: background-color 0.4s ease, color 0.4s ease;
+}
+
 @layer utilities {
   @keyframes tilt-left-pop {
     0% {
@@ -53,4 +79,34 @@ body {
   .group:hover .card-reset {
     animation: tilt-left-pop 0.4s ease reverse forwards;
   }
+}
+@keyframes gradient-animation {
+  0% {
+    background-position: 0% 50%;
+  }
+  25% {
+    background-position: 50% 75%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  75% {
+    background-position: 50% 25%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.animate-gradient {
+  background: linear-gradient(
+    -45deg,
+    #e0f7fa, /* Light Cyan - Fresh & Clean */
+    #b3e5fc, /* Light Blue - Calm & Trustworthy */
+    #81d4fa, /* Sky Blue - Professional */
+    #a7ffeb, /* Aquamarine - Healing & Growth */
+    #69f0ae  /* Light Green - Health & Vitality */
+  );
+  background-size: 400% 400%;
+  animation: gradient-animation 20s ease infinite;
 }

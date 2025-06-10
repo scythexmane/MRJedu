@@ -64,7 +64,7 @@
     },
     "copyright": "eISSN 2633-6537 | Tibbiy Tadqiqotlar Jurnali"
   },
-    "archive": {
+  "archive": {
     "title": "Arxiv",
     "volume": "{{volume}}-jild",
     "issue": "{{issue}}-son",
@@ -79,6 +79,25 @@
       "former": "ISSN 1306-3065 bilan Atrof-muhit va ilmiy ta'lim bo'yicha xalqaro jurnal (1-jild 1-son, 2006 - 14-jild 9-son, 2019)",
       "note": "2023-yil 1-son, 19-jilddan boshlab jurnal Modestum tomonidan nashr etiladi."
     }
+  },
+  "login": {
+    "welcomeTitle": "Xush kelibsiz",
+    "welcomeSubtitle": "Davom etish uchun tizimga kiring",
+    "emailPlaceholder": "Elektron pochta",
+    "passwordPlaceholder": "Parol",
+    "loginButton": "Kirish",
+    "forgotPasswordLink": "Parolni unutdingizmi?",
+    "createAccountLink": "Ro'yxatdan o'tish",
+    "createAccountTitle": "Hisob yarating",
+    "createAccountSubtitle": "Tibbiy hamjamiyatga qo‘shiling",
+    "firstNamePlaceholder": "Ism",
+    "lastNamePlaceholder": "Familiya",
+    "phonePlaceholder": "Telefon raqami",
+    "registerButton": "Ro'yxatdan o'tish",
+    "resetPasswordTitle": "Parolni tiklash",
+    "resetPasswordSubtitle": "Ko‘rsatmalar uchun emailingizni kiriting",
+    "sendButton": "Havolani yuborish",
+    "backToLoginLink": "Ortga"
   },
   "heroSlides": [
     "Kelajak tibbiyoti shu yerdan boshlanadi",

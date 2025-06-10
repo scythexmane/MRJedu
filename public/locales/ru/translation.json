@@ -81,6 +81,26 @@
       "note": "Начиная с тома 19, выпуска 1 (2023), журнал издается Modestum."
     }
   },
+  "login": {
+    "welcomeTitle": "Добро пожаловать",
+    "welcomeSubtitle": "Пожалуйста, войдите в систему",
+    "emailPlaceholder": "Электронная почта",
+    "passwordPlaceholder": "Пароль",
+    "loginButton": "Войти",
+    "forgotPasswordLink": "Забыли пароль?",
+    "createAccountLink": "Создать аккаунт",
+    "createAccountTitle": "Создайте аккаунт",
+    "createAccountSubtitle": "Присоединяйтесь к медицинскому сообществу",
+    "firstNamePlaceholder": "Имя",
+    "lastNamePlaceholder": "Фамилия",
+    "phonePlaceholder": "Телефон",
+    "registerButton": "Зарегистрироваться",
+    "resetPasswordTitle": "Сброс пароля",
+    "resetPasswordSubtitle": "Введите почту для получения инструкции",
+    "sendButton": "Отправить ссылку",
+    "backToLoginLink": "Назад ко входу"
+  }
+,
   "heroSlides": [
     "Медицина будущего начинается здесь",
     "Исследования, спасающие жизни",
