@@ -98,15 +98,19 @@ html, body {
   }
 }
 
+
+
+
 .animate-gradient {
   background: linear-gradient(
     -45deg,
-    #e0f7fa, /* Light Cyan - Fresh & Clean */
-    #b3e5fc, /* Light Blue - Calm & Trustworthy */
-    #81d4fa, /* Sky Blue - Professional */
-    #a7ffeb, /* Aquamarine - Healing & Growth */
-    #69f0ae  /* Light Green - Health & Vitality */
+    #0a192f, /* Deep Navy - Sleek & Modern */
+    #2a1547, /* Dark Purple - Mysterious & Luxe */
+    #1e3a5e, /* Dark Teal - Cool & Serene */
+    #0d2d52, /* Midnight Blue - Calm & Sophisticated */
+    #2e1065  /* Deep Indigo - Intense & Enigmatic */
   );
   background-size: 400% 400%;
   animation: gradient-animation 20s ease infinite;
 }
+

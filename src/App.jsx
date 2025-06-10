@@ -5,6 +5,7 @@ import Layout from "./pages/layout.jsx";
 // Страницы
 import Home from "./pages/Home.jsx";
 import Archive from "./pages/Archive.jsx";
+import Login from "./pages/login.jsx";
 // import About from "./pages/journal/About.jsx";
 // import AimsAndScope from "./pages/journal/AimsAndScope.jsx";
 // import EditorialBoard from "./pages/journal/EditorialBoard.jsx";
@@ -21,7 +22,6 @@ import Archive from "./pages/Archive.jsx";
 // import EditorialPolicy from "./pages/authors/EditorialPolicy.jsx";
 // import PeerReviewPolicy from "./pages/authors/PeerReviewPolicy.jsx";
 // import PublicationFee from "./pages/authors/PublicationFee.jsx";
-import Login from "./pages/Login.jsx";
 
 // import Contact from "./pages/Contact.jsx";
 
