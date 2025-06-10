@@ -31,6 +31,50 @@
     "description": "Bu yerda ilmiy taʼlim haqiqiy taʼsir bilan uchrashadi. Aqlli va yashil kelajak qurish missiyasiga qo‘shiling.",
     "cta": "Batafsil"
   },
+  "about": {
+    "title": "Jurnal haqida",
+    "description1": "Interdisciplinary Journal of Environmental and Science Education (IJESE) jurnali butun dunyo bo‘ylab ilmiy va atrof‑muhit taʼlimi sohasidagi original tadqiqotlarni nashr etadi.",
+    "description2": "IJESE ochiq kirishli jurnal hisoblanadi. Maqolalar Creative Commons Attribution 4.0 International (CC BY 4.0) litsenziyasi asosida chop etiladi, bu esa materialni qayta ishlash, tarqatish va tijorat maqsadida foydalanishga ruxsat beradi.",
+    "license": "Barcha kontent Creative Commons Attribution 4.0 International (CC BY 4.0) litsenziyasi asosida berilgan.",
+    "acceptanceRatesTitle": "Qabul qilish ko‘rsatkichlari",
+    "stats": {
+      "issn": "ISSN",
+      "doi": "DOI",
+      "publisher": "Nashriyotchi",
+      "publisherValue": "Modestum DOO, Serbiya",
+      "abbrev": "Jurnalning qisqa nomi",
+      "impactFactor": "Taʼsir faktori (2‑yil)",
+      "citeScore": "CiteScore",
+      "reviewTime": "O‘rtacha ko‘rib chiqish vaqti",
+      "hIndex": "H‑Indeks"
+    }
+  },
+  "aimsHero": {
+    "title": "Maqsad va Doirasi",
+    "p1": "Interfandalararo Atrof-muhit va Fan Taʼlimi Jurnali (IJESE) butun dunyo boʻylab fan va ekologik taʼlim sohalarida original, ikki tomonlama koʻr-koʻrona ekspertiza qilingan maqolalarni chop etadi. Biz tadqiqotchilar uchun o‘z g‘oyalarini yetkazish va tajriba almashish imkonini beradigan yetakchi platformani taqdim etamiz.",
+    "p2": "IJESE tizimli sharhlar, meta-tahlillar, empirik va nazariy tadqiqotlar, esse, fikrlar va holat tadqiqotlarini qabul qiladi. Ular fan va atrof-muhit taʼlimining ilmiy tushunchalarini rivojlantirishga xizmat qiladi.",
+
+    "scope": {
+      "biology": "Biologiya taʼlimi",
+      "chemistry": "Kimyo taʼlimi",
+      "earth": "Yer fanlari taʼlimi",
+      "environmental": "Ekologik taʼlim",
+      "outdoor": "Ochiq havoda taʼlim",
+      "physics": "Fizika taʼlimi",
+      "teacher": "Fan oʻqituvchilari taʼlimi",
+      "science": "Fan taʼlimi",
+      "sustainability": "Barqaror rivojlanish taʼlimi"
+    },
+
+    "stats": {
+      "research": "Tadqiqot maqolalari",
+      "review": "Tizimli sharhlar",
+      "theoretical": "Nazariy maqolalar",
+      "commentary": "Izohlar / Esse"
+    },
+
+    "statsTitle": "Maqola turlari bo‘yicha taqsimoti (2024)"
+  },
   "journal": {
     "title": "Atrof-muhit va fan taʼlimi bo‘yicha fanlararo jurnal",
     "description1": "Atrof-muhit va fan taʼlimi bo‘yicha fanlararo jurnal (ISSN: 2633‑6537) butun dunyodagi original ilmiy maqolalarni nashr etadi.",
@@ -81,7 +125,7 @@
     }
   },
   "login": {
-     "success": {
+    "success": {
       "login": "Muvaffaqiyatli kirish!",
       "register": "Ro'yxatdan muvaffaqiyatli o'tildi!",
       "reset": "Qayta tiklash ko'rsatmalar yuborildi!"
@@ -104,6 +148,21 @@
     "sendButton": "Havolani yuborish",
     "backToLoginLink": "Ortga",
     "confirmPasswordPlaceholder": "Parol tastiqlash"
+  },
+  "contact": {
+    "title": "Aloqa",
+    "office": "Asosiy ofis",
+    "address": "Modestum DOO, Bulevar Zorana Đinđića 125D, 1-qavat, 12C-xonadon, 11070 Belgrad, SERBIYA",
+    "email": "Elektron pochta",
+    "phone": "Telefon",
+    "viewMap": "Xaritada ko‘rish",
+    "supportNote": "Ko‘rib chiqilayotgan qo‘lyozmalar yoki nashr jarayonidagi maqolalar bo‘yicha savollaringiz bo‘lsa, quyidagiga murojaat qiling",
+    "otherInquiries": "Boshqa savollar bo‘yicha quyidagiga murojaat qiling",
+    "emails": {
+      "publications": "publications@modestum.co.uk",
+      "support": "support@editorialpark.com",
+      "ijese": "ijese@ijese.com"
+    }
   },
   "heroSlides": [
     "Kelajak tibbiyoti shu yerdan boshlanadi",

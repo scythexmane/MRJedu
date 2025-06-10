@@ -53,7 +53,7 @@ export default function FuturisticJournalArchive() {
   const sortedYears = Object.keys(archiveData).sort((a, b) => b - a);
 
   return (
-    <section className="relative px-4 py-16 md:px-8 lg:py-24 bg-gradient-to-b from-white via-[#f1f5ff] to-[#e7edff]">
+    <section className="relative px-4 py-16 md:px-8 lg:py-24 bg-[#F8F8FF] ">
       {/* vertical center line */}
       <div className="pointer-events-none absolute left-1/2 top-0 h-full -translate-x-1/2">
         <div className="h-full w-px bg-gradient-to-b from-transparent via-cyan-300 to-transparent" />

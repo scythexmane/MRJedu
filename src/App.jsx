@@ -6,8 +6,8 @@ import Layout from "./pages/layout.jsx";
 import Home from "./pages/Home.jsx";
 import Archive from "./pages/Archive.jsx";
 import Login from "./pages/login.jsx";
-// import About from "./pages/journal/About.jsx";
-// import AimsAndScope from "./pages/journal/AimsAndScope.jsx";
+import About from "./pages/journal/About.jsx";
+import AimsAndScope from "./pages/journal/AimsAndScope.jsx";
 // import EditorialBoard from "./pages/journal/EditorialBoard.jsx";
 // import Indexing from "./pages/journal/Indexing.jsx";
 // import OpenAccessPolicy from "./pages/journal/OpenAccessPolicy.jsx";
@@ -23,7 +23,7 @@ import Login from "./pages/login.jsx";
 // import PeerReviewPolicy from "./pages/authors/PeerReviewPolicy.jsx";
 // import PublicationFee from "./pages/authors/PublicationFee.jsx";
 
-// import Contact from "./pages/Contact.jsx";
+import Contact from "./pages/Contact.jsx";
 
 export default function App() {
   return (
@@ -36,16 +36,16 @@ export default function App() {
 
           {/* Journal */}
           <Route path="archive" element={<Archive />} />
-          {/* <Route path="journal/about" element={<About />} />
+          <Route path="journal/about" element={<About />} />
           <Route path="journal/aims-and-scope" element={<AimsAndScope />} />
-          <Route path="journal/editorial-board" element={<EditorialBoard />} />
-          <Route path="journal/indexing" element={<Indexing />} />
-          <Route path="journal/open-access-policy" element={<OpenAccessPolicy />} />
-          <Route path="journal/copyright-and-licensing" element={<CopyrightAndLicensing />} />
-          <Route path="journal/archiving-policy" element={<ArchivingPolicy />} />
-          <Route path="journal/advertisement-and-marketing" element={<AdvertisementAndMarketing />} />
-          <Route path="journal/journal-history" element={<JournalHistory />} />
-          <Route path="journal/institutional-cooperations" element={<InstitutionalCooperations />} /> */}
+          {/* <Route path="journal/editorial-board" element={<EditorialBoard />} /> */}
+          {/* <Route path="journal/indexing" element={<Indexing />} /> */}
+          {/* <Route path="journal/open-access-policy" element={<OpenAccessPolicy />} /> */}
+          {/* <Route path="journal/copyright-and-licensing" element={<CopyrightAndLicensing />} /> */}
+          {/* <Route path="journal/archiving-policy" element={<ArchivingPolicy />} /> */}
+          {/* <Route path="journal/advertisement-and-marketing" element={<AdvertisementAndMarketing />} /> */}
+          {/* <Route path="journal/journal-history" element={<JournalHistory />} /> */}
+          {/* <Route path="journal/institutional-cooperations" element={<InstitutionalCooperations />} /> */}
 
           {/* <Route path="authors/ethical-statement" element={<EthicalStatement />} />
           <Route path="authors/author-guidelines" element={<AuthorGuidelines />} />
@@ -54,7 +54,7 @@ export default function App() {
           <Route path="authors/publication-fee" element={<PublicationFee />} /> */}
 
           
-          {/* <Route path="contact" element={<Contact />} /> */}
+          <Route path="contact" element={<Contact />} />
           {/* <Route path="submit" element={<SubmitManuscript />} />  */}
         </Route>
       </Routes>
