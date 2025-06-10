@@ -28,7 +28,7 @@ export default function Navbar() {
   };
 
   return (
-    <header className="sticky top-0 bg-white/90 backdrop-blur shadow z-50">
+    <header className="sticky top-0 bg-white/50 backdrop-blur shadow z-50">
       <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
 
         {/* Логотип */}

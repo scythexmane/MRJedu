@@ -26,8 +26,10 @@
     "submit": "Maqolani yuborish"
   },
   "hero": {
-    "title": "Atrof-muhit va fan taʼlimi bo‘yicha fanlararo jurnal",
-    "subtitle": "Atrof-muhit va fan sohalarida tadqiqotlar, innovatsiyalar va taʼlimni qamrab oluvchi ochiq nashr etiladigan ilmiy jurnal."
+    "title": "Kashf eting. Tushuning.",
+    "highlight": "Kelajakni o'zgartiring",
+    "description": "Bu yerda ilmiy taʼlim haqiqiy taʼsir bilan uchrashadi. Aqlli va yashil kelajak qurish missiyasiga qo‘shiling.",
+    "cta": "Batafsil"
   },
   "journal": {
     "title": "Atrof-muhit va fan taʼlimi bo‘yicha fanlararo jurnal",
@@ -62,12 +64,34 @@
     },
     "copyright": "eISSN 2633-6537 | Tibbiy Tadqiqotlar Jurnali"
   },
-   "archive": {
+    "archive": {
     "title": "Arxiv",
-    "volume": "{{volume}}-tom",
+    "volume": "{{volume}}-jild",
     "issue": "{{issue}}-son",
     "labels": {
       "inProgress": "Jarayonda"
+    },
+    "history": {
+      "title": "Nashr tarixi",
+      "currentLabel": "Hozirgi nomi:",
+      "current": "Atrof-muhit va ilmiy ta'lim bo'yicha multidisplinar jurnal (15-jild 1-son, 2019 - hozirgi vaqtgacha)",
+      "formerLabel": "Oldingi nomi:",
+      "former": "ISSN 1306-3065 bilan Atrof-muhit va ilmiy ta'lim bo'yicha xalqaro jurnal (1-jild 1-son, 2006 - 14-jild 9-son, 2019)",
+      "note": "2023-yil 1-son, 19-jilddan boshlab jurnal Modestum tomonidan nashr etiladi."
     }
-  }
+  },
+  "heroSlides": [
+    "Kelajak tibbiyoti shu yerdan boshlanadi",
+    "Hayotni saqlab qoluvchi tadqiqotlar",
+    "Global hamkorlik · Ochiq ma’lumotlar"
+  ],
+  "factsTitle": "Faktlar va raqamlar",
+  "factsDescription": "Biz sog‘liqni saqlashni yaxshilash uchun ilmiy izlanishlar, klinikalar va texnologiyalarni birlashtiramiz.",
+  "patients": "Har yili bemorlar",
+  "projects": "Ilmiy loyihalar",
+  "trials": "Klinik sinovlar",
+  "clinics": "Hamkor klinikalar",
+  "articlesTitle": "So‘nggi maqolalar",
+  "articlesDescription": "Eng so‘nggi ilmiy maqolalarning to‘liq ro‘yxati.",
+  "readMore": "Maqolani o‘qish"
 }

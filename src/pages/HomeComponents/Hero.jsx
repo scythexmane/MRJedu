@@ -1,45 +1,52 @@
-import React, { useEffect } from "react";
+import React from "react";
+import { motion } from "framer-motion";
 import { useTranslation } from "react-i18next";
-import AOS from "aos";
-import "aos/dist/aos.css";
 
-export default function Hero() {
+export default function HeroMinimal() {
   const { t } = useTranslation();
 
-  useEffect(() => {
-    AOS.init({ duration: 1000 });
-  }, []);
-
   return (
-    <section className="relative w-full py-16 md:py-24 bg-[#F8F8FF] overflow-hidden z-0">
-      <div className="container mx-auto px-4 flex flex-col md:flex-row items-center justify-around relative z-10 md:gap-x-16 lg:gap-x-24">
-        
-        {/* Image Left */}
-        <div
-          className="w-full max-w-sm md:w-5/12 mb-10 md:mb-0"
-          data-aos="fade-right"
-        >
-          <div className="overflow-hidden rounded-2xl shadow-lg">
-            <img
-              src="https://www.ijese.com/images/154/ijese-cover.jpg"
-              alt="Environmental"
-              className="w-full h-full object-cover hover:scale-105 transition-transform duration-500 ease-in-out"
-            />
-          </div>
-        </div>
+    <section className="relative bg-[#F8F8FF] py-28 px-4 md:px-12">
+      {/* Декоративная сетка */}
+      <div className="absolute inset-0 pointer-events-none z-0">
+        <div className="w-full h-full bg-[radial-gradient(#ccc_1px,transparent_1px)] bg-[size:20px_20px] opacity-20" />
+      </div>
 
-        {/* Text Right */}
-        <div
-          className="w-full md:w-6/12 text-center md:text-left"
-          data-aos="fade-left"
+      {/* Контент */}
+      <div className="relative z-10 max-w-4xl mx-auto text-center space-y-6">
+        <motion.h1
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          className="text-4xl md:text-5xl font-extrabold leading-tight"
         >
-          <h1 className="text-3xl md:text-5xl font-bold text-gray-900 leading-tight mb-4">
-            {t("hero.title")}
-          </h1>
-          <p className="text-lg text-gray-600 max-w-xl mx-auto md:mx-0">
-            {t("hero.subtitle")}
-          </p>
-        </div>
+          {t("hero.title")} <br />
+          <span className="bg-gradient-to-r from-sky-500 to-emerald-500 text-transparent bg-clip-text">
+            {t("hero.highlight")}
+          </span>
+        </motion.h1>
+
+        <motion.p
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+          className="text-lg md:text-xl text-gray-700"
+        >
+          {t("hero.description")}
+        </motion.p>
+
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.6, delay: 0.5 }}
+        >
+          <a
+            href="#about"
+            className="inline-block mt-6 px-6 py-3 bg-emerald-500 text-white text-lg font-medium rounded-full hover:bg-emerald-600 transition"
+          >
+            {t("hero.cta")}
+          </a>
+        </motion.div>
       </div>
     </section>
   );

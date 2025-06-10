@@ -1,168 +1,262 @@
+/******************************************************************
+ *  MedicalPortal.jsx  ·  с i18n-переводами
+ ******************************************************************/
+
 import React, { useEffect, useState } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import { ArrowRight, BookOpen, Percent, Users } from "lucide-react";
+import {
+  Stethoscope,
+  FlaskConical,
+  Syringe,
+  HeartPulse,
+  ArrowRight,
+} from "lucide-react";
 import { useTranslation } from "react-i18next";
 
-const articles = [
+import { motion, AnimatePresence } from "framer-motion";
+
+/* ---------- demo-данные --------- */
+const MED_ARTICLES = [
   {
-    type: "Research Article",
-    title:
-      "The food-energy-water nexus: Using Hydroviz to support undergraduate students' systems thinking about complex socio-hydrologic issues",
-    authors:
-      "Silvia-Jessica Mostacedo-Marasovic, Holly C. White, Cory T. Forbes",
-    journalInfo:
-      "INTERDISCIP J ENV SCI ED, Volume 21, Issue 2, 2025, Article No: e2506",
-    doi: "https://doi.org/10.29333/ijese/15901",
+    headline: "CRISPR-терапия при наследственной анемии: фаза II",
+    authors: "M. Takeda, L. Santangelo, P. Huang",
+    issue: "Journal of Gene Therapy · 2025 · 18(3)",
+    doi: "https://doi.org/10.1234/jgt.2025.0031",
   },
   {
-    type: "Research Article",
-    title:
-      "Exploring the effect of the source of information on awareness of climate change in secondary students in the Gippsland Region",
-    authors: "Amy Cooby, Patricia Menchon, Jaime K. Manning",
-    journalInfo:
-      "INTERDISCIP J ENV SCI ED, Volume 21, Issue 2, 2025, Article No: e2507",
-    doi: "https://doi.org/10.29333/ijese/15902",
+    headline: "ИИ в диагностике меланомы vs дерматоскопия",
+    authors: "S. Hossain, J. Müller, A. Rossi",
+    issue: "Dermatology AI Review · 2025 · 7(1)",
+    doi: "https://doi.org/10.5678/dair.2025.0005",
   },
   {
-    type: "Research Article",
-    title:
-      "Nuclear wastewater release to the Pacific Ocean: An environmentally critical socio-scientific issue to promote students' and teachers' grasp of evidence",
-    authors: "Won Jung Kim",
-    journalInfo:
-      "INTERDISCIP J ENV SCI ED, Volume 21, Issue 2, 2025, Article No: e2508",
-    doi: "https://doi.org/10.29333/ijese/15938",
+    headline: "Наночастичная вакцина против RSV: 94 % эффективность",
+    authors: "K. Onishi, D. Cole, N. Bhatia",
+    issue: "Vaccine Science · 2025 · 12(2)",
+    doi: "https://doi.org/10.9101/vs.2025.0217",
   },
   {
-    type: "Research Article",
-    title:
-      "How to reliably diagnose children's concepts in learning science? Using the water cycle as an example",
-    authors: "Andreas Louis Imhof, Markus Kübler",
-    journalInfo:
-      "INTERDISCIP J ENV SCI ED, Volume 21, Issue 2, 2025, Article No: e2509",
-    doi: "https://doi.org/10.29333/ijese/15960",
+    headline: "МРТ-помощник: LLM опережает радиологов на 21 %",
+    authors: "E. Huang, P. Carvalho, T. Mukherjee",
+    issue: "AI in Imaging · 2025 · 5(6)",
+    doi: "https://doi.org/10.2100/aii.2025.0006",
+  },
+  {
+    headline: "Волновая терапия сердца: первые результаты",
+    authors: "L. Ferrer, C. Kwon",
+    issue: "Cardio Innovations · 2025 · 9(4)",
+    doi: "https://doi.org/10.4433/ci.2025.0411",
+  },
+  {
+    headline: "Телемедицина снижает реадмиссию на 37 %",
+    authors: "H. Simons, V. Capri, J. Lee",
+    issue: "Digital Health · 2025 · 11(2)",
+    doi: "https://doi.org/10.3322/dh.2025.0089",
   },
 ];
 
-const InfoCard = ({ icon, title, children }) => (
-  <div className="flex items-start gap-4">
-    <div className="flex-shrink-0 h-12 w-12 flex items-center justify-center rounded-lg bg-blue-100 text-blue-600">
-      {icon}
-    </div>
-    <div>
-      <h3 className="text-base sm:text-lg font-semibold text-gray-900">
-        {title}
-      </h3>
-      <p className="mt-1 text-sm sm:text-base text-gray-600">{children}</p>
-    </div>
-  </div>
-);
-
-export default function RefreshedJournalPage() {
+/* ---------------- Hero-карусель ---------------- */
+function HeroCarousel() {
   const { t } = useTranslation();
-  const [isMobile, setIsMobile] = useState(false);
+  const slides = t("heroSlides", { returnObjects: true }) || [];
+  const [curr, setCurr] = useState(0);
 
   useEffect(() => {
-    AOS.init({ duration: 800, once: true });
+    if (!slides.length) return;
+    const id = setInterval(() => setCurr((p) => (p + 1) % slides.length), 6000);
+    return () => clearInterval(id);
+  }, [slides.length]);
 
-    // Mobile detection
-    const checkMobile = () => {
-      setIsMobile(window.innerWidth <= 640);
-    };
+  return (
+    <div className="relative">
+      {/* Top decorative wave */}
+      <svg
+        className="absolute top-0 left-0 w-full rotate-180 fill-[#F8F8FF]"
+        viewBox="0 0 1440 150"
+        preserveAspectRatio="none"
+      >
+        <path d="M0,100 C300,200 600,0 1440,100 L1440,0 L0,0 Z" />
+      </svg>
 
-    checkMobile(); // initial
-    window.addEventListener("resize", checkMobile);
-    return () => window.removeEventListener("resize", checkMobile);
+      <section
+        className="relative flex items-center justify-center h-[85vh] bg-cover bg-center"
+        style={{
+          backgroundImage:
+            "url('https://images.unsplash.com/photo-1505751172876-fa1923c5c528?auto=format&fit=crop&w=1600&q=80')",
+        }}
+      >
+        {/* Overlay */}
+        <div className="absolute inset-0 bg-sky-900/65" />
+
+        {/* Slide‑in heading */}
+        <AnimatePresence mode="wait">
+          <motion.h1
+            key={curr}
+            initial={{ opacity: 0, y: 60 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -60 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+            className="relative z-10 text-center text-3xl sm:text-5xl md:text-6xl font-extrabold text-white tracking-tight"
+          >
+            {slides[curr]}
+          </motion.h1>
+        </AnimatePresence>
+
+        {/* Bottom decorative wave */}
+        <svg
+          className="absolute bottom-0 w-full fill-[#F8F8FF]"
+          viewBox="0 0 1440 130"
+          preserveAspectRatio="none"
+        >
+          <path d="M0,100 C300,200 600,0 1440,100 L1440,130 L0,130 Z" />
+        </svg>
+      </section>
+    </div>
+  );
+}
+
+/* ----------- Highlights = статистика ----------- */
+function Highlights() {
+  const { t } = useTranslation();
+
+  const Stat = ({ icon, label, target, delay }) => {
+    const [val, setVal] = useState(0);
+    useEffect(() => {
+      const step = Math.ceil(target / 80);
+      const id = setInterval(() => {
+        setVal((v) => {
+          if (v + step >= target) {
+            clearInterval(id);
+            return target;
+          }
+          return v + step;
+        });
+      }, 12);
+      return () => clearInterval(id);
+    }, [target]);
+
+    return (
+      <div
+        className="flex flex-col items-center"
+        data-aos="fade-up"
+        data-aos-delay={delay}
+      >
+        <div
+          className="flex items-center justify-center w-14 h-14 rounded-full bg-teal-600/15 text-teal-500 mb-3
+                        shadow-inner shadow-teal-500/10 transition hover:shadow-teal-500/25 bg-[#F8F8FF]"
+        >
+          {icon}
+        </div>
+        <span className="text-3xl font-bold text-gray-900">
+          {val}
+          <span className="text-teal-500">+</span>
+        </span>
+        <p className="mt-1 text-sm text-gray-600">{t(label)}</p>
+      </div>
+    );
+  };
+
+  return (
+    <section className="relative py-20 bg-[#F8F8FF]">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 grid gap-12">
+        <div className="text-center max-w-3xl mx-auto" data-aos="fade-up">
+          <h2 className="text-2xl md:text-4xl font-extrabold text-gray-900">
+            {t("factsTitle")}
+          </h2>
+          <p className="mt-4 text-gray-600">{t("factsDescription")}</p>
+        </div>
+
+        <div className="grid grid-cols-2 sm:grid-cols-4 gap-10">
+          <Stat
+            icon={<HeartPulse className="w-6 h-6" />}
+            label="patients"
+            target={12000}
+            delay={100}
+          />
+          <Stat
+            icon={<FlaskConical className="w-6 h-6" />}
+            label="projects"
+            target={340}
+            delay={200}
+          />
+          <Stat
+            icon={<Syringe className="w-6 h-6" />}
+            label="trials"
+            target={56}
+            delay={300}
+          />
+          <Stat
+            icon={<Stethoscope className="w-6 h-6" />}
+            label="clinics"
+            target={78}
+            delay={400}
+          />
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* ------------------ Research Feed ------------------ */
+function ResearchFeed() {
+  const { t } = useTranslation();
+
+  return (
+    <section className="py-20 bg-[#F8F8FF]">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <header className="text-center mb-12" data-aos="fade-up">
+          <h2 className="text-2xl md:text-4xl font-extrabold text-gray-900">
+            {t("articlesTitle")}
+          </h2>
+          <p className="mt-3 text-gray-600 max-w-xl mx-auto">
+            {t("articlesDescription")}
+          </p>
+        </header>
+
+        <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-3">
+          {MED_ARTICLES.map((art, i) => (
+            <article
+              key={art.doi}
+              className="group bg-white rounded-2xl p-6 shadow-md ring-1 ring-gray-200
+             transition-all duration-500 hover:shadow-lg hover:animate-tilt-left-pop preserve-3d"
+              data-aos="fade-up"
+              data-aos-delay={i * 120}
+            >
+              <h3 className="text-lg font-semibold text-sky-800">
+                {art.headline}
+              </h3>
+              <p className="mt-3 text-sm text-gray-700">{art.authors}</p>
+              <p className="mt-1 text-xs text-gray-500">{art.issue}</p>
+              <a
+                href={art.doi}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1 text-teal-600 hover:text-teal-800 mt-5
+                           font-medium text-sm"
+              >
+                {t("readMore")}
+                <ArrowRight className="w-4 h-4 transition group-hover:translate-x-1" />
+              </a>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* --------------------------- root --------------------------- */
+export default function MedicalPortal() {
+  useEffect(() => {
+    AOS.init({ duration: 900, once: true, easing: "ease-out-cubic" });
   }, []);
 
   return (
-    <div className="bg-[#F8F8FF]">
-      {/* Hero + Intro */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-20">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-          <div data-aos={isMobile ? "fade-up" : "fade-right"}>
-            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-gray-900">
-              {t("journal.title")}
-            </h1>
-            <p className="mt-6 text-base sm:text-lg leading-relaxed text-gray-700">
-              {t("journal.description1")}
-            </p>
-            <p className="mt-4 text-base sm:text-lg leading-relaxed text-gray-700">
-              {t("journal.description2")}
-            </p>
-          </div>
-
-          <div className="space-y-8" data-aos={isMobile ? "fade-up" : "fade-left"} data-aos-delay="200">
-            <InfoCard icon={<BookOpen size={24} />} title={t("journal.openAccessTitle")}>
-              {t("journal.openAccessText")}
-            </InfoCard>
-            <InfoCard icon={<Users size={24} />} title={t("journal.cooperationTitle")}>
-              {t("journal.cooperationText")}
-            </InfoCard>
-            <InfoCard icon={<Percent size={24} />} title={t("journal.acceptanceTitle")}>
-              {t("journal.acceptanceText")}
-            </InfoCard>
-          </div>
-        </div>
-      </section>
-
-      {/* Current Issue */}
-      <section className="py-12 sm:py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <header className="max-w-2xl" data-aos="fade-up">
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-gray-900">
-              {t("journal.currentIssue")}
-            </h2>
-            <p className="mt-4 text-lg sm:text-xl text-gray-600">
-              {t("journal.volumeInfo")}
-            </p>
-          </header>
-
-          <div className="mt-10 sm:mt-12 grid gap-6 sm:gap-8 grid-cols-1 md:grid-cols-2 xl:grid-cols-3">
-            {articles.map((article, index) => (
-              <article
-                key={article.doi}
-                className="flex flex-col justify-between bg-white rounded-xl overflow-hidden border border-gray-200 shadow-sm hover:shadow-md transition-shadow duration-300"
-                data-aos="fade-up"
-                data-aos-delay={index * 100}
-              >
-                <div className="p-6 sm:p-8 grow">
-                  <span className="inline-block bg-blue-100 text-blue-800 text-[10px] sm:text-xs font-semibold px-3 py-1 rounded-full mb-4">
-                    {article.type}
-                  </span>
-                  <a
-                    href={article.doi}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="block"
-                  >
-                    <h3 className="text-lg sm:text-xl font-bold text-gray-900 leading-snug hover:text-blue-600 transition-colors duration-300">
-                      {article.title}
-                    </h3>
-                  </a>
-                  <p className="mt-4 text-xs sm:text-sm font-medium text-gray-700">
-                    {article.authors}
-                  </p>
-                  <p className="mt-2 text-[10px] sm:text-xs text-gray-500">
-                    {article.journalInfo}
-                  </p>
-                </div>
-                <div className="px-6 sm:px-8 pb-6">
-                  <a
-                    href={article.doi}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 text-sm font-semibold text-blue-600 hover:text-blue-800 transition-colors duration-300 group"
-                  >
-                    {t("journal.readArticle")}
-                    <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
-                  </a>
-                </div>
-              </article>
-            ))}
-          </div>
-        </div>
-      </section>
+    <div className="bg-white">
+      <HeroCarousel />
+      <Highlights />
+      <ResearchFeed />
     </div>
   );
 }

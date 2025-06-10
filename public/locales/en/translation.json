@@ -25,12 +25,29 @@
     "search": "Search...",
     "submit": "Submit Manuscript"
   },
-  
+
   "hero": {
-    "title": "Interdisciplinary Journal of Environmental and Science Education",
-    "subtitle": "A peer-reviewed open-access journal covering research, innovation, and education in environmental and science fields."
+    "title": "Discover. Understand.",
+    "highlight": "Transform the Future",
+    "description": "Where science education meets real-world impact. Join us on a mission to build a smarter, greener tomorrow.",
+    "cta": "Learn More"
   },
-  
+  "archive": {
+    "title": "Archive",
+    "volume": "Volume {{volume}}",
+    "issue": "Issue {{issue}}",
+    "labels": {
+      "inProgress": "In Progress"
+    },
+    "history": {
+      "title": "Publication History",
+      "currentLabel": "Currently known as:",
+      "current": "Interdisciplinary Journal of Environmental and Science Education (Volume 15 Issue 1, 2019 - current)",
+      "formerLabel": "Formerly known as:",
+      "former": "International Journal of Environmental and Science Education with ISSN 1306-3065 (Volume 1 Issue 1, 2006 - Volume 14 Issue 9, 2019)",
+      "note": "Starting Volume 19 Issue 1 (2023), the journal is published by Modestum."
+    }
+  },
   "journal": {
     "title": "Interdisciplinary Journal of Environmental and Science Education",
     "description1": "The Interdisciplinary Journal of Environmental and Science Education (ISSN: 2633-6537) publishes original research articles from throughout the world in the fields of sciences education and environmental education.",
@@ -64,16 +81,19 @@
     },
     "copyright": "eISSN 2633-6537 | Medical Research Journal"
   },
-   "archive": {
-    "title": "Archive",
-    "volume": "Volume {{volume}}",
-    "issue": "Issue {{issue}}",
-    "labels": {
-      "inProgress": "In Progress"
-    }
-  }
-  
 
+  "heroSlides": [
+    "Future-proof Medicine Starts Here",
+    "Research that Saves Lives",
+    "Global Collaboration · Open Access"
+  ],
+  "factsTitle": "Facts & Figures",
+  "factsDescription": "We bring together research, clinics, and technologies to improve health globally.",
+  "patients": "Patients per year",
+  "projects": "Research projects",
+  "trials": "Clinical trials",
+  "clinics": "Partner clinics",
+  "articlesTitle": "Latest Publications",
+  "articlesDescription": "A complete list of fresh peer-reviewed research.",
+  "readMore": "Read article"
 }
-
-

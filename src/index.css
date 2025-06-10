@@ -21,6 +21,36 @@
   animation: card-hover 0.3s reverse forwards;
 }
 
-body{
-    background-color: #F8F8FF;
+body {
+  background-color: #f8f8ff;
+  /* убираем полосу прокрутки только вдоль hero-контейнера */
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}
+@layer utilities {
+  @keyframes tilt-left-pop {
+    0% {
+      transform: perspective(600px) rotateY(0deg);
+    }
+    100% {
+      transform: perspective(600px) rotateY(-3deg) scale(1.02);
+    }
+  }
+
+  .hover\:animate-tilt-left-pop:hover {
+    animation: tilt-left-pop 0.4s ease forwards;
+  }
+
+  .preserve-3d {
+    transform-style: preserve-3d;
+  }
+ъ
+  .group:hover .card-reset {
+    animation: tilt-left-pop 0.4s ease reverse forwards;
+  }
 }
