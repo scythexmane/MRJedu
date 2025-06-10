@@ -1,9 +1,8 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { ChevronDown, Search, Menu, X } from "lucide-react";
 import { Transition } from "@headlessui/react";
 import { useTranslation } from "react-i18next";
-import { useEffect } from "react";
 
 export default function Navbar() {
   const { t, i18n } = useTranslation();
@@ -12,6 +11,8 @@ export default function Navbar() {
   const [languageOpen, setLanguageOpen] = useState(false);
   const [search, setSearch] = useState("");
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+
   const toggleJournal = () => {
     setJournalOpen(!journalOpen);
     setAuthorsOpen(false);
@@ -27,8 +28,6 @@ export default function Navbar() {
     setLanguageOpen(false);
   };
 
-  const [isScrolled, setIsScrolled] = useState(false);
-
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
@@ -37,6 +36,16 @@ export default function Navbar() {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  // Handler to close Journal dropdown
+  const closeJournalDropdown = () => {
+    setJournalOpen(false);
+  };
+
+  // Handler to close Authors dropdown
+  const closeAuthorsDropdown = () => {
+    setAuthorsOpen(false);
+  };
 
   return (
     <header
@@ -95,60 +104,69 @@ export default function Navbar() {
             </button>
             <Transition show={journalOpen} {...transitionProps}>
               <div className="absolute top-full left-0 mt-2 w-64 bg-white shadow-lg rounded-lg p-4 space-y-2 z-50">
-                <Link to="/journal/about" className="block hover:text-blue-600">
+                <Link to="/journal/about" className="block hover:text-blue-600" onClick={closeJournalDropdown}>
                   {t("navbar.about")}
                 </Link>
                 <Link
                   to="/journal/aims-and-scope"
                   className="block hover:text-blue-600"
+                  onClick={closeJournalDropdown}
                 >
                   {t("navbar.aims")}
                 </Link>
                 <Link
                   to="/journal/editorial-board"
                   className="block hover:text-blue-600"
+                  onClick={closeJournalDropdown}
                 >
                   {t("navbar.editorialBoard")}
                 </Link>
                 <Link
                   to="/journal/indexing"
                   className="block hover:text-blue-600"
+                  onClick={closeJournalDropdown}
                 >
                   {t("navbar.indexing")}
                 </Link>
                 <Link
                   to="/journal/open-access-policy"
                   className="block hover:text-blue-600"
+                  onClick={closeJournalDropdown}
                 >
                   {t("navbar.openAccess")}
                 </Link>
                 <Link
                   to="/journal/copyright-and-licensing"
                   className="block hover:text-blue-600"
+                  onClick={closeJournalDropdown}
                 >
                   {t("navbar.copyright")}
                 </Link>
                 <Link
                   to="/journal/archiving-policy"
                   className="block hover:text-blue-600"
+                  onClick={closeJournalDropdown}
                 >
                   {t("navbar.archiving")}
                 </Link>
                 <Link
                   to="/journal/advertisement-and-marketing"
                   className="block hover:text-blue-600"
+                  onClick={closeJournalDropdown}
                 >
                   {t("navbar.advertising")}
                 </Link>
                 <Link
                   to="/journal/journal-history"
                   className="block hover:text-blue-600"
+                  onClick={closeJournalDropdown}
                 >
                   {t("navbar.history")}
                 </Link>
                 <Link
                   to="/journal/institutional-cooperations"
                   className="block hover:text-blue-600"
+                  onClick={closeJournalDropdown}
                 >
                   {t("navbar.cooperations")}
                 </Link>
@@ -176,30 +194,35 @@ export default function Navbar() {
                 <Link
                   to="/authors/ethical-statement"
                   className="block hover:text-blue-600"
+                  onClick={closeAuthorsDropdown}
                 >
                   {t("navbar.ethical")}
                 </Link>
                 <Link
                   to="/authors/author-guidelines"
                   className="block hover:text-blue-600"
+                  onClick={closeAuthorsDropdown}
                 >
                   {t("navbar.guidelines")}
                 </Link>
                 <Link
                   to="/authors/editorial-policy"
                   className="block hover:text-blue-600"
+                  onClick={closeAuthorsDropdown}
                 >
                   {t("navbar.policy")}
                 </Link>
                 <Link
                   to="/authors/peer-review-policy"
                   className="block hover:text-blue-600"
+                  onClick={closeAuthorsDropdown}
                 >
                   {t("navbar.review")}
                 </Link>
                 <Link
                   to="/authors/publication-fee"
                   className="block hover:text-blue-600"
+                  onClick={closeAuthorsDropdown}
                 >
                   {t("navbar.fee")}
                 </Link>
@@ -258,7 +281,7 @@ export default function Navbar() {
             </Transition>
           </div>
 
-          <Link to="login">
+          <Link to="/login">
             <button className="bg-gradient-to-r from-blue-500 to-cyan-500 text-white px-6 py-3 rounded-full shadow hover:scale-105 transition">
               {t("navbar.submit")}
             </button>
@@ -323,70 +346,100 @@ export default function Navbar() {
               >
                 <Link
                   to="/journal/about"
-                  onClick={() => setMobileMenuOpen(false)}
+                  onClick={() => {
+                    setMobileMenuOpen(false);
+                    closeJournalDropdown();
+                  }}
                   className="hover:text-blue-600"
                 >
                   {t("navbar.about")}
                 </Link>
                 <Link
                   to="/journal/aims-and-scope"
-                  onClick={() => setMobileMenuOpen(false)}
+                  onClick={() => {
+                    setMobileMenuOpen(false);
+                    closeJournalDropdown();
+                  }}
                   className="hover:text-blue-600"
                 >
                   {t("navbar.aims")}
                 </Link>
                 <Link
                   to="/journal/editorial-board"
-                  onClick={() => setMobileMenuOpen(false)}
+                  onClick={() => {
+                    setMobileMenuOpen(false);
+                    closeJournalDropdown();
+                  }}
                   className="hover:text-blue-600"
                 >
                   {t("navbar.editorialBoard")}
                 </Link>
                 <Link
                   to="/journal/indexing"
-                  onClick={() => setMobileMenuOpen(false)}
+                  onClick={() => {
+                    setMobileMenuOpen(false);
+                    closeJournalDropdown();
+                  }}
                   className="hover:text-blue-600"
                 >
                   {t("navbar.indexing")}
                 </Link>
                 <Link
                   to="/journal/open-access-policy"
-                  onClick={() => setMobileMenuOpen(false)}
+                  onClick={() => {
+                    setMobileMenuOpen(false);
+                    closeJournalDropdown();
+                  }}
                   className="hover:text-blue-600"
                 >
                   {t("navbar.openAccess")}
                 </Link>
                 <Link
                   to="/journal/copyright-and-licensing"
-                  onClick={() => setMobileMenuOpen(false)}
+                  onClick={() => {
+                    setMobileMenuOpen(false);
+                    closeJournalDropdown();
+                  }}
                   className="hover:text-blue-600"
                 >
                   {t("navbar.copyright")}
                 </Link>
                 <Link
                   to="/journal/archiving-policy"
-                  onClick={() => setMobileMenuOpen(false)}
+                  onClick={() => {
+                    setMobileMenuOpen(false);
+                    closeJournalDropdown();
+                  }}
                   className="hover:text-blue-600"
                 >
                   {t("navbar.archiving")}
                 </Link>
                 <Link
                   to="/journal/advertisement-and-marketing"
-                  onClick={() => setMobileMenuOpen(false)}
+                  onClick={() => {
+                    setMobileMenuOpen(false);
+                    closeJournalDropdown();
+                  }}
                   className="hover:text-blue-600"
                 >
                   {t("navbar.advertising")}
                 </Link>
                 <Link
                   to="/journal/journal-history"
-                  onClick={() => setMobileMenuOpen(false)}
+                  onClick={() => {
+                    setMobileMenuOpen(false);
+                    closeJournalDropdown();
+                  }}
                   className="hover:text-blue-600"
                 >
                   {t("navbar.history")}
                 </Link>
                 <Link
                   to="/journal/institutional-cooperations"
-                  onClick={() => setMobileMenuOpen(false)}
+                  onClick={() => {
+                    setMobileMenuOpen(false);
+                    closeJournalDropdown();
+                  }}
                   className="hover:text-blue-600"
                 >
                   {t("navbar.cooperations")}
@@ -425,35 +478,50 @@ export default function Navbar() {
               >
                 <Link
                   to="/authors/ethical-statement"
-                  onClick={() => setMobileMenuOpen(false)}
+                  onClick={() => {
+                    setMobileMenuOpen(false);
+                    closeAuthorsDropdown();
+                  }}
                   className="hover:text-blue-600"
                 >
                   {t("navbar.ethical")}
                 </Link>
                 <Link
                   to="/authors/author-guidelines"
-                  onClick={() => setMobileMenuOpen(false)}
+                  onClick={() => {
+                    setMobileMenuOpen(false);
+                    closeAuthorsDropdown();
+                  }}
                   className="hover:text-blue-600"
                 >
                   {t("navbar.guidelines")}
                 </Link>
                 <Link
                   to="/authors/editorial-policy"
-                  onClick={() => setMobileMenuOpen(false)}
+                  onClick={() => {
+                    setMobileMenuOpen(false);
+                    closeAuthorsDropdown();
+                  }}
                   className="hover:text-blue-600"
                 >
                   {t("navbar.policy")}
                 </Link>
                 <Link
                   to="/authors/peer-review-policy"
-                  onClick={() => setMobileMenuOpen(false)}
+                  onClick={() => {
+                    setMobileMenuOpen(false);
+                    closeAuthorsDropdown();
+                  }}
                   className="hover:text-blue-600"
                 >
                   {t("navbar.review")}
                 </Link>
                 <Link
                   to="/authors/publication-fee"
-                  onClick={() => setMobileMenuOpen(false)}
+                  onClick={() => {
+                    setMobileMenuOpen(false);
+                    closeAuthorsDropdown();
+                  }}
                   className="hover:text-blue-600"
                 >
                   {t("navbar.fee")}
