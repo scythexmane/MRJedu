@@ -48,6 +48,7 @@
       "note": "Starting Volume 19 Issue 1 (2023), the journal is published by Modestum."
     }
   },
+
   "journal": {
     "title": "Interdisciplinary Journal of Environmental and Science Education",
     "description1": "The Interdisciplinary Journal of Environmental and Science Education (ISSN: 2633-6537) publishes original research articles from throughout the world in the fields of sciences education and environmental education.",
@@ -81,14 +82,14 @@
     },
     "copyright": "eISSN 2633-6537 | Medical Research Journal"
   },
-  "contact": {
+   "contact": {
     "title": "Contact",
     "office": "Main Office",
     "address": "Modestum DOO, Bulevar Zorana Đinđića 125D, floor 1, flat 12C, 11070 Belgrade, SERBIA",
+    "viewMap": "View on map",
     "email": "Email",
     "phone": "Phone",
-    "viewMap": "View on map",
-    "supportNote": "If you have any questions about manuscripts under review or articles in production, please contact",
+    "supportNote": "For questions about manuscripts or articles in production, please contact",
     "otherInquiries": "For all other inquiries, contact",
     "emails": {
       "publications": "publications@modestum.co.uk",
@@ -97,31 +98,31 @@
     }
   },
   "aimsHero": {
-   "title": "Aims & Scope",
-   "p1": "The Interdisciplinary Journal of Environmental and Science Education (IJESE) publishes original, double‑blind peer‑reviewed articles from around the world in the fields of science and environmental education. We aim to provide scholars with a premier venue to share transformative ideas and evidence‑based practices.",
-   "p2": "IJESE welcomes systematic reviews, meta‑analyses, empirical and theoretical studies, essays, commentaries, and case studies that advance scholarly understanding and promote sustainability‑oriented education.",
+    "title": "Aims & Scope",
+    "p1": "The Interdisciplinary Journal of Environmental and Science Education (IJESE) publishes original, double‑blind peer‑reviewed articles from around the world in the fields of science and environmental education. We aim to provide scholars with a premier venue to share transformative ideas and evidence‑based practices.",
+    "p2": "IJESE welcomes systematic reviews, meta‑analyses, empirical and theoretical studies, essays, commentaries, and case studies that advance scholarly understanding and promote sustainability‑oriented education.",
 
-   "scope": {
-     "biology": "Biology Education",
-     "chemistry": "Chemistry Education",
-     "earth": "Earth Science Education",
-     "environmental": "Environmental Education",
-     "outdoor": "Outdoor Education",
-     "physics": "Physics Education",
-     "teacher": "Science Teacher Education",
-     "science": "Science Education",
-     "sustainability": "Sustainability Education"
-   },
+    "scope": {
+      "biology": "Biology Education",
+      "chemistry": "Chemistry Education",
+      "earth": "Earth Science Education",
+      "environmental": "Environmental Education",
+      "outdoor": "Outdoor Education",
+      "physics": "Physics Education",
+      "teacher": "Science Teacher Education",
+      "science": "Science Education",
+      "sustainability": "Sustainability Education"
+    },
 
-   "stats": {
-     "research": "Research Articles",
-     "review": "Systematic Reviews",
-     "theoretical": "Theoretical Papers",
-     "commentary": "Commentaries / Essays"
-   },
+    "stats": {
+      "research": "Research Articles",
+      "review": "Systematic Reviews",
+      "theoretical": "Theoretical Papers",
+      "commentary": "Commentaries / Essays"
+    },
 
-   "statsTitle": "Article Type Distribution (2024)"
- },
+    "statsTitle": "Article Type Distribution (2024)"
+  },
   "about": {
     "title": "About the Journal",
     "description1": "The Interdisciplinary Journal of Environmental and Science Education (IJESE) publishes original research from around the world in the fields of Science Education and Environmental Education.",
@@ -164,6 +165,18 @@
     "sendButton": "Send Reset Link",
     "backToLoginLink": "Back to Login",
     "confirmPasswordPlaceholder": "Confirm password"
+  },
+  "indexing": {
+    "title": "Indexing & Abstracting"
+  },
+  "board": {
+    "title": "Editorial Board",
+    "search": "Search by name, institution, ORCID…",
+    "roles": {
+      "editors": "Editors-in-Chief",
+      "board": "Editorial Board",
+      "assistant": "Editorial Assistant"
+    }
   },
   "heroSlides": [
     "Future-proof Medicine Starts Here",

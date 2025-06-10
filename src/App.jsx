@@ -8,8 +8,8 @@ import Archive from "./pages/Archive.jsx";
 import Login from "./pages/login.jsx";
 import About from "./pages/journal/About.jsx";
 import AimsAndScope from "./pages/journal/AimsAndScope.jsx";
-// import EditorialBoard from "./pages/journal/EditorialBoard.jsx";
-// import Indexing from "./pages/journal/Indexing.jsx";
+import EditorialBoard from "./pages/journal/EditorialBoard.jsx";
+import Indexing from "./pages/journal/Indexing.jsx";
 // import OpenAccessPolicy from "./pages/journal/OpenAccessPolicy.jsx";
 // import CopyrightAndLicensing from "./pages/journal/CopyrightAndLicensing.jsx";
 // import ArchivingPolicy from "./pages/journal/ArchivingPolicy.jsx";
@@ -38,8 +38,8 @@ export default function App() {
           <Route path="archive" element={<Archive />} />
           <Route path="journal/about" element={<About />} />
           <Route path="journal/aims-and-scope" element={<AimsAndScope />} />
-          {/* <Route path="journal/editorial-board" element={<EditorialBoard />} /> */}
-          {/* <Route path="journal/indexing" element={<Indexing />} /> */}
+          <Route path="journal/editorial-board" element={<EditorialBoard />} />
+          <Route path="journal/indexing" element={<Indexing />} />
           {/* <Route path="journal/open-access-policy" element={<OpenAccessPolicy />} /> */}
           {/* <Route path="journal/copyright-and-licensing" element={<CopyrightAndLicensing />} /> */}
           {/* <Route path="journal/archiving-policy" element={<ArchivingPolicy />} /> */}

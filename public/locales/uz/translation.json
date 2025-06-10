@@ -49,6 +49,18 @@
       "hIndex": "H‑Indeks"
     }
   },
+  "indexing": {
+    "title": "Indekslash va annotatsiyalash"
+  },
+  "board": {
+    "title": "Tahrir hay'ati",
+    "search": "Ism, tashkilot, ORCID bo‘yicha qidiring…",
+    "roles": {
+      "editors": "Bosh muharrirlar",
+      "board": "Hay’at a’zolari",
+      "assistant": "Tahrir yordamchisi"
+    }
+  },
   "aimsHero": {
     "title": "Maqsad va Doirasi",
     "p1": "Interfandalararo Atrof-muhit va Fan Taʼlimi Jurnali (IJESE) butun dunyo boʻylab fan va ekologik taʼlim sohalarida original, ikki tomonlama koʻr-koʻrona ekspertiza qilingan maqolalarni chop etadi. Biz tadqiqotchilar uchun o‘z g‘oyalarini yetkazish va tajriba almashish imkonini beradigan yetakchi platformani taqdim etamiz.",
