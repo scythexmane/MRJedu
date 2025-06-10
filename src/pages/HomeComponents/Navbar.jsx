@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { ChevronDown, Search, Menu, X } from "lucide-react";
 import { Transition } from "@headlessui/react";
 import { useTranslation } from "react-i18next";
+import { useEffect } from "react";
 
 export default function Navbar() {
   const { t, i18n } = useTranslation();
@@ -11,7 +12,6 @@ export default function Navbar() {
   const [languageOpen, setLanguageOpen] = useState(false);
   const [search, setSearch] = useState("");
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-
   const toggleJournal = () => {
     setJournalOpen(!journalOpen);
     setAuthorsOpen(false);
@@ -27,12 +27,29 @@ export default function Navbar() {
     setLanguageOpen(false);
   };
 
-  return (
-    <header className="sticky top-0 bg-white/50 backdrop-blur shadow z-50">
-      <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+  const [isScrolled, setIsScrolled] = useState(false);
 
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 10);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  return (
+    <header
+      className={`sticky top-0 z-50 transition-all duration-300 ${
+        isScrolled ? "bg-white/70 backdrop-blur-lg shadow" : "bg-transparent"
+      }`}
+    >
+      <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
         {/* Логотип */}
-        <Link to="/" className="flex items-center gap-2 hover:opacity-90 transition">
+        <Link
+          to="/"
+          className="flex items-center gap-2 hover:opacity-90 transition"
+        >
           <img src="/logo.svg" alt="MRJedu" className="h-12 w-auto" />
           <span className="font-semibold text-xl text-gray-800">
             {t("navbar.titleLine1")} <br /> {t("navbar.titleLine2")}
@@ -45,14 +62,21 @@ export default function Navbar() {
           className="md:hidden p-2 rounded-md hover:bg-gray-200 transition"
           aria-label="Toggle menu"
         >
-          {mobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+          {mobileMenuOpen ? (
+            <X className="h-6 w-6" />
+          ) : (
+            <Menu className="h-6 w-6" />
+          )}
         </button>
 
         {/* Навигация для десктопа */}
         <nav className="hidden md:flex gap-6 text-gray-700 font-medium relative">
-
-          <Link to="/" className="hover:text-blue-600 transition">{t("navbar.home")}</Link>
-          <Link to="/archive" className="hover:text-blue-600 transition">{t("navbar.archive")}</Link>
+          <Link to="/" className="hover:text-blue-600 transition">
+            {t("navbar.home")}
+          </Link>
+          <Link to="/archive" className="hover:text-blue-600 transition">
+            {t("navbar.archive")}
+          </Link>
 
           {/* Journal Info Dropdown */}
           <div className="relative">
@@ -63,20 +87,71 @@ export default function Navbar() {
               aria-haspopup="true"
             >
               {t("navbar.journalInfo")}
-              <ChevronDown className={`h-4 w-4 transition-transform duration-300 ${journalOpen ? "rotate-180" : "rotate-0"}`} />
+              <ChevronDown
+                className={`h-4 w-4 transition-transform duration-300 ${
+                  journalOpen ? "rotate-180" : "rotate-0"
+                }`}
+              />
             </button>
             <Transition show={journalOpen} {...transitionProps}>
               <div className="absolute top-full left-0 mt-2 w-64 bg-white shadow-lg rounded-lg p-4 space-y-2 z-50">
-                <Link to="/journal/about" className="block hover:text-blue-600">{t("navbar.about")}</Link>
-                <Link to="/journal/aims-and-scope" className="block hover:text-blue-600">{t("navbar.aims")}</Link>
-                <Link to="/journal/editorial-board" className="block hover:text-blue-600">{t("navbar.editorialBoard")}</Link>
-                <Link to="/journal/indexing" className="block hover:text-blue-600">{t("navbar.indexing")}</Link>
-                <Link to="/journal/open-access-policy" className="block hover:text-blue-600">{t("navbar.openAccess")}</Link>
-                <Link to="/journal/copyright-and-licensing" className="block hover:text-blue-600">{t("navbar.copyright")}</Link>
-                <Link to="/journal/archiving-policy" className="block hover:text-blue-600">{t("navbar.archiving")}</Link>
-                <Link to="/journal/advertisement-and-marketing" className="block hover:text-blue-600">{t("navbar.advertising")}</Link>
-                <Link to="/journal/journal-history" className="block hover:text-blue-600">{t("navbar.history")}</Link>
-                <Link to="/journal/institutional-cooperations" className="block hover:text-blue-600">{t("navbar.cooperations")}</Link>
+                <Link to="/journal/about" className="block hover:text-blue-600">
+                  {t("navbar.about")}
+                </Link>
+                <Link
+                  to="/journal/aims-and-scope"
+                  className="block hover:text-blue-600"
+                >
+                  {t("navbar.aims")}
+                </Link>
+                <Link
+                  to="/journal/editorial-board"
+                  className="block hover:text-blue-600"
+                >
+                  {t("navbar.editorialBoard")}
+                </Link>
+                <Link
+                  to="/journal/indexing"
+                  className="block hover:text-blue-600"
+                >
+                  {t("navbar.indexing")}
+                </Link>
+                <Link
+                  to="/journal/open-access-policy"
+                  className="block hover:text-blue-600"
+                >
+                  {t("navbar.openAccess")}
+                </Link>
+                <Link
+                  to="/journal/copyright-and-licensing"
+                  className="block hover:text-blue-600"
+                >
+                  {t("navbar.copyright")}
+                </Link>
+                <Link
+                  to="/journal/archiving-policy"
+                  className="block hover:text-blue-600"
+                >
+                  {t("navbar.archiving")}
+                </Link>
+                <Link
+                  to="/journal/advertisement-and-marketing"
+                  className="block hover:text-blue-600"
+                >
+                  {t("navbar.advertising")}
+                </Link>
+                <Link
+                  to="/journal/journal-history"
+                  className="block hover:text-blue-600"
+                >
+                  {t("navbar.history")}
+                </Link>
+                <Link
+                  to="/journal/institutional-cooperations"
+                  className="block hover:text-blue-600"
+                >
+                  {t("navbar.cooperations")}
+                </Link>
               </div>
             </Transition>
           </div>
@@ -90,25 +165,55 @@ export default function Navbar() {
               aria-haspopup="true"
             >
               {t("navbar.forAuthors")}
-              <ChevronDown className={`h-4 w-4 transition-transform duration-300 ${authorsOpen ? "rotate-180" : "rotate-0"}`} />
+              <ChevronDown
+                className={`h-4 w-4 transition-transform duration-300 ${
+                  authorsOpen ? "rotate-180" : "rotate-0"
+                }`}
+              />
             </button>
             <Transition show={authorsOpen} {...transitionProps}>
               <div className="absolute top-full left-0 mt-2 w-64 bg-white shadow-lg rounded-lg p-4 space-y-2 z-50">
-                <Link to="/authors/ethical-statement" className="block hover:text-blue-600">{t("navbar.ethical")}</Link>
-                <Link to="/authors/author-guidelines" className="block hover:text-blue-600">{t("navbar.guidelines")}</Link>
-                <Link to="/authors/editorial-policy" className="block hover:text-blue-600">{t("navbar.policy")}</Link>
-                <Link to="/authors/peer-review-policy" className="block hover:text-blue-600">{t("navbar.review")}</Link>
-                <Link to="/authors/publication-fee" className="block hover:text-blue-600">{t("navbar.fee")}</Link>
+                <Link
+                  to="/authors/ethical-statement"
+                  className="block hover:text-blue-600"
+                >
+                  {t("navbar.ethical")}
+                </Link>
+                <Link
+                  to="/authors/author-guidelines"
+                  className="block hover:text-blue-600"
+                >
+                  {t("navbar.guidelines")}
+                </Link>
+                <Link
+                  to="/authors/editorial-policy"
+                  className="block hover:text-blue-600"
+                >
+                  {t("navbar.policy")}
+                </Link>
+                <Link
+                  to="/authors/peer-review-policy"
+                  className="block hover:text-blue-600"
+                >
+                  {t("navbar.review")}
+                </Link>
+                <Link
+                  to="/authors/publication-fee"
+                  className="block hover:text-blue-600"
+                >
+                  {t("navbar.fee")}
+                </Link>
               </div>
             </Transition>
           </div>
 
-          <Link to="/contact" className="hover:text-blue-600 transition">{t("navbar.contact")}</Link>
+          <Link to="/contact" className="hover:text-blue-600 transition">
+            {t("navbar.contact")}
+          </Link>
         </nav>
 
         {/* Инструменты справа для десктопа */}
         <div className="hidden md:flex items-center gap-4">
-
           {/* Search */}
           <div className="relative">
             <input
@@ -128,7 +233,11 @@ export default function Navbar() {
               className="px-3 py-1.5 border rounded-full bg-white hover:bg-gray-100 transition flex items-center gap-1 text-sm"
             >
               {i18n.language.toUpperCase()}
-              <ChevronDown className={`h-4 w-4 transition-transform duration-300 ${languageOpen ? "rotate-180" : "rotate-0"}`} />
+              <ChevronDown
+                className={`h-4 w-4 transition-transform duration-300 ${
+                  languageOpen ? "rotate-180" : "rotate-0"
+                }`}
+              />
             </button>
             <Transition show={languageOpen} {...transitionProps}>
               <div className="absolute right-0 mt-2 w-28 bg-white shadow-lg rounded-lg py-2 text-sm z-50">
@@ -136,7 +245,11 @@ export default function Navbar() {
                   <button
                     key={lang}
                     onClick={() => handleLangChange(lang)}
-                    className={`block w-full px-4 py-2 text-left hover:bg-blue-100 ${i18n.language.toUpperCase() === lang ? "font-semibold text-blue-600" : ""}`}
+                    className={`block w-full px-4 py-2 text-left hover:bg-blue-100 ${
+                      i18n.language.toUpperCase() === lang
+                        ? "font-semibold text-blue-600"
+                        : ""
+                    }`}
                   >
                     {lang}
                   </button>
@@ -164,7 +277,6 @@ export default function Navbar() {
         leaveTo="opacity-0 -translate-y-2"
       >
         <nav className="md:hidden bg-white shadow-lg border-t border-gray-200 px-6 py-4 space-y-4">
-
           <Link
             to="/"
             className="block text-gray-700 hover:text-blue-600 font-medium"
@@ -191,7 +303,9 @@ export default function Navbar() {
             >
               {t("navbar.journalInfo")}
               <ChevronDown
-                className={`h-5 w-5 transition-transform duration-300 ${journalOpen ? "rotate-180" : "rotate-0"}`}
+                className={`h-5 w-5 transition-transform duration-300 ${
+                  journalOpen ? "rotate-180" : "rotate-0"
+                }`}
               />
             </button>
             <Transition
@@ -207,34 +321,74 @@ export default function Navbar() {
                 id="mobile-journal-menu"
                 className="pl-4 mt-2 flex flex-col space-y-2 border-l border-gray-300"
               >
-                <Link to="/journal/about" onClick={() => setMobileMenuOpen(false)} className="hover:text-blue-600">
+                <Link
+                  to="/journal/about"
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="hover:text-blue-600"
+                >
                   {t("navbar.about")}
                 </Link>
-                <Link to="/journal/aims-and-scope" onClick={() => setMobileMenuOpen(false)} className="hover:text-blue-600">
+                <Link
+                  to="/journal/aims-and-scope"
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="hover:text-blue-600"
+                >
                   {t("navbar.aims")}
                 </Link>
-                <Link to="/journal/editorial-board" onClick={() => setMobileMenuOpen(false)} className="hover:text-blue-600">
+                <Link
+                  to="/journal/editorial-board"
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="hover:text-blue-600"
+                >
                   {t("navbar.editorialBoard")}
                 </Link>
-                <Link to="/journal/indexing" onClick={() => setMobileMenuOpen(false)} className="hover:text-blue-600">
+                <Link
+                  to="/journal/indexing"
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="hover:text-blue-600"
+                >
                   {t("navbar.indexing")}
                 </Link>
-                <Link to="/journal/open-access-policy" onClick={() => setMobileMenuOpen(false)} className="hover:text-blue-600">
+                <Link
+                  to="/journal/open-access-policy"
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="hover:text-blue-600"
+                >
                   {t("navbar.openAccess")}
                 </Link>
-                <Link to="/journal/copyright-and-licensing" onClick={() => setMobileMenuOpen(false)} className="hover:text-blue-600">
+                <Link
+                  to="/journal/copyright-and-licensing"
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="hover:text-blue-600"
+                >
                   {t("navbar.copyright")}
                 </Link>
-                <Link to="/journal/archiving-policy" onClick={() => setMobileMenuOpen(false)} className="hover:text-blue-600">
+                <Link
+                  to="/journal/archiving-policy"
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="hover:text-blue-600"
+                >
                   {t("navbar.archiving")}
                 </Link>
-                <Link to="/journal/advertisement-and-marketing" onClick={() => setMobileMenuOpen(false)} className="hover:text-blue-600">
+                <Link
+                  to="/journal/advertisement-and-marketing"
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="hover:text-blue-600"
+                >
                   {t("navbar.advertising")}
                 </Link>
-                <Link to="/journal/journal-history" onClick={() => setMobileMenuOpen(false)} className="hover:text-blue-600">
+                <Link
+                  to="/journal/journal-history"
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="hover:text-blue-600"
+                >
                   {t("navbar.history")}
                 </Link>
-                <Link to="/journal/institutional-cooperations" onClick={() => setMobileMenuOpen(false)} className="hover:text-blue-600">
+                <Link
+                  to="/journal/institutional-cooperations"
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="hover:text-blue-600"
+                >
                   {t("navbar.cooperations")}
                 </Link>
               </div>
@@ -251,7 +405,9 @@ export default function Navbar() {
             >
               {t("navbar.forAuthors")}
               <ChevronDown
-                className={`h-5 w-5 transition-transform duration-300 ${authorsOpen ? "rotate-180" : "rotate-0"}`}
+                className={`h-5 w-5 transition-transform duration-300 ${
+                  authorsOpen ? "rotate-180" : "rotate-0"
+                }`}
               />
             </button>
             <Transition
@@ -267,19 +423,39 @@ export default function Navbar() {
                 id="mobile-authors-menu"
                 className="pl-4 mt-2 flex flex-col space-y-2 border-l border-gray-300"
               >
-                <Link to="/authors/ethical-statement" onClick={() => setMobileMenuOpen(false)} className="hover:text-blue-600">
+                <Link
+                  to="/authors/ethical-statement"
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="hover:text-blue-600"
+                >
                   {t("navbar.ethical")}
                 </Link>
-                <Link to="/authors/author-guidelines" onClick={() => setMobileMenuOpen(false)} className="hover:text-blue-600">
+                <Link
+                  to="/authors/author-guidelines"
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="hover:text-blue-600"
+                >
                   {t("navbar.guidelines")}
                 </Link>
-                <Link to="/authors/editorial-policy" onClick={() => setMobileMenuOpen(false)} className="hover:text-blue-600">
+                <Link
+                  to="/authors/editorial-policy"
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="hover:text-blue-600"
+                >
                   {t("navbar.policy")}
                 </Link>
-                <Link to="/authors/peer-review-policy" onClick={() => setMobileMenuOpen(false)} className="hover:text-blue-600">
+                <Link
+                  to="/authors/peer-review-policy"
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="hover:text-blue-600"
+                >
                   {t("navbar.review")}
                 </Link>
-                <Link to="/authors/publication-fee" onClick={() => setMobileMenuOpen(false)} className="hover:text-blue-600">
+                <Link
+                  to="/authors/publication-fee"
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="hover:text-blue-600"
+                >
                   {t("navbar.fee")}
                 </Link>
               </div>
@@ -315,7 +491,9 @@ export default function Navbar() {
             >
               {i18n.language.toUpperCase()}
               <ChevronDown
-                className={`h-5 w-5 transition-transform duration-300 ${languageOpen ? "rotate-180" : "rotate-0"}`}
+                className={`h-5 w-5 transition-transform duration-300 ${
+                  languageOpen ? "rotate-180" : "rotate-0"
+                }`}
               />
             </button>
             <Transition
@@ -333,7 +511,9 @@ export default function Navbar() {
                     key={lang}
                     onClick={() => handleLangChange(lang)}
                     className={`block w-full px-4 py-2 text-left hover:bg-blue-100 ${
-                      i18n.language.toUpperCase() === lang ? "font-semibold text-blue-600" : ""
+                      i18n.language.toUpperCase() === lang
+                        ? "font-semibold text-blue-600"
+                        : ""
                     }`}
                   >
                     {lang}
@@ -349,7 +529,6 @@ export default function Navbar() {
               {t("navbar.submit")}
             </button>
           </Link>
-
         </nav>
       </Transition>
     </header>

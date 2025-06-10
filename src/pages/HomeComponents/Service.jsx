@@ -1,16 +1,16 @@
 /******************************************************************
- *  MedicalPortal.jsx  ·  с i18n-переводами
+ * MedicalPortal.jsx   ·   с i18n-переводами
  ******************************************************************/
 
 import React, { useEffect, useState } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import {
-  Stethoscope,
-  FlaskConical,
   Syringe,
   HeartPulse,
   ArrowRight,
+  FlaskConical,
+  Stethoscope,
 } from "lucide-react";
 import { useTranslation } from "react-i18next";
 
@@ -46,7 +46,7 @@ const MED_ARTICLES = [
     headline: "Волновая терапия сердца: первые результаты",
     authors: "L. Ferrer, C. Kwon",
     issue: "Cardio Innovations · 2025 · 9(4)",
-    doi: "https://doi.org/10.4433/ci.2025.0411",
+    doi: "https://doi.10.4433/ci.2025.0411",
   },
   {
     headline: "Телемедицина снижает реадмиссию на 37 %",
@@ -121,20 +121,23 @@ function Highlights() {
   const { t } = useTranslation();
 
   const Stat = ({ icon, label, target, delay }) => {
-    const [val, setVal] = useState(0);
+    const [val, setVal] = useState(target);
+    const [direction, setDirection] = useState(1); // 1 for increasing, -1 for decreasing
+
     useEffect(() => {
-      const step = Math.ceil(target / 80);
-      const id = setInterval(() => {
-        setVal((v) => {
-          if (v + step >= target) {
-            clearInterval(id);
-            return target;
-          }
-          return v + step;
-        });
-      }, 12);
-      return () => clearInterval(id);
-    }, [target]);
+      const interval = setInterval(() => {
+        // Calculate a random fluctuation around the target.
+        // This ensures the number always changes.
+        const fluctuation = Math.floor(Math.random() * 20) - 10; // Fluctuate by +/- 10
+        const newVal = target + fluctuation;
+
+        // Determine the direction for animation
+        setDirection(newVal > val ? 1 : -1);
+        setVal(newVal);
+      }, 2000 + delay); // Fluctuate every 2 seconds, plus an individual delay
+
+      return () => clearInterval(interval);
+    }, [target, delay, val]); // Added 'val' to dependencies to ensure effect re-runs when val changes
 
     return (
       <div
@@ -144,14 +147,24 @@ function Highlights() {
       >
         <div
           className="flex items-center justify-center w-14 h-14 rounded-full bg-teal-600/15 text-teal-500 mb-3
-                        shadow-inner shadow-teal-500/10 transition hover:shadow-teal-500/25 bg-[#F8F8FF]"
+                      shadow-inner shadow-teal-500/10 transition hover:shadow-teal-500/25 bg-[#F8F8FF]"
         >
           {icon}
         </div>
-        <span className="text-3xl font-bold text-gray-900">
-          {val}
-          <span className="text-teal-500">+</span>
-        </span>
+        <div className="relative h-10 overflow-hidden">
+          <AnimatePresence initial={false} mode="wait">
+            <motion.span
+              key={val} // Use 'val' as the key to trigger animation on change
+              initial={{ y: direction > 0 ? 30 : -30, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              exit={{ y: direction > 0 ? -30 : 30, opacity: 0 }}
+              transition={{ duration: 0.4 }} // Smooth transition duration
+              className="text-3xl font-bold text-gray-900">
+              {val}
+              <span className="text-teal-500">+</span>
+            </motion.span>
+          </AnimatePresence>
+        </div>
         <p className="mt-1 text-sm text-gray-600">{t(label)}</p>
       </div>
     );
@@ -233,7 +246,7 @@ function ResearchFeed() {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-1 text-teal-600 hover:text-teal-800 mt-5
-                           font-medium text-sm"
+                             font-medium text-sm"
               >
                 {t("readMore")}
                 <ArrowRight className="w-4 h-4 transition group-hover:translate-x-1" />
