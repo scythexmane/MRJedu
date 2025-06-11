@@ -129,19 +129,13 @@ export default function Navbar() {
                   {t("navbar.indexing")}
                 </Link>
                 <Link
-                  to="/journal/open-access-policy"
+                  to="/journal/open-access-policy-and-licensing"
                   className="block hover:text-blue-600"
                   onClick={closeJournalDropdown}
                 >
                   {t("navbar.openAccess")}
                 </Link>
-                <Link
-                  to="/journal/copyright-and-licensing"
-                  className="block hover:text-blue-600"
-                  onClick={closeJournalDropdown}
-                >
-                  {t("navbar.copyright")}
-                </Link>
+            
                 <Link
                   to="/journal/archiving-policy"
                   className="block hover:text-blue-600"
@@ -384,26 +378,17 @@ export default function Navbar() {
                 >
                   {t("navbar.indexing")}
                 </Link>
-                <Link
-                  to="/journal/open-access-policy"
-                  onClick={() => {
+               <Link
+                  to="/journal/open-access-policy-and-licensing"
+                  className="block hover:text-blue-600"
+                   onClick={() => {
                     setMobileMenuOpen(false);
                     closeJournalDropdown();
                   }}
-                  className="hover:text-blue-600"
                 >
                   {t("navbar.openAccess")}
                 </Link>
-                <Link
-                  to="/journal/copyright-and-licensing"
-                  onClick={() => {
-                    setMobileMenuOpen(false);
-                    closeJournalDropdown();
-                  }}
-                  className="hover:text-blue-600"
-                >
-                  {t("navbar.copyright")}
-                </Link>
+           
                 <Link
                   to="/journal/archiving-policy"
                   onClick={() => {
@@ -592,7 +577,7 @@ export default function Navbar() {
           </div>
 
           {/* Мобильная кнопка Submit */}
-          <Link to="/authors/submit-manuscript" onClick={() => setMobileMenuOpen(false)}>
+          <Link to="/login" onClick={() => setMobileMenuOpen(false)}>
             <button className="w-full mt-4 bg-gradient-to-r from-blue-500 to-cyan-500 text-white px-6 py-3 rounded-full shadow hover:scale-105 transition">
               {t("navbar.submit")}
             </button>

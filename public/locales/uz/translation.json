@@ -9,8 +9,7 @@
     "aims": "Maqsad va vazifalar",
     "editorialBoard": "Tahririyat hay’ati",
     "indexing": "Indekslash",
-    "openAccess": "Ochiq foydalanish siyosati",
-    "copyright": "Mualliflik huquqi va litsenziya",
+    "openAccess": "Ochiq foydalanish siyosati va litsenziya",
     "archiving": "Arxivlash siyosati",
     "advertising": "Reklama va marketing",
     "history": "Jurnal tarixi",
@@ -24,6 +23,87 @@
     "contact": "Aloqa",
     "search": "Qidiruv...",
     "submit": "Maqolani yuborish"
+  },
+  "cooperation": {
+    "title": "Institutlararo hamkorlik",
+    "description": "Biz barqarorlik, taʼlim va ilmiy taraqqiyotga sodiq bo‘lgan mintaqaviy va xalqaro muassasalar bilan faxr bilan hamkorlik qilamiz. Bu hamkorliklar bizning taʼsir doiramizni kengaytiradi, ilmiy izlanishlarni rivojlantiradi va xalqaro bilim almashinuvini kuchaytiradi.",
+    "cycere": {
+      "title": "Atrof-Muhit Tadqiqot va Ta'lim Markazi (CYCERE, Kipr)",
+      "text": "Akrotiri yarimorolidagi CYCERE Kiprdagi birinchi mustaqil ekologik markaz hisoblanadi. Markaz ta’lim, ilmiy izlanish va ma’lumot yetkazish orqali tabiatni muhofaza qilishga xizmat qiladi."
+    },
+    "cbs": {
+      "title": "Kipr Biologiya Jamiyati (CBS)",
+      "text": "CBS biologiya fanini rivojlantirish, ilmiy tadqiqotlar, ta'lim va jamoatchilikni jalb qilish orqali faoliyat yuritadi."
+    },
+    "impactTitle": "Hamkorlik natijalari",
+    "impact": {
+      "education": "Ekologik va ilmiy ta’limni rivojlantirish",
+      "research": "Hamkorlikdagi tadqiqot va nashrlar",
+      "network": "Akademik va institutlararo tarmoqlarni mustahkamlash",
+      "sustainability": "Global barqaror rivojlanish maqsadlarini qo‘llab-quvvatlash"
+    }
+  },
+  "history": {
+    "title": "Jurnal tarixi",
+    "intro": "Jurnal o‘z faoliyati davomida sezilarli o‘zgarishlarni boshdan kechirdi. Rebrending va tahririy kengashni kuchaytirish orqali zamonaviy ilmiy standartlarga moslashib, sifat va etikani saqlab qoldi.",
+    "points": {
+      "firstPublished": "2006 yilda birinchi marta chop etilgan",
+      "status": "Hozir faol va nashr etilmoqda",
+      "frequency": "Har chorakda nashr etiladi",
+      "type": "Ilmiy tahlil asosida tekshirilgan davriy nashr",
+      "language": "Ingliz tilida chop etiladi"
+    },
+    "currentTitle": "Hozirgi nomi",
+    "currentName": "Interdisciplinary Journal of Environmental and Science Education (2019-yil 15-jild 1-sonidan boshlab)",
+    "formerTitle": "Oldingi nomi",
+    "formerName": "International Journal of Environmental Science Education (2006-yil 1-jild 1-son – 2019-yil 14-jild 9-son)",
+    "additional": "Jurnal rivojlanish yo‘lida quyidagi muhim bosqichlarni bosib o‘tgan:",
+    "addPoints": {
+      "rebranding": "Fanlararo tadqiqotlarga e'tibor qaratilgan rebrending",
+      "editorialGrowth": "Tahririyat kengashi va ruxsat tizimini mustahkamlash",
+      "globalReach": "Xalqaro auditoriyaga kengroq yetib borish",
+      "digitalIndexing": "Asosiy indeksatsiya va arxivlash tizimlariga qo‘shilishi"
+    },
+    "timeline": {
+      "title": "Asosiy bosqichlar",
+      "founded": "International Journal of Environmental Science Education nomi bilan tashkil etilgan.",
+      "openAccess": "To‘liq ochiq kirish modeli qabul qilindi.",
+      "renamed": "Fanlararo yo‘nalishni aks ettirish uchun nomi o‘zgartirildi.",
+      "indexing": "Xalqaro ilmiy bazalarda indeksatsiya qilindi."
+    }
+  },
+
+  "advertisement": {
+    "title": "Reklama va marketing",
+    "intro": "Biz platformamizda tijoriy reklama joylashtirmaymiz. Asosiy maqsadimiz — ilmiy maqolalarni tarqatish.",
+    "detailsTitle": "Bizning targ‘ibot falsafamiz",
+    "details": "Banner reklama o‘rniga biz tanlab yuboriladigan takliflarga e’tibor qaratamiz — faqat jurnal yo‘nalishiga mos tadqiqotchilarga xat yuboramiz. Har bir xat aniq, shaffof va bitta bosishda obunani bekor qilish havolasini o‘z ichiga oladi. Biz shaxsiy ma’lumotlarni sotmaymiz va GDPR, COPE etik qoidalariga rioya qilamiz, hamjamiyat ishonchini saqlaymiz.",
+    "points": {
+      "noAds": "Uchinchi tomon reklamasi yo‘q",
+      "targetedInvites": "Faqat tegishli olimlarga taklif yuboriladi",
+      "optOut": "Har bir xatda \"Bekor qilish\" havolasi",
+      "dataPrivacy": "Ma’lumotlar uchinchi shaxslarga berilmaydi",
+      "ethics": "COPE/ICMJE etikasiga mos",
+      "scopeAlignment": "Faoliyat jurnal yo‘nalishida cheklangan",
+      "communityTrust": "Kliklardan ko‘ra ishonch muhim"
+    }
+  },
+  "archiving": {
+    "title": "Arxivlash siyosati",
+    "intro": "Doimiy kirishni ta’minlash uchun biz ishonchli uchinchi tomon saqlash va mualliflar tomonidan o‘zini-o‘zi arxivlashni birlashtiramiz.",
+    "detailsTitle": "Uzoq muddatli saqlash nega muhim?",
+    "details": "Ilmiy bilimlar texnologiyalar va kompaniyalar o‘zgarishidan ustun turishi kerak. Ko‘p qatlamli strategiyamiz har bir maqola kelajak tadqiqotchilari uchun topiladigan, iqtibos keltiriladigan va butunligicha qolishini ta’minlaydi. Portico bilan hamkorlik, geografik zaxira nusxalar va OAI-PMH orqali boy metama’lumotlar ilmiy arxivni raqamli yemirilishdan himoya qiladi.",
+    "points": {
+      "portico": "Portico-da himoyalangan arxiv nusxalari",
+      "selfArchive": "Mualliflar yakuniy PDF-ni istalgan OAI-mos repozitoriyga joylashtirishi mumkin",
+      "redundancy": "Geo-taqsimlangan zaxira ma’lumot markazlari",
+      "versioning": "Barcha versiyalar DOI bilan aniq bog‘langan",
+      "oaiCompliance": "OAI-PMH orqali ochiq metama’lumot",
+      "secureStorage": "Fayllar shifrlanadi va muntazam tekshiriladi",
+      "longTerm": "50+ yillik saqlash rejası",
+      "metadata": "Keng qamrovli, mashina o‘qiy oladigan metama’lumot",
+      "recovery": "Favqulodda tiklash rejasi va sinovlari"
+    }
   },
   "hero": {
     "title": "Kashf eting. Tushuning.",
@@ -49,8 +129,51 @@
       "hIndex": "H‑Indeks"
     }
   },
+  "openAccess": {
+    "title": "Ochiq kirish siyosati",
+    "description": "Bu ochiq kirish jurnalidir. Barcha kontent foydalanuvchilar va ularning muassasalari uchun hech qanday to‘lovsiz va cheklovlarsiz mavjud.",
+    "badge": "Ochiq kirish",
+    "points": {
+      "boai": "BOAI ochiq kirish ta’rifiga mos keladi",
+      "license": "Creative Commons (CC BY 4.0) litsenziyasi asosida chop etiladi",
+      "archive": "Mualliflar maqolalarni ochiq arxivlarga joylashtirishi mumkin",
+      "immediate": "Darhol erkin foydalanish, obuna yoki to‘lovlarsiz",
+      "global": "Dunyo bo‘ylab tadqiqotchilar uchun ochiq",
+      "equity": "Bilimga kirishni tenglashtiradi",
+      "educationSupport": "O‘qituvchilar va talabalar uchun bepul materiallarni qo‘llab-quvvatlaydi",
+      "responsibleReuse": "Mualliflikni ko‘rsatish sharti bilan mas’uliyatli foydalanishga ruxsat beradi",
+      "openCommunity": "Global ochiq tadqiqotlar hamjamiyatini shakllantiradi"
+    }
+  },
+  "copyright": {
+    "title": "Mualliflik huquqi va litsenziya",
+    "description": "Maqolalar Creative Commons litsenziyasi asosida chop etiladi. Mualliflar huquqlari saqlanadi va nashr etish uchun ruxsat beriladi.",
+    "points": {
+      "ownership": "Mualliflar o‘z maqolalarining huquq egasi hisoblanadi",
+      "permissions": "Litsenziyasiz mualliflik bilan himoyalangan materiallardan foydalanish mumkin emas",
+      "usage": "'Barcha huquqlar himoyalangan' degan iborani ishlatib bo‘lmaydi",
+      "attribution": "Foydalanuvchilar muallifni va maqola manbasini ko‘rsatishi shart",
+      "ccLicense": "Barcha materiallar CC BY 4.0 litsenziyasi ostida tarqatiladi",
+      "reuseAllowed": "Hamma maqolalarni ko‘chirishi, bo‘lishishi va moslashtirishi mumkin — faqat tegishli havola bilan"
+    }
+  },
   "indexing": {
-    "title": "Indekslash va annotatsiyalash"
+    "title": "Indekslash va Referatsiya",
+    "subtitle": "Bizning jurnal yetakchi ilmiy platformalarda indekslanadi, bu esa global ko‘rinuvchanlik va iqtiboslarni kuzatishni ta’minlaydi.",
+    "stats": {
+      "databases": "Indekslash Bazalari",
+      "years": "Nashr Etilgan Yillar",
+      "citations": "Umumiy Iqtiboslar"
+    },
+    "cta": "Barcha Sertifikatlarni Ko‘rish",
+    "descriptions": {
+      "googleScholar": "Google ilmiy qidiruvi orqali keng kirish imkoniyati.",
+      "crossref": "Barcha maqolalar uchun rasmiy DOI ro‘yxatga olish.",
+      "road": "Ochiq ilmiy manbalar katalogi.",
+      "scilit": "Dinamik indeksli ilmiy adabiyot bazasi.",
+      "semanticScholar": "AI yordamida maqola tavsiyalari.",
+      "doaj": "Shaffoflikni ta’minlaydigan ochiq kirish jurnallari katalogi."
+    }
   },
   "board": {
     "title": "Tahrir hay'ati",
@@ -61,6 +184,7 @@
       "assistant": "Tahrir yordamchisi"
     }
   },
+
   "aimsHero": {
     "title": "Maqsad va Doirasi",
     "p1": "Interfandalararo Atrof-muhit va Fan Taʼlimi Jurnali (IJESE) butun dunyo boʻylab fan va ekologik taʼlim sohalarida original, ikki tomonlama koʻr-koʻrona ekspertiza qilingan maqolalarni chop etadi. Biz tadqiqotchilar uchun o‘z g‘oyalarini yetkazish va tajriba almashish imkonini beradigan yetakchi platformani taqdim etamiz.",
@@ -189,5 +313,163 @@
   "clinics": "Hamkor klinikalar",
   "articlesTitle": "So‘nggi maqolalar",
   "articlesDescription": "Eng so‘nggi ilmiy maqolalarning to‘liq ro‘yxati.",
-  "readMore": "Maqolani o‘qish"
+  "readMore": "Maqolani o‘qish",
+  "title": {
+    "title": "Axloqiy bayonot",
+    "description": "<em>Atrof-muhit va fan ta'limi bo'yicha xalqaro jurnal</em> tadqiqot va nashr etikasining eng yuqori standartlariga rioya qilishga sodiqdir. Quyida yuqori sifatli, axloqiy tadqiqot amaliyotlarini ta'minlash uchun bizning yo'riqnomalarimiz va siyosatlarimiz keltirilgan.",
+    "points": {}
+  },
+  "ethical_statement": {
+    "title": "Axloqiy bayonot",
+    "description": "<em>Atrof-muhit va fan ta'limi bo'yicha xalqaro jurnal</em> ikki marta ko'r-ko'rona ko'rib chiqish tizimida ishlaydi. Barcha manfaatdor tomonlar — nashriyotchi, muharrirlar, sharhlovchilar va mualliflar — Nashr etika qo'mitasi (COPE) tomonidan belgilangan eng yaxshi amaliyotlarga mos keladigan yo'riqnomalarimizga rioya qilishlari shart. Biz nashr etika qoidabuzarliklarini bartaraf etish uchun COPE sxemalariga amal qilamiz.",
+    "points": {
+      "double_blind": "Ikki marta ko'r-ko'rona ko'rib chiqish xolis baholashni ta'minlaydi.",
+      "cope_guidelines": "COPE yo'riqnomalariga axloqiy nizolarda qat'iy rioya qilinadi.",
+      "confidentiality": "Barcha tomonlar ko'rib chiqish jarayonida maxfiylikni saqlashlari shart."
+    }
+  },
+  "authorship": {
+    "title": "Mualliflik",
+    "description": "Mualliflar tadqiqotning kontseptsiyasi, ma'lumotlar to'plash, tahlil va talqin qilishda muhim hissa qo'shgan bo'lishlari kerak. Barcha mualliflar ishni ishlab chiqish, tanqidiy ko'rib chiqish va yakuniy tasdiqlash uchun javobgardir. Taqdim etish vaqtida to'liq ismlar, institutsional elektron pochta manzillari, muassasalar va mamlakatlar ko'rsatilishi kerak. Mas'ul muallif ORCID taqdim etishi shart, va hammualliflar Scopus Author ID yoki Web of Science ResearcherID kabi identifikatorlarni kiritishlari tavsiya etiladi. Muallif bo'lmaganlarning hissasi minnatdorchilikda qayd etilishi kerak.",
+    "points": {
+      "significant_contribution": "Muhim hissa tadqiqot dizaynini ishlab chiqish, ma'lumotlarni tahlil qilish yoki qo'lyozma tayyorlashni o'z ichiga oladi.",
+      "final_approval": "Mualliflar qo'lyozmaning yakuniy versiyasida kelishuvga erishishlari kerak.",
+      "acknowledgments": "Muallif bo'lmaganlar (masalan, texnik yordamchilar) minnatdorchilikda qayd etiladi.",
+      "orcid_mandatory": "Mas'ul muallif uchun ORCID kuzatuvchanlikni ta'minlash uchun majburiydir."
+    }
+  },
+  "competing_interests": {
+    "title": "Manfaatlar to'qnashuvi deklaratsiyasi",
+    "description": "Mualliflar tadqiqotga xolislikka ta'sir qilishi mumkin bo'lgan har qanday manfaatlar to'qnashuvini, masalan, moliyaviy aloqalar, raqobat yoki boshqa omillarni oshkor qilishlari kerak. Bunga pul munosabatlari, qo'lyozma yozish uchun to'lovlar yoki ob'ektivlikka ta'sir qiluvchi boshqa holatlar kiradi. Agar qo'lyozma nashr etilsa, oshkor qilinadigan ma'lumotlar havolalar bo'limidan oldin eslatmada keltiriladi.",
+    "points": {
+      "financial_ties": "Moliyaviy aloqalar grantlar, ish bilan ta'minlash yoki maslahatlarni o'z ichiga oladi.",
+      "personal_relationships": "Ob'ektivlikka ta'sir qilishi mumkin bo'lgan shaxsiy munosabatlar deklaratsiya qilinishi kerak.",
+      "non_disclosure": "Oshkor qilinmaslik qo'lyozmaning rad etilishiga olib kelishi mumkin."
+    }
+  },
+  "funding": {
+    "title": "Moliyalashtirish",
+    "description": "Mualliflar barcha moliyalashtirish tafsilotlarini, shu jumladan grant raqamlarini taqdim etishlari kerak. Agar homiylar yoki moliyalashtiruvchilar tadqiqot dizayni yoki amalga oshirilishiga ta'sir qilgan bo'lsa, bu rollar batafsil bayon qilinishi kerak.",
+    "points": {
+      "funding_sources": "Moliyalashtirish manbalari universitetlar, tadqiqot kengashlari yoki xususiy tashkilotlarni o'z ichiga oladi.",
+      "grant_numbers": "Grant raqamlari shaffoflik va kuzatuvchanlikni ta'minlaydi.",
+      "funder_involvement": "Homiyning ma'lumotlarni tahlil qilish yoki hisobot berishdagi har qanday ishtiroki oshkor qilinishi kerak."
+    }
+  },
+  "live_subjects": {
+    "title": "Tirik sub'ektlar bilan tadqiqot",
+    "description": "Mualliflar WMA Xelsinki deklaratsiyasi kabi tegishli yo'riqnomalariga rioya qilishlari va tirik sub'ektlar ishtirokidagi tadqiqotlar uchun axloqiy qo'mita tasdiqlarini va ishtirokchilarning roziligini olishlari kerak.",
+    "points": {
+      "ethics_approvals": "Axloqiy tasdiqlar hujjatlashtirilishi va so'rov bo'yicha taqdim etilishi kerak.",
+      "minimize_harm": "Tadqiqot ishtirokchilarga zarar etkazishni minimallashtirishi kerak.",
+      "international_standards": "Xalqaro standartlarga rioya qilish majburiydir."
+    }
+  },
+  "consent": {
+    "title": "Ishtirokchilarning xabardor roziligi",
+    "description": "Mualliflar ishtirokchilardan xabardor rozilik olishlari va uni hujjatlashtirishlari kerak. Rozilik shakllari yuborilmasligi kerak, lekin huquqiy tekshiruv uchun saqlanishi kerak, agar kerak bo'lsa.",
+    "points": {
+      "voluntary_consent": "Rozilik ixtiyoriy va xabardor bo'lishi kerak.",
+      "study_understanding": "Ishtirokchilar tadqiqotning maqsadi va xavf-xatarlarini tushunishlari kerak.",
+      "secure_storage": "Hujjatlar auditlar uchun xavfsiz saqlanishi kerak."
+    }
+  },
+  "vulnerable_groups": {
+    "title": "Zaif guruhlar va shaxslar",
+    "description": "Zaif guruhlar yoki shaxslarga alohida e'tibor berilishi kerak, ularning ishtiroki zarur va foydali bo'lishi, majburlashga qarshi himoya choraları bilan ta'minlanishi kerak.",
+    "points": {
+      "vulnerable_definition": "Zaif guruhlar voyaga yetmaganlar, keksalar yoki kognitiv buzilishlarga ega shaxslarni o'z ichiga oladi.",
+      "justify_inclusion": "Tadqiqot ularning ishtirokini oqlashi va foyda keltirishi kerak.",
+      "ethical_oversight": "Qo'shimcha axloqiy nazorat talab qilinadi."
+    }
+  },
+  "confidential_data": {
+    "title": "Maxfiy ma'lumotlarni boshqarish",
+    "description": "Mualliflar ishtirokchilarning maxfiy ma'lumotlarini himoya qilishlari va maxfiylikni ta'minlashlari, ishtirokchilarga zarar yetkazmaslik uchun choralar ko'rishlari kerak.",
+    "points": {
+      "anonymization": "Ma'lumotlar imkon qadar anonimlashtirilishi kerak.",
+      "secure_storage": "Xavfsiz saqlash tizimlari talab qilinadi.",
+      "prevent_access": "Ruxsatsiz kirishning oldi olinishi kerak."
+    }
+  },
+  "data_sharing": {
+    "title": "Ma'lumotlarni almashish va takrorlanadiganlik",
+    "description": "Mualliflar tadqiqot ma'lumotlari mavjudligini, shu jumladan kirish tartib-qoidalarini va davomiyligini ko'rsatishlari kerak. Almashish uchun Mendeley Data ishlatilishi mumkin.",
+    "points": {
+      "availability_statements": "Ma'lumotlar mavjudligi haqidagi bayonotlar shaffoflikni oshiradi.",
+      "access_procedures": "Kirish tartib-qoidalari aniq belgilanishi kerak.",
+      "repositories": "Mendeley Data kabi repozitoriyalar uzoq muddatli kirishni ta'minlaydi."
+    }
+  },
+  "intellectual_property": {
+    "title": "Intellektual mulk",
+    "description": "Mualliflar Creative Commons Attribution litsenziyasi shartlariga muvofiq mualliflik huquqi bilan himoyalangan materiallardan foydalanish uchun ruxsat olishlari kerak.",
+    "points": {
+      "documented_permissions": "Ruxsatnomalar hujjatlashtirilishi kerak.",
+      "copyrighted_material": "Mualliflik huquqi bilan himoyalangan tasvirlar yoki matnlar aniq rozilikni talab qiladi.",
+      "cc_terms": "Creative Commons shartlariga rioya qilinishi kerak."
+    }
+  },
+  "ethics": {
+    "title": "Etik Bayonot",
+    "contact": "Savollar uchun bog'laning:",
+    "sections": [
+      {
+        "heading": "Mualliflik",
+        "text": "Mualliflar tadqiqot konsepsiyasi, maʼlumot toʻplash, tahlil va talqinda muhim hissa qo‘shgan bo‘lishi kerak..."
+      },
+      {
+        "heading": "Qarama-qarshi manfaatlar",
+        "text": "Moliyaviy yoki shaxsiy manfaatlar aniqlanishi kerak..."
+      },
+      {
+        "heading": "Moliyalashtirish",
+        "text": "Barcha moliyalashtirish manbalari, grant raqamlari kiritilishi kerak..."
+      },
+      {
+        "heading": "Jonli subyektlar bilan tadqiqotlar",
+        "text": "Etik normalarga rioya qilish majburiy (masalan, Xelsinki deklaratsiyasi)..."
+      },
+      {
+        "heading": "Ma'lumotli rozilik",
+        "text": "Ishtirokchilarning roziligi olinib, hujjatlashtirilishi lozim..."
+      },
+      {
+        "heading": "Zaif guruhlar",
+        "text": "Zaif guruhlarning tadqiqotga jalb etilishi asoslanishi kerak..."
+      },
+      {
+        "heading": "Maxfiy ma'lumotlar",
+        "text": "Mualliflar sezgir ma'lumotlarni himoya qilishi va ishtirokchilar xavfsizligini ta'minlashi kerak."
+      },
+      {
+        "heading": "Ma'lumotlar almashinuvi",
+        "text": "Ma'lumotlarning mavjudligi va ularga kirish tartibi ko'rsatilishi kerak..."
+      },
+      {
+        "heading": "Intellektual mulk",
+        "text": "Mualliflar mualliflik huquqi bilan himoyalangan materiallar uchun ruxsatnoma olishlari kerak..."
+      },
+      {
+        "heading": "Etik nazorat",
+        "text": "Barcha tomonlar COPE ko'rsatmalariga rioya qilishlari kerak..."
+      },
+      {
+        "heading": "Tuzatish va qaytarish",
+        "text": "Maqoladagi xatoliklar tuzatiladi. Jiddiy buzilishlar maqolaning qaytarilishiga olib keladi."
+      },
+      {
+        "heading": "Shikoyatlar va apellyatsiyalar",
+        "text": "Mualliflar shikoyatni editor@modestum.co.uk ga yuborishlari mumkin..."
+      },
+      {
+        "heading": "Rollar va mas'uliyatlar",
+        "text": "Mualliflar: original ish, manfaatlarni oshkor qilish...\nTaqrizchilar: halollik va xolislik...\nMuharrirlar: xolis taqriz jarayoni...\nNashriyot: vositalar va mustaqillik."
+      },
+      {
+        "heading": "Plagiat va noxolislik siyosati",
+        "text": "Plagiat va boshqa xatti-harakatlardan saqlanish kerak...\nBuzilishlar COPE bo‘yicha ko‘rib chiqiladi."
+      }
+    ]
+  }
 }

@@ -44,7 +44,7 @@ export default function OpenAccessSection() {
   }, []);
 
   return (
-    <section className="relative px-6 py-20 md:px-10 lg:py-28 bg-[#F8F8FF] overflow-hidden space-y-24">
+    <section className="relative px-6 py-20 md:px-10 lg:py-28 bg-white overflow-hidden space-y-24">
       {/* OPEN ACCESS & COPYRIGHT BLOCK */}
       {/* ... existing Open Access and Copyright blocks ... */}
 
@@ -103,9 +103,9 @@ export default function OpenAccessSection() {
         {/* Illustration */}
         <div className="relative" data-aos="fade-left">
           <img
-            src="https://static.vecteezy.com/system/resources/previews/005/878/295/original/digital-marketing-modern-flat-concept-for-web-banner-design-marketer-publishes-advert-content-and-analyzes-data-promotes-business-in-social-networks-illustration-with-isolated-people-scene-free-vector.jpg"
+            src="/image.png"
             alt="Stylized megaphone on pastel background representing ethical and transparent scholarly outreach"
-            className="rounded-2xl  object-cover w-full h-full max-h-[420px]"
+            className="rounded-2xl shadow-xl object-cover w-full h-full max-h-[420px]"
           />
         </div>
       </div>

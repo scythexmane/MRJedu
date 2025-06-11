@@ -9,8 +9,7 @@
     "aims": "Aims & Scope",
     "editorialBoard": "Editorial Board",
     "indexing": "Indexing",
-    "openAccess": "Open Access Policy",
-    "copyright": "Copyright & Licensing",
+    "openAccess": "Open Access Policy & Licensing",
     "archiving": "Archiving Policy",
     "advertising": "Advertisement & Marketing",
     "history": "Journal History",
@@ -25,7 +24,87 @@
     "search": "Search...",
     "submit": "Submit Manuscript"
   },
+  "advertisement": {
+    "title": "Advertisement & Marketing",
+    "intro": "We do not display commercial ads. Our platform is devoted solely to scholarly communication.",
+    "detailsTitle": "Our Outreach Philosophy",
+    "details": "Instead of banner ads, we focus on selective outreach—personally inviting researchers whose expertise fits the journal. Every call-for-paper email is concise, transparent and contains a one-click opt-out. We never sell contact data and strictly follow GDPR, COPE and best-practice marketing ethics to maintain community trust.",
+    "points": {
+      "noAds": "Zero third-party adverts or paid banners",
+      "targetedInvites": "Invitations sent only to relevant scholars",
+      "optOut": "Clear opt-out link in every email",
+      "dataPrivacy": "No sharing or selling of personal data",
+      "ethics": "Conforms to COPE/ICMJE marketing ethics",
+      "scopeAlignment": "Promotions limited to journal’s scientific scope",
+      "communityTrust": "Prioritising long-term trust over clicks"
+    }
+  },
 
+  "cooperation": {
+    "title": "Institutional Cooperations",
+    "description": "We proudly collaborate with regional and international institutions committed to sustainability, education, and scientific advancement. These partnerships amplify our outreach, foster joint research, and encourage knowledge sharing across borders.",
+    "cycere": {
+      "title": "Cyprus Centre for Environmental Research and Education (CYCERE)",
+      "text": "Located on the Akrotiri Peninsula, CYCERE is the first independent environmental center in Cyprus. It supports conservation through environmental education, research, and outreach."
+    },
+    "cbs": {
+      "title": "Cyprus Biological Society (CBS)",
+      "text": "CBS is dedicated to advancing biology in Cyprus through research, education, and public engagement in biological sciences."
+    },
+    "impactTitle": "Impact of Our Collaborations",
+    "impact": {
+      "education": "Environmental and scientific education enhancement",
+      "research": "Joint research and publication opportunities",
+      "network": "Stronger academic and institutional networking",
+      "sustainability": "Support for global environmental sustainability goals"
+    }
+  },
+  "history": {
+    "title": "Journal History",
+    "intro": "The journal has undergone significant evolution since its establishment. Through rebranding and editorial enhancement, it has adapted to the modern academic landscape while maintaining high standards of quality and ethics.",
+    "points": {
+      "firstPublished": "First published in 2006",
+      "status": "Currently active and publishing",
+      "frequency": "Published quarterly",
+      "type": "Peer-reviewed scientific periodical",
+      "language": "Published in English"
+    },
+    "currentTitle": "Currently known as",
+    "currentName": "Interdisciplinary Journal of Environmental and Science Education (since Volume 15 Issue 1, 2019)",
+    "formerTitle": "Formerly known as",
+    "formerName": "International Journal of Environmental Science Education (Volume 1 Issue 1, 2006 – Volume 14 Issue 9, 2019)",
+    "additional": "Over time, the journal has experienced milestones that have shaped its identity:",
+    "addPoints": {
+      "rebranding": "A strategic rebranding to emphasize interdisciplinary research",
+      "editorialGrowth": "Strengthening of editorial board and peer-review processes",
+      "globalReach": "Increased visibility and accessibility to a global audience",
+      "digitalIndexing": "Integration into major indexing and archiving platforms"
+    },
+    "timeline": {
+      "title": "Key Milestones",
+      "founded": "Journal launched as International Journal of Environmental Science Education.",
+      "openAccess": "Adopted full open access publishing model.",
+      "renamed": "Renamed to reflect broader interdisciplinary scope.",
+      "indexing": "Achieved indexing in international scientific databases."
+    }
+  },
+  "archiving": {
+    "title": "Archiving Policy",
+    "intro": "To guarantee permanent access, we combine trusted third-party preservation with author-driven self-archiving.",
+    "detailsTitle": "Why Long-Term Preservation Matters",
+    "details": "Scientific knowledge must outlive shifting technologies and corporate lifecycles. Our multi-layered preservation strategy ensures every article remains discoverable, citable, and intact for future generations of researchers. By partnering with Portico, maintaining redundant off-site backups, and exposing rich metadata through OAI-PMH, we safeguard the scholarly record against digital decay.",
+    "points": {
+      "portico": "Locked archival masters preserved by Portico",
+      "selfArchive": "Authors may deposit the final PDF in any OAI-compliant repository",
+      "redundancy": "Geo-distributed back-ups and mirrored data centers",
+      "versioning": "All versions stored with clear DOI-linked provenance",
+      "oaiCompliance": "Metadata openly harvested via OAI-PMH",
+      "secureStorage": "Files encrypted and integrity-checked regularly",
+      "longTerm": "Preservation horizon of 50+ years",
+      "metadata": "Detailed, machine-readable metadata for discovery",
+      "recovery": "Disaster-recovery plan with regular restoration drills"
+    }
+  },
   "hero": {
     "title": "Discover. Understand.",
     "highlight": "Transform the Future",
@@ -82,7 +161,7 @@
     },
     "copyright": "eISSN 2633-6537 | Medical Research Journal"
   },
-   "contact": {
+  "contact": {
     "title": "Contact",
     "office": "Main Office",
     "address": "Modestum DOO, Bulevar Zorana Đinđića 125D, floor 1, flat 12C, 11070 Belgrade, SERBIA",
@@ -97,6 +176,7 @@
       "ijese": "ijese@ijese.com"
     }
   },
+
   "aimsHero": {
     "title": "Aims & Scope",
     "p1": "The Interdisciplinary Journal of Environmental and Science Education (IJESE) publishes original, double‑blind peer‑reviewed articles from around the world in the fields of science and environmental education. We aim to provide scholars with a premier venue to share transformative ideas and evidence‑based practices.",
@@ -167,7 +247,50 @@
     "confirmPasswordPlaceholder": "Confirm password"
   },
   "indexing": {
-    "title": "Indexing & Abstracting"
+    "title": "Indexing and Abstracting",
+    "subtitle": "Our journal is indexed by several leading scientific platforms, ensuring global visibility and citation tracking.",
+    "stats": {
+      "databases": "Indexing Databases",
+      "years": "Years of Publishing",
+      "citations": "Total Citations"
+    },
+    "cta": "View All Certificates",
+    "descriptions": {
+      "googleScholar": "Broad access through Google’s academic search engine.",
+      "crossref": "Official DOI registration for all published articles.",
+      "road": "Directory of open-access scholarly resources.",
+      "scilit": "Scientific literature database with dynamic indexing.",
+      "semanticScholar": "AI-powered scholarly article recommendations.",
+      "doaj": "Directory of Open Access Journals ensuring transparency."
+    }
+  },
+  "openAccess": {
+    "title": "Open Access Policy",
+    "description": "This is an open access journal. All content is freely available without charge to the user or their institution and without any embargo period.",
+    "badge": "Open Access",
+    "points": {
+      "boai": "Complies with the BOAI definition of open access",
+      "license": "Published under Creative Commons Attribution License (CC BY 4.0)",
+      "archive": "Authors may self-archive their articles in open repositories",
+      "immediate": "Immediate access with no subscription or fees",
+      "global": "Accessible by researchers and readers worldwide",
+      "equity": "Fosters equity by removing barriers to knowledge",
+      "educationSupport": "Supports educators and students with free material",
+      "responsibleReuse": "Encourages responsible reuse with proper credit",
+      "openCommunity": "Builds a global open-access research community"
+    }
+  },
+  "copyright": {
+    "title": "Copyright and Licensing",
+    "description": "Articles are published under the Creative Commons Attribution License. Authors retain ownership and grant us a license to publish.",
+    "points": {
+      "ownership": "Authors retain copyright ownership of their work",
+      "permissions": "No copyrighted material may be used without permission",
+      "usage": "No 'all rights reserved' claims allowed",
+      "attribution": "Users must credit authors and cite the original publication",
+      "ccLicense": "All content distributed under CC BY 4.0",
+      "reuseAllowed": "Anyone may copy, adapt, and share with attribution"
+    }
   },
   "board": {
     "title": "Editorial Board",
@@ -191,5 +314,67 @@
   "clinics": "Partner clinics",
   "articlesTitle": "Latest Publications",
   "articlesDescription": "A complete list of fresh peer-reviewed research.",
-  "readMore": "Read article"
+  "readMore": "Read article",
+  "ethics": {
+    "title": "Ethical Statement",
+    "contact": "Contact for inquiries:",
+    "sections": [
+      {
+        "heading": "Authorship",
+        "text": "Authors must significantly contribute to the study’s concept, data collection, analysis, and interpretation, and approve the final manuscript..."
+      },
+      {
+        "heading": "Competing Interests",
+        "text": "Authors must disclose financial, personal, or other conflicts that could bias their work..."
+      },
+      {
+        "heading": "Funding",
+        "text": "All funding sources, including grant numbers, must be reported..."
+      },
+      {
+        "heading": "Research on Live Subjects",
+        "text": "Compliance with ethical guidelines (e.g., WMA Declaration of Helsinki) is mandatory..."
+      },
+      {
+        "heading": "Informed Consent",
+        "text": "Authors must obtain and confirm participant consents..."
+      },
+      {
+        "heading": "Vulnerable Groups",
+        "text": "Studies involving vulnerable populations must justify their inclusion..."
+      },
+      {
+        "heading": "Confidential Data",
+        "text": "Authors must protect sensitive data and ensure participant safety."
+      },
+      {
+        "heading": "Data Sharing",
+        "text": "Articles should state data availability, access procedures, and duration..."
+      },
+      {
+        "heading": "Intellectual Property",
+        "text": "Authors must secure permissions for copyrighted..."
+      },
+      {
+        "heading": "Ethical Oversight",
+        "text": "All parties must follow COPE’s ethical guidelines..."
+      },
+      {
+        "heading": "Corrections and Retractions",
+        "text": "Errors in published articles are corrected with notices..."
+      },
+      {
+        "heading": "Complaints and Appeals",
+        "text": "Authors may address concerns to editor@modestum.co.uk..."
+      },
+      {
+        "heading": "Roles and Responsibilities",
+        "text": "Authors: Submit original work, disclose conflicts...\nReviewers: Maintain confidentiality, review fairly...\nEditors: Unbiased peer review...\nPublisher: Provides tools and ensures independence."
+      },
+      {
+        "heading": "Plagiarism and Malpractice Policy",
+        "text": "Authors must avoid plagiarism, simultaneous submissions...\nMisconduct triggers COPE-guided investigations."
+      }
+    ]
+  }
 }
