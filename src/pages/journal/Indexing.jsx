@@ -4,43 +4,62 @@ import "aos/dist/aos.css";
 import { useTranslation } from "react-i18next";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
+import {
+  GraduationCap,
+  Link2,
+  Map,
+  Database,
+  Brain,
+  BookOpenCheck,
+} from "lucide-react";
+
 // Indexing databases + short translation keys for their descriptions
 const indexingPlatforms = [
   {
     name: "Google Scholar",
     url: "https://scholar.google.com/",
-    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/Google_Scholar_logo.svg/512px-Google_Scholar_logo.svg.png",
+    logo:
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/Google_Scholar_logo.svg/512px-Google_Scholar_logo.svg.png",
     descKey: "googleScholar",
+    Icon: GraduationCap,
   },
   {
     name: "CROSSREF",
     url: "https://www.crossref.org/",
-    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/29/CrossRef_Logo.png/320px-CrossRef_Logo.png",
+    logo:
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/2/29/CrossRef_Logo.png/320px-CrossRef_Logo.png",
     descKey: "crossref",
+    Icon: Link2,
   },
   {
     name: "ROAD",
     url: "https://road.issn.org/",
     logo: "https://road.issn.org/themes/road/logo-en.png",
     descKey: "road",
+    Icon: Map,
   },
   {
     name: "SCILIT",
     url: "https://www.scilit.net/",
     logo: "https://www.scilit.net/img/logo.png",
     descKey: "scilit",
+    Icon: Database,
   },
   {
     name: "Semantic Scholar",
     url: "https://www.semanticscholar.org/",
-    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c7/Semantic_Scholar_logo.svg/512px-Semantic_Scholar_logo.svg.png",
+    logo:
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c7/Semantic_Scholar_logo.svg/512px-Semantic_Scholar_logo.svg.png",
     descKey: "semanticScholar",
+    Icon: Brain,
   },
   {
     name: "DOAJ",
     url: "https://doaj.org/",
-    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/Directory_of_Open_Access_Journals_logo.png/512px-Directory_of_Open_Access_Journals_logo.png",
+    logo:
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/Directory_of_Open_Access_Journals_logo.png/512px-Directory_of_Open_Access_Journals_logo.png",
     descKey: "doaj",
+    Icon: BookOpenCheck,
   },
 ];
 
@@ -107,32 +126,38 @@ export default function IndexingSection() {
 
         {/* Indexing cards */}
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 px-4">
-          {indexingPlatforms.map((platform, idx) => (
-            <a
-              key={idx}
-              href={platform.url}
-              target="_blank"
-              rel="noopener noreferrer"
-              data-aos="fade-up"
-              data-aos-delay={idx * 100}
-              className="group bg-white/80 backdrop-blur border border-cyan-100 rounded-xl shadow-md hover:shadow-lg transition p-6 flex flex-col items-center text-center hover:-translate-y-1"
-            >
-              <motion.img
-                src={platform.logo}
-                alt={platform.name}
-                className="h-16 object-contain mb-4"
-                whileHover={{ scale: 1.1 }}
-                transition={{ type: "spring", stiffness: 300 }}
-              />
-              <span className="text-lg font-medium text-cyan-700 mb-2">
-                {platform.name}
-              </span>
-              {/* Reveal description on hover */}
-              <p className="text-sm text-cyan-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                {t(`indexing.descriptions.${platform.descKey}`)}
-              </p>
-            </a>
-          ))}
+          {indexingPlatforms.map((platform, idx) => {
+            const { Icon } = platform;
+            return (
+              <a
+                key={idx}
+                href={platform.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                data-aos="fade-up"
+                data-aos-delay={idx * 100}
+                className="group bg-white/80 backdrop-blur border border-cyan-100 rounded-xl shadow-md hover:shadow-lg transition p-6 flex flex-col items-center text-center hover:-translate-y-1"
+              >
+                {/* Brand logo */}
+                <motion.img
+                  src={platform.logo}
+                  alt={platform.name}
+                  className="h-16 object-contain mb-4"
+                  whileHover={{ scale: 1.1 }}
+                  transition={{ type: "spring", stiffness: 300 }}
+                />
+                {/* Contextual Icon */}
+                <Icon className="w-8 h-8 text-cyan-600 mb-2 group-hover:rotate-6 transition-transform duration-300" />
+                <span className="text-lg font-medium text-cyan-700 mb-2">
+                  {platform.name}
+                </span>
+                {/* Reveal description on hover */}
+                <p className="text-sm text-cyan-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  {t(`indexing.descriptions.${platform.descKey}`)}
+                </p>
+              </a>
+            );
+          })}
         </div>
 
         {/* Call to Action */}
