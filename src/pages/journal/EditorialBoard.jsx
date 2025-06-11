@@ -291,7 +291,7 @@ export default function EditorialBoard() {
     setOpenRoles((prev) => ({ ...prev, [role]: !prev[role] }));
 
   return (
-    <section className="relative px-4 py-16 md:px-8 lg:py-24 bg-gradient-to-b bg-[#F8F8FF] overflow-hidden">
+    <section className="relative px-4 py-16 md:px-8 lg:py-24 bg-gradient-to-b bg-[#F8F8FF]">
       {/* subtle background dots */}
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(#c1e5ff_1px,transparent_1px)] bg-[size:20px_20px] opacity-20" />
 

@@ -436,6 +436,33 @@
     "reportFormat": "Report Format",
     "reportFormatDesc": "Feedback should be constructive, clear, and well-structured."
   },
+  "contact_art": {
+    "main_title": "Connect With Us",
+    "main_subtitle": "Interface with our care network",
+    "nodes": {
+      "appointment": {
+        "title": "Schedule Appointment",
+        "description": "Call to schedule a consultation with a specialist. We will find the most convenient time for you.",
+        "action": "Make a Call"
+      },
+      "location": {
+        "title": "Our Location",
+        "description": "100 Amir Temur Avenue, Tashkent, Uzbekistan. We are waiting for you.",
+        "action": "View on Map"
+      },
+      "partnership": {
+        "title": "Partnership",
+        "description": "We are always open to new ideas and collaborations. Email us.",
+        "action": "Send an Email"
+      },
+      "emergency": {
+        "title": "Emergency",
+        "description": "For life-threatening situations, call immediately. We are available 24/7.",
+        "action": "Call Emergency"
+      }
+    },
+    "back_to_network": "Back to Network"
+  },
   "articleFee": {
     "title": "Article Processing Fee (APF)",
     "description": "Modestum publishes all its journals as Open Access. This means all articles are made available to readers worldwide free of charge. To support this, a one-time Article Processing Fee (APF) is required upon article acceptance, covering peer review, production, hosting, and distribution costs.",

@@ -3,21 +3,19 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import { useTranslation } from "react-i18next";
 import { motion } from "framer-motion";
-
+import { Link } from "react-router-dom";
 // Indexing databases + short translation keys for their descriptions
 const indexingPlatforms = [
   {
     name: "Google Scholar",
     url: "https://scholar.google.com/",
-    logo:
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/Google_Scholar_logo.svg/512px-Google_Scholar_logo.svg.png",
+    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/Google_Scholar_logo.svg/512px-Google_Scholar_logo.svg.png",
     descKey: "googleScholar",
   },
   {
     name: "CROSSREF",
     url: "https://www.crossref.org/",
-    logo:
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/2/29/CrossRef_Logo.png/320px-CrossRef_Logo.png",
+    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/29/CrossRef_Logo.png/320px-CrossRef_Logo.png",
     descKey: "crossref",
   },
   {
@@ -35,15 +33,13 @@ const indexingPlatforms = [
   {
     name: "Semantic Scholar",
     url: "https://www.semanticscholar.org/",
-    logo:
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c7/Semantic_Scholar_logo.svg/512px-Semantic_Scholar_logo.svg.png",
+    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c7/Semantic_Scholar_logo.svg/512px-Semantic_Scholar_logo.svg.png",
     descKey: "semanticScholar",
   },
   {
     name: "DOAJ",
     url: "https://doaj.org/",
-    logo:
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/Directory_of_Open_Access_Journals_logo.png/512px-Directory_of_Open_Access_Journals_logo.png",
+    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/Directory_of_Open_Access_Journals_logo.png/512px-Directory_of_Open_Access_Journals_logo.png",
     descKey: "doaj",
   },
 ];
@@ -99,10 +95,14 @@ export default function IndexingSection() {
         </p>
 
         {/* Quick stats */}
-        <div className="flex flex-wrap justify-center gap-8 mb-14" data-aos="fade-up" data-aos-delay="200">
-          <Stat value="6+" label={t("indexing.stats.databases")}/>
-          <Stat value="10+" label={t("indexing.stats.years")}/>
-          <Stat value="15K+" label={t("indexing.stats.citations")}/>
+        <div
+          className="flex flex-wrap justify-center gap-8 mb-14"
+          data-aos="fade-up"
+          data-aos-delay="200"
+        >
+          <Stat value="6+" label={t("indexing.stats.databases")} />
+          <Stat value="10+" label={t("indexing.stats.years")} />
+          <Stat value="15K+" label={t("indexing.stats.citations")} />
         </div>
 
         {/* Indexing cards */}
@@ -137,12 +137,12 @@ export default function IndexingSection() {
 
         {/* Call to Action */}
         <div data-aos="fade-up" data-aos-delay="400" className="mt-14">
-          <a
-            href="/contact" // Replace with real URL
+          <Link
+            to="/contact" // Replace with real URL
             className="inline-block px-8 py-3 bg-cyan-600 hover:bg-cyan-700 text-white font-medium rounded-full shadow-lg transition focus-visible:ring focus-visible:ring-cyan-400 focus-visible:ring-opacity-50"
           >
             {t("indexing.cta")}
-          </a>
+          </Link>
         </div>
       </div>
     </section>

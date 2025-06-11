@@ -13,6 +13,7 @@ export default function Layout() {
 
   return (
     <>
+    
       <IntroOverlay /> {/* 👈 вот сюда */}
       <AnimatePresence mode="wait" initial={false}>
         <motion.div

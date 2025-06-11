@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { useTranslation } from "react-i18next";
@@ -15,11 +15,34 @@ import {
 export default function AboutPage() {
   const { t } = useTranslation();
 
+  const acceptanceData = [
+    { year: "2019", rate: 20 },
+    { year: "2020", rate: 16 },
+    { year: "2021", rate: 24 },
+    { year: "2022", rate: 23 },
+    { year: "2023", rate: 18 },
+    { year: "2024", rate: 25 },
+    { year: "2025", rate: 26 },
+  ];
+
+  const [filteredData, setFilteredData] = useState([]);
+
   useEffect(() => {
     AOS.init({ duration: 800, once: true });
+
+    const handleResize = () => {
+      if (window.innerWidth < 640) {
+        setFilteredData(acceptanceData.slice(-3));
+      } else {
+        setFilteredData(acceptanceData);
+      }
+    };
+
+    handleResize();
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  /* ----------------------------- static data ----------------------------- */
   const stats = [
     { key: "issn", value: "2633-6537" },
     { key: "doi", value: "https://doi.org/10.29333/ijese", link: true },
@@ -32,16 +55,9 @@ export default function AboutPage() {
     { key: "downloads", value: "85K+ article downloads/year" },
     { key: "editors", value: "18 international editors" },
     { key: "languages", value: "Supports English & Russian" },
-    { key: "plagiarism", value: "Plagiarism check: Turnitin" }
+    { key: "plagiarism", value: "Plagiarism check: Turnitin" },
   ];
 
-  const acceptanceData = [
-    { year: "2019", rate: 23 },
-    { year: "2020", rate: 18 },
-    { year: "2021", rate: 23 },
-  ];
-
-  /* ------------------------------ component ------------------------------ */
   return (
     <section className="relative px-6 py-16 md:px-10 lg:py-24 bg-gradient-to-b bg-[#F8F8FF] ">
       <div className="max-w-6xl mx-auto text-gray-800">
@@ -54,7 +70,11 @@ export default function AboutPage() {
         </h1>
 
         {/* descriptions */}
-        <div className="space-y-6 text-lg leading-relaxed" data-aos="fade-up" data-aos-delay="50">
+        <div
+          className="space-y-6 text-lg leading-relaxed"
+          data-aos="fade-up"
+          data-aos-delay="50"
+        >
           <p>{t("about.description1")}</p>
           <p>{t("about.description2")}</p>
         </div>
@@ -65,7 +85,7 @@ export default function AboutPage() {
           data-aos="fade-up"
           data-aos-delay="150"
         >
-          {stats.map((item, idx) => (
+          {stats.map((item) => (
             <div
               key={item.key}
               className="group relative p-6 bg-white/70 backdrop-blur-md border border-cyan-100 rounded-xl shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
@@ -93,23 +113,28 @@ export default function AboutPage() {
 
         {/* acceptance rates chart */}
         <div className="mt-16" data-aos="fade-up" data-aos-delay="250">
-          <h2 className="text-2xl font-bold mb-4 text-cyan-700">
+          <h2 className="text-2xl font-bold mb-4 text-cyan-700 flex justify-center">
             {t("about.acceptanceRatesTitle")}
           </h2>
-          <div className="w-full h-64 bg-white/70 backdrop-blur-md rounded-xl p-4 border border-cyan-100 shadow-md">
-            <ResponsiveContainer width="100%" height="100%">
-              <BarChart data={acceptanceData} margin={{ top: 10, right: 20, left: 0, bottom: 10 }}>
-                <CartesianGrid strokeDasharray="3 3" opacity={0.2} />
-                <XAxis dataKey="year" axisLine={false} tickLine={false} />
-                <YAxis
-                  axisLine={false}
-                  tickLine={false}
-                  tickFormatter={(v) => `${v}%`}
-                />
-                <Tooltip formatter={(v) => `${v}%`} />
-                <Bar dataKey="rate" radius={[4, 4, 0, 0]} fill="#06b6d4" />
-              </BarChart>
-            </ResponsiveContainer>
+          <div className="w-full flex justify-center">
+            <div className="w-full sm:w-[90%] md:w-[75%] lg:w-[60%] h-64 bg-white/70 backdrop-blur-md rounded-xl p-4 border border-cyan-100 shadow-md">
+              <ResponsiveContainer width="100%" height="100%">
+                <BarChart
+                  data={filteredData}
+                  margin={{ top: 10, right: 40, left: 0, bottom: 10 }}
+                >
+                  <CartesianGrid strokeDasharray="3 3" opacity={0.2} />
+                  <XAxis dataKey="year" axisLine={false} tickLine={false} />
+                  <YAxis
+                    axisLine={false}
+                    tickLine={false}
+                    tickFormatter={(v) => `${v}%`}
+                  />
+                  <Tooltip formatter={(v) => `${v}%`} />
+                  <Bar dataKey="rate" radius={[4, 4, 0, 0]} fill="#06b6d4" />
+                </BarChart>
+              </ResponsiveContainer>
+            </div>
           </div>
         </div>
 

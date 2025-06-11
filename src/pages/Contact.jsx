@@ -1,141 +1,169 @@
-import React, { useEffect } from "react";
-import { Mail, Phone, MapPin, Map, Info } from "lucide-react";
-import AOS from "aos";
-import "aos/dist/aos.css";
-import { useTranslation } from "react-i18next";
+import React from "react";
 
-export default function ContactSection() {
-  const { t } = useTranslation();
+import { useState } from 'react';
+import { Phone, Mail, MapPin, Clock, Facebook, Linkedin, Instagram } from 'lucide-react';
 
-  useEffect(() => {
-    AOS.init({ duration: 800, once: true });
-  }, []);
+export default function ContactPage() {
+  const [formData, setFormData] = useState({
+    firstName: '',
+    lastName: '',
+    email: '',
+    phone: '',
+    message: '',
+  });
+
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log(formData);
+  };
 
   return (
-    <section className="relative px-4 py-16 md:px-8 lg:py-24 bg-[#F8F8FF]">
-      <div
-        data-aos="fade-up"
-        className="relative max-w-4xl mx-auto rounded-3xl bg-white shadow-xl border border-cyan-100 p-6 sm:p-8 lg:p-12 transition hover:shadow-cyan-300"
+    <div className="min-h-screen bg-white flex flex-col lg:flex-row" style={{ fontFamily: "'Inter', sans-serif", fontSize: 16, lineHeight: 1.4 }}>
+      {/* Aside */}
+      <aside
+        className="order-[-1] lg:order-none w-full lg:w-[320px] shrink-0 py-8 px-5 lg:py-12 lg:px-10 text-white"
+        style={{
+          backgroundColor: '#121212',
+          backgroundImage: 'url(/src/assets/lines.svg)',
+          backgroundRepeat: 'repeat',
+          backgroundSize: 'cover',
+        }}
       >
-        {/* QR Code */}
-        <div className="absolute hidden sm:block top-4 right-4 z-10">
-          <div className="w-20 h-20 p-1 bg-white rounded-lg shadow-md border border-cyan-100 hover:shadow-lg hover:scale-105 transition transform duration-300">
-            <img
-              src="https://api.qrserver.com/v1/create-qr-code/?size=100x100&data=https://goo.gl/maps/gMiVCevXwzzj6Pv16"
-              alt="QR Code"
-              className="w-full h-full object-contain rounded"
-            />
+        <h2 className="text-2xl font-semibold tracking-wide">Get in touch</h2>
+        <p className="text-sm text-[#E5E7EB] mt-2 leading-6">
+          We're here to help and answer any question you might have.
+        </p>
+
+        <div className="mt-8 space-y-6">
+          <div className="flex items-center gap-3 text-[#F5F5F5]">
+            <Phone size={18} />
+            <span>+998 90 123 45 67</span>
+          </div>
+          <div className="flex items-center gap-3 text-[#F5F5F5]">
+            <Mail size={18} />
+            <span>info@example.com</span>
+          </div>
+          <div className="flex items-center gap-3 text-[#F5F5F5]">
+            <MapPin size={18} />
+            <span>123 Main St, Tashkent, UZ</span>
+          </div>
+          <div className="flex items-center gap-3 text-[#F5F5F5]">
+            <Clock size={18} />
+            <span>Mon–Fri, 9am–6pm</span>
           </div>
         </div>
 
-        {/* Title */}
-        <h2 className="text-3xl font-extrabold text-cyan-600 text-center mb-10">
-          {t("contact.title")}
-        </h2>
+        <div className="flex gap-6 mt-16">
+          <a href="#" className="hover:opacity-75 transition">
+            <Facebook size={20} />
+          </a>
+          <a href="#" className="hover:opacity-75 transition">
+            <Linkedin size={20} />
+          </a>
+          <a href="#" className="hover:opacity-75 transition">
+            <Instagram size={20} />
+          </a>
+        </div>
+      </aside>
 
-        <div className="space-y-6 text-gray-800 text-base leading-relaxed">
-          {/* Address */}
-          <div className="flex items-start gap-4 group transition">
-            <MapPin className="text-cyan-500 mt-1 shrink-0" />
+      {/* Form Section */}
+      <section className="flex-1 py-16 px-5">
+        <form
+          className="max-w-[640px] mx-auto grid gap-8"
+          onSubmit={handleSubmit}
+        >
+          {/* Row 1 */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
             <div>
-              <p className="font-semibold text-lg group-hover:text-cyan-700 transition">
-                {t("contact.office")}
-              </p>
-              <p>{t("contact.address")}</p>
-              <a
-                href="https://goo.gl/maps/gMiVCevXwzzj6Pv16"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="mt-2 inline-flex items-center gap-1 text-sm text-cyan-600 hover:text-cyan-800 underline transition"
-              >
-                <Map className="w-4 h-4" />
-                {t("contact.viewMap")}
-              </a>
+              <label className="block text-sm font-semibold text-[#111] mb-2">
+                First name
+              </label>
+              <input
+                required
+                name="firstName"
+                value={formData.firstName}
+                onChange={handleChange}
+                type="text"
+                placeholder="John"
+                className="w-full border rounded-md border-[#F4F4F4] py-3 px-4 text-sm placeholder-[#A3A3A3] focus:ring-2 focus:ring-[#D92329]/40 focus:outline-none"
+              />
+            </div>
+            <div>
+              <label className="block text-sm font-semibold text-[#111] mb-2">
+                Last name
+              </label>
+              <input
+                required
+                name="lastName"
+                value={formData.lastName}
+                onChange={handleChange}
+                type="text"
+                placeholder="Doe"
+                className="w-full border rounded-md border-[#F4F4F4] py-3 px-4 text-sm placeholder-[#A3A3A3] focus:ring-2 focus:ring-[#D92329]/40 focus:outline-none"
+              />
             </div>
           </div>
 
           {/* Email */}
-          <div className="flex items-start gap-4 group">
-            <Mail className="text-cyan-500 mt-1 shrink-0" />
-            <div>
-              <span className="font-semibold">{t("contact.email")}: </span>
-              <a
-                href={`mailto:${t("contact.emails.publications")}`}
-                className="text-cyan-600 underline hover:text-cyan-800 transition group-hover:underline"
-              >
-                {t("contact.emails.publications")}
-              </a>
-            </div>
+          <div>
+            <label className="block text-sm font-semibold text-[#111] mb-2">
+              Email
+            </label>
+            <input
+              required
+              name="email"
+              value={formData.email}
+              onChange={handleChange}
+              type="email"
+              placeholder="you@example.com"
+              className="w-full border rounded-md border-[#F4F4F4] py-3 px-4 text-sm placeholder-[#A3A3A3] focus:ring-2 focus:ring-[#D92329]/40 focus:outline-none"
+            />
           </div>
 
           {/* Phone */}
-          <div className="flex items-start gap-4 group">
-            <Phone className="text-cyan-500 mt-1 shrink-0" />
-            <div>
-              <span className="font-semibold">{t("contact.phone")}: </span>
-              <a
-                href="tel:+381616600107"
-                className="text-cyan-600 underline hover:text-cyan-800 transition group-hover:underline"
-              >
-                +381 61 6600107
-              </a>
-            </div>
-          </div>
-
-          {/* Support */}
-          <div className="flex items-start gap-4 group">
-            <Info className="text-cyan-500 mt-1 shrink-0" />
-            <p>
-              {t("contact.supportNote")}:{" "}
-              <a
-                href={`mailto:${t("contact.emails.support")}`}
-                className="text-cyan-600 underline hover:text-cyan-800 transition"
-              >
-                {t("contact.emails.support")}
-              </a>
-            </p>
-          </div>
-
-          {/* Other inquiries */}
-          <div className="flex items-start gap-4 group">
-            <Info className="text-cyan-500 mt-1 shrink-0" />
-            <p>
-              {t("contact.otherInquiries")}:{" "}
-              <a
-                href={`mailto:${t("contact.emails.ijese")}`}
-                className="text-cyan-600 underline hover:text-cyan-800 transition"
-              >
-                {t("contact.emails.ijese")}
-              </a>
-            </p>
-          </div>
-        </div>
-
-        {/* Google Map */}
-        <div className="mt-10 rounded-xl overflow-hidden border-2 border-cyan-100 shadow-md hover:shadow-cyan-200 transition">
-          <iframe
-            title="Modestum Office Map"
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2830.7770162620776!2d20.419204115536055!3d44.8156328790984!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x475a705d683fe4c7%3A0x431e94f53c252228!2sBulevar%20Zorana%20%C4%90in%C4%91i%C4%87a%20125D%2C%20Beograd%2011070%2C%20Serbia!5e0!3m2!1sen!2srs!4v1718028742982!5m2!1sen!2srs"
-            width="100%"
-            height="300"
-            loading="lazy"
-            style={{ border: 0 }}
-            allowFullScreen
-            referrerPolicy="no-referrer-when-downgrade"
-          />
-        </div>
-
-        {/* QR on mobile */}
-        <div className="mt-6 flex sm:hidden justify-center">
-          <div className="w-24 h-24 p-1 bg-white rounded-lg shadow-md border border-cyan-100 hover:shadow-lg hover:scale-105 transition transform duration-300">
-            <img
-              src="https://api.qrserver.com/v1/create-qr-code/?size=100x100&data=https://goo.gl/maps/gMiVCevXwzzj6Pv16"
-              alt="QR Code"
-              className="w-full h-full object-contain rounded"
+          <div>
+            <label className="block text-sm font-semibold text-[#111] mb-2">
+              Phone number
+            </label>
+            <input
+              required
+              name="phone"
+              value={formData.phone}
+              onChange={handleChange}
+              type="tel"
+              placeholder="+998 90 123 45 67"
+              className="w-full border rounded-md border-[#F4F4F4] py-3 px-4 text-sm placeholder-[#A3A3A3] focus:ring-2 focus:ring-[#D92329]/40 focus:outline-none"
             />
           </div>
-        </div>
-      </div>
-    </section>
+
+          {/* Message */}
+          <div>
+            <label className="block text-sm font-semibold text-[#111] mb-2">
+              Message
+            </label>
+            <textarea
+              required
+              name="message"
+              value={formData.message}
+              onChange={handleChange}
+              placeholder="Your message here..."
+              className="w-full border rounded-md border-[#F4F4F4] py-3 px-4 text-sm placeholder-[#A3A3A3] focus:ring-2 focus:ring-[#D92329]/40 focus:outline-none h-40 resize-none"
+            />
+          </div>
+
+          {/* Button */}
+          <button
+            type="submit"
+            className="bg-[#D92329] text-white font-medium px-10 py-3 rounded-md hover:bg-[#B71C1F] active:scale-95 transition ml-auto mt-8"
+          >
+            Send message
+          </button>
+        </form>
+      </section>
+    </div>
   );
 }

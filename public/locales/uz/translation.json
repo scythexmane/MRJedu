@@ -512,6 +512,34 @@
       "text1": "Aniqlik, original bo‘lishi, manbalar to‘g‘riligini va metodologiyaning haqiqiyligini tekshiring. Barcha mualliflar portalga qo‘shilishi kerak. Texnik yordam uchun biz bilan bog‘laning:"
     }
   },
+
+  "contact_art": {
+    "main_title": "Biz bilan bog'laning",
+    "main_subtitle": "Yordam markazimiz bilan aloqa o'rnating",
+    "nodes": {
+      "appointment": {
+        "title": "Qabulga yozilish",
+        "description": "Mutaxassis bilan maslahatlashish uchun qo'ng'iroq qiling. Biz siz uchun eng qulay vaqtni tanlaymiz.",
+        "action": "Qo'ng'iroq qilish"
+      },
+      "location": {
+        "title": "Bizning manzil",
+        "description": "Amir Temur shoh ko'chasi, 100, Toshkent, O'zbekiston. Biz sizni kutamiz.",
+        "action": "Xaritada ko'rish"
+      },
+      "partnership": {
+        "title": "Hamkorlik",
+        "description": "Biz yangi g'oyalar va hamkorlik uchun doim ochiqmiz. Bizga yozing.",
+        "action": "Elektron pochta yuborish"
+      },
+      "emergency": {
+        "title": "Shoshilinch yordam",
+        "description": "Hayot uchun xavfli holatlarda darhol qo'ng'iroq qiling. Biz 24/7 ishlaymiz.",
+        "action": "Tez yordam chaqirish"
+      }
+    },
+    "back_to_network": "Tarmoqqa qaytish"
+  },
   "peerReview": {
     "title": "Taqriz siyosati",
     "doubleBlind": "Ikki tomonlama anonim taqriz",
