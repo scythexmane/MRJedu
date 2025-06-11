@@ -18,16 +18,14 @@ const indexingPlatforms = [
   {
     name: "Google Scholar",
     url: "https://scholar.google.com/",
-    logo:
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/Google_Scholar_logo.svg/512px-Google_Scholar_logo.svg.png",
+    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/Google_Scholar_logo.svg/512px-Google_Scholar_logo.svg.png",
     descKey: "googleScholar",
     Icon: GraduationCap,
   },
   {
     name: "CROSSREF",
     url: "https://www.crossref.org/",
-    logo:
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/2/29/CrossRef_Logo.png/320px-CrossRef_Logo.png",
+    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/29/CrossRef_Logo.png/320px-CrossRef_Logo.png",
     descKey: "crossref",
     Icon: Link2,
   },
@@ -48,16 +46,14 @@ const indexingPlatforms = [
   {
     name: "Semantic Scholar",
     url: "https://www.semanticscholar.org/",
-    logo:
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c7/Semantic_Scholar_logo.svg/512px-Semantic_Scholar_logo.svg.png",
+    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c7/Semantic_Scholar_logo.svg/512px-Semantic_Scholar_logo.svg.png",
     descKey: "semanticScholar",
     Icon: Brain,
   },
   {
     name: "DOAJ",
     url: "https://doaj.org/",
-    logo:
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/Directory_of_Open_Access_Journals_logo.png/512px-Directory_of_Open_Access_Journals_logo.png",
+    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/Directory_of_Open_Access_Journals_logo.png/512px-Directory_of_Open_Access_Journals_logo.png",
     descKey: "doaj",
     Icon: BookOpenCheck,
   },
@@ -147,7 +143,13 @@ export default function IndexingSection() {
                   transition={{ type: "spring", stiffness: 300 }}
                 />
                 {/* Contextual Icon */}
-                <Icon className="w-8 h-8 text-cyan-600 mb-2 group-hover:rotate-6 transition-transform duration-300" />
+                <div className="mb-2">
+                  <Icon
+                    className="w-8 h-8 text-cyan-600 transition-transform duration-300 group-hover:rotate-6 shrink-0"
+                    aria-hidden="true"
+                    focusable="false"
+                  />
+                </div>
                 <span className="text-lg font-medium text-cyan-700 mb-2">
                   {platform.name}
                 </span>
