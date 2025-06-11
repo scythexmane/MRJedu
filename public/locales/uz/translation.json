@@ -471,5 +471,80 @@
         "text": "Plagiat va boshqa xatti-harakatlardan saqlanish kerak...\nBuzilishlar COPE bo‘yicha ko‘rib chiqiladi."
       }
     ]
+  },
+  "editorialPolicy": {
+    "title": "Tahrir Siyosati",
+    "languageRequirements": "Til Talablari",
+    "languageDescription": "Mualliflar topshirilgan material tildan xatolardan holi va jurnal format talablariga mos bo‘lishini ta’minlashi kerak.",
+    "editingSupport": "Tilni tahrirlash xizmati",
+    "editingDescription": "Ingliz tili ona tili bo‘lmagan mualliflarga grammatik, aniqlik va format jihatidan tahrirlash xizmatlaridan foydalanish tavsiya etiladi.",
+    "ethicsOriginality": "Etika va Originalilik",
+    "ethicsDescription": "Topshiruvlar original, avval chop etilmagan bo‘lishi va etik me’yorlarga mos tayyorlanishi kerak. Barcha hammualliflar rozilik bildirishi shart.",
+    "noDualSubmission": "Ikki martalik yuborish taqiqlanadi",
+    "dualSubmissionDescription": "Maqola boshqa jurnalga yuborilgan bo‘lsa, rad qilinadi.",
+    "peerReview": "Taqriz Jarayoni",
+    "peerReviewDescription": "Barcha topshiruvlar avval muharrirlar tomonidan tekshiriladi, so‘ngra yashirin tarzda taqriz qilinadi. Har vaqtda tuzatish so‘ralishi mumkin.",
+    "submissionID": "Yuborish ID raqami",
+    "submissionIDDescription": "Har bir maqolaga ID belgilanadi. Muharrir yoki texnik yordam bilan aloqa qilishda shu ID ishlatiladi."
+  },
+  "authorGuidelines": {
+    "title": "Mualliflar uchun ko'rsatmalar",
+    "submission": {
+      "title": "Qo‘lyozmani topshirish",
+      "text1": "Barcha qo‘lyozmalar ingliz tilida quyidagi",
+      "portal": "jo‘natish portali",
+      "text2": "orqali topshirilishi kerak. Ular original, nashr qilinmagan va jurnal mavzusi hamda etikasi bilan mos bo‘lishi lozim. Hammualliflar ko‘rsatilgan bo‘lishi va matn uslubi izchil bo‘lishi kerak."
+    },
+    "preparation": {
+      "title": "Qo‘lyozma tayyorlash",
+      "text": "Qo‘lyozmani A4 formatda, 1.5 qatordan oraliq, 11-12 pt shrift, matnni tekislab tayyorlang. Ikki fayl topshiring: muallif ma'lumotlari, hissa va moliyalashtirish bilan sarlavha sahifasi; va mualliflarsiz versiya. Tuzilishi: Sarlavha, Annotatsiya (≤150 so‘z), Kalit so‘zlar, Kirish, Usullar, Natijalar, Munozara, Xulosa, Adabiyotlar."
+    },
+    "references": {
+      "title": "Manbalar va iqtiboslar",
+      "text": "APA 7-nashr formatiga rioya qiling. Barcha iqtiboslar adabiyot ro'yxatida ko'rsatilishi lozim. 3+ muallif bo'lsa, 'et al.' ishlatiladi. To‘g‘ridan-to‘g‘ri iqtiboslarda sahifa raqami ko‘rsatilishi kerak. 'op. cit.' va 'ibid.' dan foydalanmang."
+    },
+    "figures": {
+      "title": "Rasmlar va jadvallar",
+      "text": "Jadvallar tushunarli bo‘lib, qisqa sarlavhalarga ega bo‘lishi kerak. Rasmlar yuqori sifatli (JPEG, 300 dpi), belgilangan (a, b, c...) bo‘lishi va alohida yuklanishi kerak. Matnda [Table 1], [Figure 1] kabi ko‘rsatiladi."
+    },
+    "final": {
+      "title": "Yakuniy tekshiruv va aloqa",
+      "text1": "Aniqlik, original bo‘lishi, manbalar to‘g‘riligini va metodologiyaning haqiqiyligini tekshiring. Barcha mualliflar portalga qo‘shilishi kerak. Texnik yordam uchun biz bilan bog‘laning:"
+    }
+  },
+  "peerReview": {
+    "title": "Taqriz siyosati",
+    "doubleBlind": "Ikki tomonlama anonim taqriz",
+    "doubleBlindDesc": "Mualliflar va taqrizchilar bir-biriga noma'lum bo'lib qoladi.",
+    "reviewPurpose": "Taqriz maqsadi",
+    "reviewPurposeDesc": "Taqriz jarayoni maqolalar sifatini va ishonchliligini ta’minlaydi.",
+    "reviewProcess": "Taqriz jarayoni",
+    "reviewProcessDesc": "Maqolalar kamida ikki nafar mustaqil mutaxassis tomonidan ko'rib chiqiladi.",
+    "competingInterests": "Manfaatlar to‘qnashuvi",
+    "competingDesc": "Taqrizchilar har qanday manfaatlar to‘qnashuvi haqida xabar berishi shart.",
+    "confidentiality": "Maxfiylik",
+    "confidentialityDesc": "Taqriz davomida barcha materiallar maxfiy saqlanadi.",
+    "timeliness": "O‘z vaqtida baholash",
+    "timelinessDesc": "Taqrizchilar belgilangan muddatda fikr-mulohazalarni taqdim etishlari kerak.",
+    "recommendations": "Taqriz tavsiyalari",
+    "recommendationsDesc": "Taqrizchilar maqolani qabul qilish, qayta ko‘rib chiqish yoki rad etishni tavsiya qiladilar.",
+    "reportFormat": "Hisobot shakli",
+    "reportFormatDesc": "Fikrlar aniq, tushunarli va konstruktiv bo‘lishi kerak."
+  },
+  "articleFee": {
+    "title": "Maqola Ishlov Berish To‘lovi (APF)",
+    "description": "Modestum barcha jurnallarini ochiq kirish shaklida nashr etadi. Bu barcha maqolalar butun dunyo bo‘ylab o‘quvchilarga bepul taqdim etiladi degani. Buni qo‘llab-quvvatlash uchun maqola qabul qilingach bir martalik APF to‘lovi talab qilinadi, bu tahrir, ishlab chiqarish, joylashtirish va tarqatish xarajatlarini qoplaydi.",
+    "issn": "e-ISSN",
+    "journal": "Jurnal Nomi",
+    "fee": "APF",
+    "type1": "I-tur uchun",
+    "type2": "II-tur uchun",
+    "type12": "I va II-tur uchun",
+    "discount": "({{date}}gacha {{newFee}}gacha chegirma bilan)",
+    "waived": "{{original}} ({{date}}gacha bepul)",
+    "waivedUntil": "({{date}}gacha bepul)",
+    "free": "BEPUL",
+    "note1": "I-tur: Asosiy tadqiqotlar, sharh maqolalari",
+    "note2": "II-tur: Kichik xabarlar, Kasus tahlillari va boshqalar"
   }
 }

@@ -18,9 +18,9 @@ import InstitutionalCooperations from "./pages/journal/InstitutionalCooperations
 
 import EthicalStatement from "./pages/authors/EthicalStatement.jsx";
 import AuthorGuidelines from "./pages/authors/AuthorGuidelines.jsx";
-// import EditorialPolicy from "./pages/authors/EditorialPolicy.jsx";
-// import PeerReviewPolicy from "./pages/authors/PeerReviewPolicy.jsx";
-// import PublicationFee from "./pages/authors/PublicationFee.jsx";
+import EditorialPolicy from "./pages/authors/EditorialPolicy.jsx";
+import PeerReviewPolicy from "./pages/authors/PeerReviewPolicy.jsx";
+import PublicationFee from "./pages/authors/PublicationFee.jsx";
 
 import Contact from "./pages/Contact.jsx";
 
@@ -65,12 +65,11 @@ export default function App() {
             path="authors/author-guidelines"
             element={<AuthorGuidelines />}
           />
-          {/* <Route path="authors/editorial-policy" element={<EditorialPolicy />} /> */}
-          {/* <Route path="authors/peer-review-policy" element={<PeerReviewPolicy />} /> */}
-          {/* <Route path="authors/publication-fee" element={<PublicationFee />} />  */}
+          <Route path="authors/editorial-policy" element={<EditorialPolicy />} />
+          <Route path="authors/peer-review-policy" element={<PeerReviewPolicy />} />
+          <Route path="authors/publication-fee" element={<PublicationFee />} /> 
 
           <Route path="contact" element={<Contact />} />
-          {/* <Route path="submit" element={<SubmitManuscript />} />   */}
         </Route>
       </Routes>
     </Router>

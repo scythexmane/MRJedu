@@ -376,5 +376,80 @@
         "text": "Authors must avoid plagiarism, simultaneous submissions...\nMisconduct triggers COPE-guided investigations."
       }
     ]
+  },
+  "editorialPolicy": {
+    "title": "Editorial Policy",
+    "languageRequirements": "Language Requirements",
+    "languageDescription": "Authors must ensure that their submission is free of linguistic errors and complies with the journal's formatting standards.",
+    "editingSupport": "Language Editing Support",
+    "editingDescription": "Non-native English speakers are encouraged to use language editing services to improve grammar, clarity, and formatting before submission.",
+    "ethicsOriginality": "Ethical Compliance & Originality",
+    "ethicsDescription": "Submitted work must be original, unpublished, and prepared in accordance with ethical standards. All co-authors must approve.",
+    "noDualSubmission": "No Dual Submission",
+    "dualSubmissionDescription": "Manuscripts must not be under review elsewhere. Submissions violating this will be rejected immediately.",
+    "peerReview": "Peer Review Process",
+    "peerReviewDescription": "All submissions go through an initial editorial check, then double-blind peer review. Revisions may be requested at any time.",
+    "submissionID": "Submission Identification",
+    "submissionIDDescription": "Each submission receives a unique ID, which should be used in all correspondence with editors and support staff."
+  },
+  "authorGuidelines": {
+    "title": "Author Guidelines",
+    "submission": {
+      "title": "Manuscript Submission",
+      "text1": "All manuscripts must be submitted in English via the",
+      "portal": "submission portal",
+      "text2": "Submissions should be original, unpublished, and aligned with the journal’s scope and ethics. Authors must enter co-author information and ensure consistency in language style."
+    },
+    "preparation": {
+      "title": "Manuscript Preparation",
+      "text": "Format your manuscript using A4 size, 1.5 line spacing, 11-12 pt fonts, justified text. Submit two files: a title page (with author info, contributions, funding) and a blinded manuscript (no author details). Structure: Title, Abstract (≤150 words), Keywords, Introduction, Methods, Results, Discussion, Conclusions, References."
+    },
+    "references": {
+      "title": "References & Citations",
+      "text": "Follow APA 7th edition. Include all cited works in the reference list. Use 'et al.' for 3+ authors in text. Direct quotes should include page numbers. Avoid op. cit. and ibid."
+    },
+    "figures": {
+      "title": "Figures & Tables",
+      "text": "Tables must be self-explanatory with concise captions. Figures should be high-resolution (JPEG, 300 dpi), labeled (a, b, c...), and uploaded separately. Indicate placement with [Table 1], [Figure 1] in text."
+    },
+    "final": {
+      "title": "Final Checks & Contact",
+      "text1": "Ensure clarity, originality, proper citations, valid methodology, and that all authors are added to the portal. Contact us for technical support at"
+    }
+  },
+  "peerReview": {
+    "title": "Peer Review Policy",
+    "doubleBlind": "Double-blind Review",
+    "doubleBlindDesc": "Both authors and reviewers remain anonymous to ensure unbiased evaluation.",
+    "reviewPurpose": "Purpose of Review",
+    "reviewPurposeDesc": "The review process ensures the quality and integrity of published content.",
+    "reviewProcess": "Review Process",
+    "reviewProcessDesc": "Manuscripts are reviewed by at least two independent experts.",
+    "competingInterests": "Competing Interests",
+    "competingDesc": "Reviewers must disclose any potential conflicts of interest.",
+    "confidentiality": "Confidentiality",
+    "confidentialityDesc": "All submitted materials are kept confidential during the review.",
+    "timeliness": "Timeliness",
+    "timelinessDesc": "Reviewers are expected to submit evaluations within the specified timeframe.",
+    "recommendations": "Review Recommendations",
+    "recommendationsDesc": "Reviewers suggest acceptance, revision, or rejection based on merit.",
+    "reportFormat": "Report Format",
+    "reportFormatDesc": "Feedback should be constructive, clear, and well-structured."
+  },
+  "articleFee": {
+    "title": "Article Processing Fee (APF)",
+    "description": "Modestum publishes all its journals as Open Access. This means all articles are made available to readers worldwide free of charge. To support this, a one-time Article Processing Fee (APF) is required upon article acceptance, covering peer review, production, hosting, and distribution costs.",
+    "issn": "e-ISSN",
+    "journal": "Journal Name",
+    "fee": "APF",
+    "type1": "for Type I",
+    "type2": "for Type II",
+    "type12": "for Type I & II",
+    "discount": "(discounted to {{newFee}} until {{date}})",
+    "waived": "{{original}} (waived until {{date}})",
+    "waivedUntil": "(waived until {{date}})",
+    "free": "FREE",
+    "note1": "Type I: Original Research, Review Articles",
+    "note2": "Type II: Case Reports, Short Communications, etc."
   }
 }

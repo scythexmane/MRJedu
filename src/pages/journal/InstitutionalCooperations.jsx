@@ -76,7 +76,7 @@ export default function OpenAccessSection() {
             data-aos="zoom-in"
           >
             <img
-              src="/images/institutional-cooperation.jpg"
+              src="https://avatars.mds.yandex.net/i?id=c41e2b96402304fcc7f7b16fc580fcaa_l-5869113-images-thumbs&ref=rim&n=13&w=3000&h=2000"
               alt="Environmental education collaboration research biology"
               className="w-full h-full object-cover"
             />
