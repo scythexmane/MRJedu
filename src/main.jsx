@@ -6,11 +6,13 @@ import "./index.css";
 import App from "./App.jsx";
 import "./i18n";
 import { ThemeProvider } from "./pages/ThemeProvider.jsx";
+import CookieConsent from "./Cookie.jsx"
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
     <ThemeProvider>
       <App />
+      <CookieConsent/>
     </ThemeProvider>
   </StrictMode>
 );

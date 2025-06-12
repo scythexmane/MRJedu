@@ -161,21 +161,6 @@
     },
     "copyright": "eISSN 2633-6537 | Medical Research Journal"
   },
-  "contact": {
-    "title": "Contact",
-    "office": "Main Office",
-    "address": "Modestum DOO, Bulevar Zorana Đinđića 125D, floor 1, flat 12C, 11070 Belgrade, SERBIA",
-    "viewMap": "View on map",
-    "email": "Email",
-    "phone": "Phone",
-    "supportNote": "For questions about manuscripts or articles in production, please contact",
-    "otherInquiries": "For all other inquiries, contact",
-    "emails": {
-      "publications": "publications@modestum.co.uk",
-      "support": "support@editorialpark.com",
-      "ijese": "ijese@ijese.com"
-    }
-  },
 
   "aimsHero": {
     "title": "Aims & Scope",
@@ -436,6 +421,19 @@
     "reportFormat": "Report Format",
     "reportFormatDesc": "Feedback should be constructive, clear, and well-structured."
   },
+  "contact": {
+    "title": "Get in <1>touch</1>",
+    "description": "We are always ready to assist you, answer your questions, and help you schedule an appointment. Fill out the form or use a convenient way to contact us.",
+    "phone": "Phone:",
+    "email": "Email:",
+    "address": "Address:",
+    "workingHours": "Working Hours:",
+    "writeUs": "Write to us",
+    "name": "Name",
+    "send": "Send",
+    "message": "Message",
+    "formPhone": "Phone"
+  },
   "contact_art": {
     "main_title": "Connect With Us",
     "main_subtitle": "Interface with our care network",
@@ -478,5 +476,138 @@
     "free": "FREE",
     "note1": "Type I: Original Research, Review Articles",
     "note2": "Type II: Case Reports, Short Communications, etc."
+  },
+  "cookie": {
+    "title": "We use cookies 🍪",
+    "description": "To improve the portal experience, for analytics, and content personalization.",
+    "accept": "Accept",
+    "decline": "Decline"
+  },
+  "terms": {
+    "title": "Terms of Use",
+    "subtitle": "Please read the following terms carefully before using our website.",
+    "general": {
+      "title": "General Terms",
+      "text": "These terms and conditions define the terms of use which are effective when you are using this website..."
+    },
+    "intellectual": {
+      "title": "Intellectual Property",
+      "text": "We are the rightful owner of the content displayed on websites. These materials..."
+    },
+    "disclaimer": {
+      "title": "Disclaimer",
+      "text": "While Modestum takes reasonable steps to ensure the content is accurate..."
+    },
+    "thirdParty": {
+      "title": "Third-Party Websites",
+      "text": "Our websites may contain links to third-party services that are not owned by us..."
+    },
+    "offensive": {
+      "title": "Offensive Use",
+      "text": "Any attempt to attack, inject viruses, or hack our systems is prohibited by law..."
+    },
+    "payments": {
+      "title": "Credit Card Statements",
+      "text": "We use third-party payment processors. By using them you agree to their policies..."
+    },
+    "exchange": {
+      "title": "Exchange Rate Statement",
+      "text": "All payments are made in Serbian dinar (RSD). Conversion is based on current exchange rates..."
+    },
+    "privacy": {
+      "title": "Data Protection",
+      "text": "We collect only essential personal data, secured with modern encryption technology..."
+    },
+    "vat": {
+      "title": "VAT Info",
+      "text": "Prices may or may not include VAT. Final VAT is calculated at checkout where applicable..."
+    },
+    "reclamation": {
+      "title": "Reclamation Policy",
+      "text": "If issues arise, you may submit a request with valid documentation for investigation..."
+    },
+    "refund": {
+      "title": "Refund Policy",
+      "text": "Refunds are issued only if we fail to publish your article due to our own fault..."
+    },
+    "complaints": {
+      "title": "Complaint Conditions",
+      "text": "If you have complaints, please contact our support. We respond promptly to all inquiries..."
+    },
+    "modifications": {
+      "title": "Modifications",
+      "text": "We may change these terms without prior notice. Continued use means acceptance..."
+    }
+  },
+  "privacy": {
+    "title": "Privacy Policy",
+    "personal": {
+      "title": "Personal Information",
+      "text": "We collect personal details such as your name, email address, institutional affiliation, country, academic degree, and researcher identifiers like ORCID."
+    },
+    "use": {
+      "title": "Use of Information",
+      "text": "Your information is used to facilitate editorial workflows, communicate with authors and reviewers, process payments, and ensure legal compliance."
+    },
+    "store": {
+      "title": "Data Storage",
+      "text": "We retain personal data only for as long as necessary and rely on secure third-party services for storage and processing."
+    },
+    "sharing": {
+      "title": "Data Sharing",
+      "text": "We do not sell your information. Data may be shared with editors, reviewers, DOI services, plagiarism checkers, and payment processors as needed."
+    },
+    "links": {
+      "title": "Third-Party Links",
+      "text": "Our site may include links to external websites. We are not responsible for their privacy practices or content."
+    },
+    "children": {
+      "title": "Children",
+      "text": "Our services are intended for users over the age of 18. Children under 13 should not use this site without parental consent."
+    },
+    "cookies": {
+      "title": "Cookies",
+      "text": "We use cookies and similar technologies to enhance your experience. For details, see our Cookies Policy."
+    },
+    "rights": {
+      "title": "Your Rights",
+      "text": "You have the right to access, correct, delete, or restrict the processing of your personal data at any time."
+    },
+    "changes": {
+      "title": "Policy Changes",
+      "text": "This policy may be updated occasionally. Any changes will be posted on this page."
+    },
+    "contact": {
+      "title": "Contact",
+      "text": "For privacy-related inquiries, contact Mr. Tim Haider at info@modestum.org."
+    },
+    "cookie_policy": {
+      "title": "Cookie Policy",
+      "text": "We are committed to being transparent about the technologies and information used across our Sites. Please review this Cookie Policy, along with our Privacy Policy and Terms of Use before using the Sites."
+    },
+    "cookie_def": {
+      "title": "What are cookies",
+      "text": "Cookies are small text files stored on your device by your browser during website visits. They improve user experience, remember login details, and help monitor how the site is used."
+    },
+    "cookie_types": {
+      "title": "Types of cookies",
+      "text": "Some cookies are session-based (temporary) and deleted after your browser session ends. Others are persistent and remain between sessions."
+    },
+    "cookie_use": {
+      "title": "Cookies that we use",
+      "text": "We use only temporary session cookies for statistical purposes. These cookies do not store personally identifiable information."
+    },
+    "cookie_manage": {
+      "title": "Managing your cookie preferences",
+      "text": "You may disable cookies via your browser settings. However, since we only use essential cookies, disabling them may affect some site functionality."
+    },
+    "cookie_changes": {
+      "title": "Changes to this policy",
+      "text": "We may update this Cookie Policy from time to time. Changes will be posted on this page. Please read it carefully before using our Sites."
+    },
+    "cookie_contact": {
+      "title": "Contact us",
+      "text": "If you have questions or requests about this Cookie Policy, contact Mr. Tim Heider at: info@modestum.org."
+    }
   }
 }

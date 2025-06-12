@@ -21,8 +21,11 @@ import AuthorGuidelines from "./pages/authors/AuthorGuidelines.jsx";
 import EditorialPolicy from "./pages/authors/EditorialPolicy.jsx";
 import PeerReviewPolicy from "./pages/authors/PeerReviewPolicy.jsx";
 import PublicationFee from "./pages/authors/PublicationFee.jsx";
-
+import CookieePolicySection from "./pages/Cookieee.jsx";
 import Contact from "./pages/Contact.jsx";
+
+import Terms from "./pages/Terms.jsx";
+import PrivacyPolicySection from "./pages/PrivacyPolicy.jsx";
 
 export default function App() {
   return (
@@ -65,9 +68,19 @@ export default function App() {
             path="authors/author-guidelines"
             element={<AuthorGuidelines />}
           />
-          <Route path="authors/editorial-policy" element={<EditorialPolicy />} />
-          <Route path="authors/peer-review-policy" element={<PeerReviewPolicy />} />
-          <Route path="authors/publication-fee" element={<PublicationFee />} /> 
+          <Route
+            path="authors/editorial-policy"
+            element={<EditorialPolicy />}
+          />
+          <Route
+            path="authors/peer-review-policy"
+            element={<PeerReviewPolicy />}
+          />
+          <Route path="authors/publication-fee" element={<PublicationFee />} />
+          <Route path="terms" element={<Terms />} />
+          <Route path="privacy" element={<PrivacyPolicySection />} />
+          <Route path="cookies" element={<CookieePolicySection />} />
+
 
           <Route path="contact" element={<Contact />} />
         </Route>

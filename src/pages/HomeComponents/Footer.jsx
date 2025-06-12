@@ -13,7 +13,6 @@ export default function Footer() {
         { label: t('footer.links.home'), to: '/' },
         { label: t('footer.links.journals'), to: '/journals' },
         { label: t('footer.links.contact'), to: '/contact' },
-        { label: t('footer.links.subscribe'), to: '/subscribe' },
       ],
     },
     {
@@ -23,7 +22,6 @@ export default function Footer() {
         { label: t('footer.links.archive'), to: '/archive' },
         { label: t('footer.links.about'), to: '/journal/about' },
         { label: t('footer.links.authorGuidelines'), to: '/authors/author-guidelines' },
-        { label: t('footer.links.contact'), to: '/contact' },
       ],
     },
     {

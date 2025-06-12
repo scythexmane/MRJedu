@@ -11,8 +11,11 @@ import {
   Linkedin,
   Youtube,
 } from "lucide-react";
+import { useTranslation, Trans } from "react-i18next";
 
 const ContactPage = () => {
+  const { t } = useTranslation();
+
   useEffect(() => {
     AOS.init({ once: false, duration: 800, offset: 100 });
   }, []);
@@ -27,20 +30,20 @@ const ContactPage = () => {
       <div className="container mx-auto px-4 pt-24 flex flex-col-reverse lg:flex-row items-center gap-12">
         <div className="flex-1" data-aos="fade-right">
           <h1 className="text-4xl lg:text-6xl font-extrabold leading-tight mb-6">
-            Свяжитесь с&nbsp;<span className="text-teal-600">нашей клиникой</span>
+            <Trans i18nKey="contact.title">
+              Свяжитесь с <span className="text-teal-600">нами</span>
+            </Trans>
           </h1>
           <p className="text-lg lg:text-xl mb-8 max-w-prose">
-            Мы всегда готовы оказать поддержку, ответить на вопросы и помочь
-            записаться на приём. Заполните форму или воспользуйтесь удобным для
-            вас способом связи.
+            {t("contact.description")}
           </p>
 
           {/* Contact info cards */}
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-            <ContactCard Icon={Phone} title="Телефон:" subtitle="+998 71 123‑45‑67" />
-            <ContactCard Icon={Mail} title="Email:" subtitle="info@medportal.uz" />
-            <ContactCard Icon={MapPin} title="Адрес:" subtitle="Ташкент, ул. Здоровья, 10" />
-            <ContactCard Icon={Clock} title="Часы работы:" subtitle="Пн‑Сб 09:00‑18:00" />
+            <ContactCard Icon={Phone} title={t("contact.phone")} subtitle="+998 71 123‑45‑67" />
+            <ContactCard Icon={Mail} title={t("contact.email")} subtitle="info@medportal.uz" />
+            <ContactCard Icon={MapPin} title={t("contact.address")} subtitle="Ташкент, ул. Здоровья, 10" />
+            <ContactCard Icon={Clock} title={t("contact.workingHours")} subtitle="Пн‑Сб 09:00‑18:00" />
           </div>
 
           {/* Social links */}
@@ -65,7 +68,7 @@ const ContactPage = () => {
           <img
             src="https://cdn.culture.ru/images/6a6a4e59-37a8-5ddd-943e-3549a60d1b74"
             alt="Doctor Illustration"
-            className="w-full opacity-90 "
+            className="w-full opacity-90"
           />
         </div>
       </div>
@@ -74,18 +77,18 @@ const ContactPage = () => {
       <div className="container mx-auto px-4 py-24" data-aos="fade-up">
         <div className="bg-white rounded-3xl shadow-2xl overflow-hidden grid lg:grid-cols-2">
           <div className="p-10 lg:p-14">
-            <h2 className="text-3xl font-bold mb-6">Напишите нам</h2>
+            <h2 className="text-3xl font-bold mb-6">{t("contact.writeUs")}</h2>
 
             <form className="space-y-6">
-              <FloatingInput type="text" id="name" placeholder="Имя" />
+              <FloatingInput type="text" id="name" placeholder={t("contact.name")} />
               <FloatingInput type="email" id="email" placeholder="Email" />
-              <FloatingInput type="tel" id="phone" placeholder="Телефон" />
-              <FloatingTextarea id="message" placeholder="Сообщение" rows={4} />
+              <FloatingInput type="tel" id="phone" placeholder={t("contact.formPhone")} />
+              <FloatingTextarea id="message" placeholder={t("contact.message")} rows={4} />
               <button
                 type="submit"
                 className="relative inline-flex items-center justify-center rounded-xl px-8 py-3 font-semibold bg-teal-600 hover:bg-teal-700 text-white shadow-lg shadow-teal-600/30 transition-transform transform hover:-translate-y-0.5"
               >
-                Отправить
+                {t("contact.send")}
               </button>
             </form>
           </div>

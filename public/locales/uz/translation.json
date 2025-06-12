@@ -285,21 +285,138 @@
     "backToLoginLink": "Ortga",
     "confirmPasswordPlaceholder": "Parol tastiqlash"
   },
-  "contact": {
-    "title": "Aloqa",
-    "office": "Asosiy ofis",
-    "address": "Modestum DOO, Bulevar Zorana Đinđića 125D, 1-qavat, 12C-xonadon, 11070 Belgrad, SERBIYA",
-    "email": "Elektron pochta",
-    "phone": "Telefon",
-    "viewMap": "Xaritada ko‘rish",
-    "supportNote": "Ko‘rib chiqilayotgan qo‘lyozmalar yoki nashr jarayonidagi maqolalar bo‘yicha savollaringiz bo‘lsa, quyidagiga murojaat qiling",
-    "otherInquiries": "Boshqa savollar bo‘yicha quyidagiga murojaat qiling",
-    "emails": {
-      "publications": "publications@modestum.co.uk",
-      "support": "support@editorialpark.com",
-      "ijese": "ijese@ijese.com"
+  "cookie": {
+    "title": "Biz cookie-fayllardan foydalanamiz 🍪",
+    "description": "Portal ishlashini yaxshilash, tahlil qilish va kontentni shaxsiylashtirish uchun.",
+    "accept": "Qabul qilish",
+    "decline": "Rad etish"
+  },
+  "terms": {
+    "general": {
+      "title": "Umumiy shartlar",
+      "text": "Bizning saytimizdan foydalanganingizda, siz foydalanish shartlari, maxfiylik siyosati va cookie siyosatiga rozilik bildirasiz. Shartlar ogohlantirishsiz o‘zgarishi mumkin."
+    },
+    "intellectual": {
+      "title": "Intellektual mulk",
+      "text": "Barcha materiallar mualliflik huquqlari bilan himoyalangan. Kontentni faqat ruxsat bilan ishlatish mumkin. Nashr etilgan maqolalar Creative Commons litsenziyasi asosida tarqatilishi mumkin."
+    },
+    "disclaimer": {
+      "title": "Mas'uliyatdan voz kechish",
+      "text": "Biz sayt ma'lumotlarining to‘g‘riligiga yoki uzluksizligiga kafolat bermaymiz. Ma'lumotlardan foydalanish — o'z xavfingiz ostida."
+    },
+    "thirdparty": {
+      "title": "Uchinchi tomon saytlar",
+      "text": "Saytimizda tashqi havolalar bo‘lishi mumkin. Biz ularning mazmuni yoki maxfiylik siyosati uchun javobgar emasmiz."
+    },
+    "offensive": {
+      "title": "Nomaqbul foydalanish",
+      "text": "Saytga zarar yetkazish yoki ruxsatsiz kirish urinishlari jinoyat hisoblanadi va tegishli organlarga xabar qilinadi."
+    },
+    "payment": {
+      "title": "Karta orqali to‘lovlar",
+      "text": "Barcha to‘lovlar uchinchi tomon to‘lov tizimlari orqali amalga oshiriladi. Kartangiz ma'lumotlari xavfsiz tarzda saqlanadi."
+    },
+    "exchange": {
+      "title": "Valyuta va kurs",
+      "text": "To‘lovlar Serbiya dinorida amalga oshiriladi. Valyutangizdagi yakuniy narx bank kursiga bog‘liq."
+    },
+    "privacy": {
+      "title": "Maxfiylik",
+      "text": "Biz faqat zarur foydalanuvchi ma'lumotlarini yig‘amiz va ularni himoyalaymiz. Maxfiylik — biz uchun muhim."
+    },
+    "vat": {
+      "title": "QQS",
+      "text": "Saytdagi narxlar QQSni o‘z ichiga olgan yoki bo‘lmagan bo‘lishi mumkin. To‘lovda bu ko‘rsatiladi."
+    },
+    "reclamation": {
+      "title": "Shikoyatlar",
+      "text": "To‘lov yoki xizmat bilan bog‘liq muammolar bo‘lsa, bizga murojaat qiling. So‘rov bo‘yicha qo‘shimcha ma’lumotlar talab qilinishi mumkin."
+    },
+    "refund": {
+      "title": "Pulni qaytarish siyosati",
+      "text": "Faqat bizning xatoliklarimiz tufayli maqola chop etilmagan bo‘lsa, pul qaytariladi. Nashrdan keyin pul qaytarilmaydi."
+    },
+    "complaints": {
+      "title": "Shikoyatni ko‘rib chiqish",
+      "text": "Biz xizmat sifati uchun javobgarmiz. Har qanday muammoni hal qilish uchun biz bilan bog‘laning: publications@modestum.co.uk."
+    },
+    "modifications": {
+      "title": "Shartlarga o‘zgartirishlar",
+      "text": "Biz ushbu shartlarni istalgan vaqtda o‘zgartirish huquqini saqlab qolamiz. Saytdan foydalanishni davom ettirish — bu rozilikni bildiradi."
     }
   },
+  "privacy": {
+    "cookie_policy": {
+      "title": "Cookie Siyosati",
+      "text": "Biz saytlarimizda ishlatiladigan texnologiyalar va ma’lumotlar haqida ochiq bo‘lishga intilamiz. Iltimos, ushbu cookie siyosatini, shuningdek Maxfiylik siyosati va Foydalanish shartlarini o‘qib chiqing."
+    },
+    "cookie_def": {
+      "title": "Cookie nima?",
+      "text": "Cookie — bu siz saytga tashrif buyurganingizda brauzeringiz orqali qurilmangizda saqlanadigan kichik matnli fayllardir. Ular foydalanuvchi tajribasini yaxshilash, kirish ma'lumotlarini eslab qolish va saytni qanday ishlatayotganingizni kuzatishda yordam beradi."
+    },
+    "cookie_types": {
+      "title": "Cookie turlari",
+      "text": "Ba'zi cookie-fayllar sessiyaviy bo‘lib, brauzer sessiyasi tugagach avtomatik ravishda o‘chiriladi. Boshqalari esa doimiy bo‘lib, sessiyalar orasida ham saqlanadi."
+    },
+    "cookie_use": {
+      "title": "Biz qanday cookie ishlatamiz",
+      "text": "Biz faqat statistik maqsadlarda vaqtincha sessiyaviy cookie-fayllardan foydalanamiz. Bu cookie’lar shaxsiy ma’lumotlarni saqlamaydi."
+    },
+    "cookie_manage": {
+      "title": "Cookie sozlamalarini boshqarish",
+      "text": "Cookie’lardan brauzer sozlamalari orqali voz kechishingiz mumkin. Ammo, biz faqat zaruriy cookie’lardan foydalanganimiz sababli, ularni o‘chirib qo‘yish sayt ishlashiga ta’sir qilishi mumkin."
+    },
+    "cookie_changes": {
+      "title": "Siyosatdagi o‘zgarishlar",
+      "text": "Ushbu siyosat vaqti-vaqti bilan yangilanib turadi. Har qanday o‘zgarish shu sahifada e’lon qilinadi. Iltimos, foydalanishdan oldin o‘qib chiqing."
+    },
+    "cookie_contact": {
+      "title": "Biz bilan bog‘lanish",
+      "text": "Agar ushbu siyosat bo‘yicha savollaringiz bo‘lsa, janob Tim Heider bilan bog‘laning: info@modestum.org."
+    },
+    "title": "Maxfiylik Siyosati",
+    "personal": {
+      "title": "Shaxsiy ma'lumotlar",
+      "text": "Biz sizning ismingiz, elektron pochta manzilingiz, tashkilotga aloqadorligingiz, mamlakatingiz, ta'lim darajangiz va tadqiqotchi identifikatorlari (masalan, ORCID) kabi ma'lumotlarni yig'amiz."
+    },
+    "use": {
+      "title": "Ma'lumotdan foydalanish",
+      "text": "Ma'lumotlar maqolalarni ko‘rib chiqish, mualliflar va tahririyatlar bilan aloqa, to‘lovlarni qayta ishlash va qonunchilikka rioya qilish uchun ishlatiladi."
+    },
+    "store": {
+      "title": "Saqlash",
+      "text": "Biz shaxsiy ma'lumotlarni faqat zarur muddatgacha saqlaymiz va ularni ishonchli uchinchi tomon xizmatlari orqali saqlaymiz."
+    },
+    "sharing": {
+      "title": "Ulashish",
+      "text": "Biz ma'lumotlaringizni sotmaymiz. Ular tahrirchilar, rецензентлар, DOI xizmatlari, plagiat tekshiruvi va to‘lov tizimlariga uzatilishi mumkin."
+    },
+    "links": {
+      "title": "Havolalar",
+      "text": "Saytimizda tashqi havolalar bo‘lishi mumkin. Biz ularning maxfiylik siyosati uchun javobgar emasmiz."
+    },
+    "children": {
+      "title": "Bolalar",
+      "text": "Saytimiz faqat 18 yoshdan oshgan foydalanuvchilar uchun mo‘ljallangan. 13 yoshgacha bo‘lgan bolalar ota-onasi roziligisiz foydalana olmaydi."
+    },
+    "cookies": {
+      "title": "Cookies fayllar",
+      "text": "Biz cookies va o‘xshash texnologiyalardan foydalanamiz. Tafsilotlar uchun cookies siyosatimizga murojaat qiling."
+    },
+    "rights": {
+      "title": "Sizning huquqlaringiz",
+      "text": "Siz shaxsiy ma'lumotlaringizni ko‘rish, o‘zgartirish, o‘chirish yoki undan foydalanishni cheklashni talab qilishingiz mumkin."
+    },
+    "changes": {
+      "title": "O‘zgarishlar",
+      "text": "Ushbu siyosat vaqti-vaqti bilan yangilanadi. Barcha o‘zgarishlar shu sahifada e’lon qilinadi."
+    },
+    "contact": {
+      "title": "Bog‘lanish",
+      "text": "Maxfiylik bo‘yicha savollar uchun Tim Heiderga quyidagi manzil orqali murojaat qiling: info@modestum.org."
+    }
+  },
+
   "heroSlides": [
     "Kelajak tibbiyoti shu yerdan boshlanadi",
     "Hayotni saqlab qoluvchi tadqiqotlar",
@@ -513,32 +630,18 @@
     }
   },
 
-  "contact_art": {
-    "main_title": "Biz bilan bog'laning",
-    "main_subtitle": "Yordam markazimiz bilan aloqa o'rnating",
-    "nodes": {
-      "appointment": {
-        "title": "Qabulga yozilish",
-        "description": "Mutaxassis bilan maslahatlashish uchun qo'ng'iroq qiling. Biz siz uchun eng qulay vaqtni tanlaymiz.",
-        "action": "Qo'ng'iroq qilish"
-      },
-      "location": {
-        "title": "Bizning manzil",
-        "description": "Amir Temur shoh ko'chasi, 100, Toshkent, O'zbekiston. Biz sizni kutamiz.",
-        "action": "Xaritada ko'rish"
-      },
-      "partnership": {
-        "title": "Hamkorlik",
-        "description": "Biz yangi g'oyalar va hamkorlik uchun doim ochiqmiz. Bizga yozing.",
-        "action": "Elektron pochta yuborish"
-      },
-      "emergency": {
-        "title": "Shoshilinch yordam",
-        "description": "Hayot uchun xavfli holatlarda darhol qo'ng'iroq qiling. Biz 24/7 ishlaymiz.",
-        "action": "Tez yordam chaqirish"
-      }
-    },
-    "back_to_network": "Tarmoqqa qaytish"
+  "contact": {
+    "title": "Biz bilan <1>bogʻlaning</1>",
+    "description": "Har doim sizga yordam berishga, savollaringizga javob berishga va qabulga yozilishga tayyormiz. Quyidagi shaklni to‘ldiring yoki o‘zingizga qulay usulda biz bilan bog‘laning.",
+    "phone": "Telefon:",
+    "email": "Email:",
+    "address": "Manzil:",
+    "workingHours": "Ish vaqti:",
+    "writeUs": "Bizga yozing",
+    "name": "Ism",
+    "send": "Yuborish",
+    "message": "Xabar",
+    "formPhone": "Telefon raqam"
   },
   "peerReview": {
     "title": "Taqriz siyosati",
