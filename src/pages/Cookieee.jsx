@@ -12,16 +12,7 @@ import {
 } from "lucide-react";
 
 const sections = [
-  "personal",
-  "use",
-  "store",
-  "sharing",
-  "links",
-  "children",
-  "cookies",
-  "rights",
-  "changes",
-  "contact",
+  
   "cookie_policy",
   "cookie_def",
   "cookie_types",
@@ -32,22 +23,13 @@ const sections = [
 ];
 
 const icons = {
-  personal: <UserCheck className="w-7 h-7 text-cyan-600 group-hover:rotate-12 transition-transform duration-300" />,
-  use: <FileText className="w-7 h-7 text-cyan-600 group-hover:rotate-12 transition-transform duration-300" />,
-  store: <Lock className="w-7 h-7 text-cyan-600 group-hover:rotate-12 transition-transform duration-300" />,
-  sharing: <ShieldCheck className="w-7 h-7 text-cyan-600 group-hover:rotate-12 transition-transform duration-300" />,
-  links: <ExternalLink className="w-7 h-7 text-cyan-600 group-hover:rotate-12 transition-transform duration-300" />,
-  children: <UserCheck className="w-7 h-7 text-cyan-600 group-hover:rotate-12 transition-transform duration-300" />,
-  cookies: <Globe className="w-7 h-7 text-cyan-600 group-hover:rotate-12 transition-transform duration-300" />,
-  rights: <ShieldCheck className="w-7 h-7 text-cyan-600 group-hover:rotate-12 transition-transform duration-300" />,
-  changes: <FileText className="w-7 h-7 text-cyan-600 group-hover:rotate-12 transition-transform duration-300" />,
-  contact: <ExternalLink className="w-7 h-7 text-cyan-600 group-hover:rotate-12 transition-transform duration-300" />,
-  cookie_policy: <Cookie className="w-7 h-7 text-cyan-600 group-hover:rotate-12 transition-transform duration-300" />,
-  cookie_def: <Cookie className="w-7 h-7 text-cyan-600 group-hover:rotate-12 transition-transform duration-300" />,
-  cookie_types: <Cookie className="w-7 h-7 text-cyan-600 group-hover:rotate-12 transition-transform duration-300" />,
-  cookie_use: <Cookie className="w-7 h-7 text-cyan-600 group-hover:rotate-12 transition-transform duration-300" />,
-  cookie_manage: <Cookie className="w-7 h-7 text-cyan-600 group-hover:rotate-12 transition-transform duration-300" />,
-  cookie_changes: <Cookie className="w-7 h-7 text-cyan-600 group-hover:rotate-12 transition-transform duration-300" />,
+ 
+  cookie_policy: <Cookie className="w-7 h-7 text-cyan-600 group-hover:rotate-12 transition-transform duration-300" />, 
+  cookie_def: <Cookie className="w-7 h-7 text-cyan-600 group-hover:rotate-12 transition-transform duration-300" />, 
+  cookie_types: <Cookie className="w-7 h-7 text-cyan-600 group-hover:rotate-12 transition-transform duration-300" />, 
+  cookie_use: <Cookie className="w-7 h-7 text-cyan-600 group-hover:rotate-12 transition-transform duration-300" />, 
+  cookie_manage: <Cookie className="w-7 h-7 text-cyan-600 group-hover:rotate-12 transition-transform duration-300" />, 
+  cookie_changes: <Cookie className="w-7 h-7 text-cyan-600 group-hover:rotate-12 transition-transform duration-300" />, 
   cookie_contact: <Cookie className="w-7 h-7 text-cyan-600 group-hover:rotate-12 transition-transform duration-300" />,
 };
 
@@ -55,7 +37,7 @@ const PrivacyPolicySection = () => {
   const { t } = useTranslation();
 
   return (
-    <section className="relative px-6 py-24 md:px-20 bg-white overflow-hidden">
+    <section className="relative px-6 py-24 md:px-20 bg-[#F8F8FF] overflow-hidden">
       {/* Abstract floating cyan accents */}
       <div className="absolute top-[-12%] left-[-12%] w-[380px] h-[380px] bg-cyan-100 opacity-40 rounded-full blur-3xl animate-[ping_8s_linear_infinite]" />
       <div className="absolute bottom-[-15%] right-[-10%] w-[300px] h-[300px] bg-cyan-200 opacity-30 rounded-full blur-2xl animate-[pulse_10s_ease-in-out_infinite]" />
@@ -63,7 +45,7 @@ const PrivacyPolicySection = () => {
 
       <div className="relative z-10 max-w-7xl mx-auto">
         <h2 className="text-5xl font-black text-center text-cyan-900 mb-16 tracking-tight leading-tight drop-shadow-md">
-          {t("privacy.title")}
+          {t("cookie_policy.title")}
         </h2>
 
         <div className="grid md:grid-cols-2 gap-10">

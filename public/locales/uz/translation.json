@@ -292,57 +292,58 @@
     "decline": "Rad etish"
   },
   "terms": {
+    "title": "Foydalanish shartlari",
     "general": {
       "title": "Umumiy shartlar",
-      "text": "Bizning saytimizdan foydalanganingizda, siz foydalanish shartlari, maxfiylik siyosati va cookie siyosatiga rozilik bildirasiz. Shartlar ogohlantirishsiz o‘zgarishi mumkin."
+      "text": "Ushbu shartlar bizning saytimiz va xizmatlarimizdan foydalanishingizni tartibga soladi. Saytdan foydalangan holda siz ularga rozilik bildirasiz."
     },
     "intellectual": {
       "title": "Intellektual mulk",
-      "text": "Barcha materiallar mualliflik huquqlari bilan himoyalangan. Kontentni faqat ruxsat bilan ishlatish mumkin. Nashr etilgan maqolalar Creative Commons litsenziyasi asosida tarqatilishi mumkin."
+      "text": "Saytdagi barcha kontent mualliflik huquqi bilan himoyalangan. Uni ruxsatsiz nusxalash yoki tarqatish taqiqlanadi."
     },
     "disclaimer": {
-      "title": "Mas'uliyatdan voz kechish",
-      "text": "Biz sayt ma'lumotlarining to‘g‘riligiga yoki uzluksizligiga kafolat bermaymiz. Ma'lumotlardan foydalanish — o'z xavfingiz ostida."
+      "title": "Rad etish",
+      "text": "Saytdagi ma’lumotlarning to‘liqligi yoki aniqligi bo‘yicha kafolat bermaymiz."
     },
-    "thirdparty": {
+    "thirdParty": {
       "title": "Uchinchi tomon saytlar",
-      "text": "Saytimizda tashqi havolalar bo‘lishi mumkin. Biz ularning mazmuni yoki maxfiylik siyosati uchun javobgar emasmiz."
+      "text": "Saytimizdagi havolalar orqali ochiladigan boshqa saytlarga biz javobgar emasmiz."
     },
     "offensive": {
-      "title": "Nomaqbul foydalanish",
-      "text": "Saytga zarar yetkazish yoki ruxsatsiz kirish urinishlari jinoyat hisoblanadi va tegishli organlarga xabar qilinadi."
+      "title": "Haqoratli materiallar",
+      "text": "Foydalanuvchilar noqonuniy yoki zararli kontentni yuklay olmaydi."
     },
-    "payment": {
-      "title": "Karta orqali to‘lovlar",
-      "text": "Barcha to‘lovlar uchinchi tomon to‘lov tizimlari orqali amalga oshiriladi. Kartangiz ma'lumotlari xavfsiz tarzda saqlanadi."
+    "payments": {
+      "title": "To‘lovlar",
+      "text": "Barcha to‘lovlar xavfsiz tarzda amalga oshiriladi. Ayrim xizmatlarga qo‘shimcha shartlar qo‘llaniladi."
     },
     "exchange": {
-      "title": "Valyuta va kurs",
-      "text": "To‘lovlar Serbiya dinorida amalga oshiriladi. Valyutangizdagi yakuniy narx bank kursiga bog‘liq."
+      "title": "Qaytarish va almashtirish",
+      "text": "Ma’lum shartlarda mahsulot qaytarilishi mumkin. Qaytarish siyosatini ko‘rib chiqing."
+    },
+    "vat": {
+      "title": "QQS va yig‘imlar",
+      "text": "Narxlar sizning mintaqangizga qarab QQS va boshqa soliqlarni o‘z ichiga olishi mumkin."
     },
     "privacy": {
       "title": "Maxfiylik",
-      "text": "Biz faqat zarur foydalanuvchi ma'lumotlarini yig‘amiz va ularni himoyalaymiz. Maxfiylik — biz uchun muhim."
-    },
-    "vat": {
-      "title": "QQS",
-      "text": "Saytdagi narxlar QQSni o‘z ichiga olgan yoki bo‘lmagan bo‘lishi mumkin. To‘lovda bu ko‘rsatiladi."
+      "text": "Ma’lumotlaringiz bizning Maxfiylik siyosatimiz asosida himoyalanadi."
     },
     "reclamation": {
       "title": "Shikoyatlar",
-      "text": "To‘lov yoki xizmat bilan bog‘liq muammolar bo‘lsa, bizga murojaat qiling. So‘rov bo‘yicha qo‘shimcha ma’lumotlar talab qilinishi mumkin."
+      "text": "Shikoyatlaringizni rasmiy aloqa kanallari orqali yuborishingiz mumkin."
     },
     "refund": {
-      "title": "Pulni qaytarish siyosati",
-      "text": "Faqat bizning xatoliklarimiz tufayli maqola chop etilmagan bo‘lsa, pul qaytariladi. Nashrdan keyin pul qaytarilmaydi."
+      "title": "Pulni qaytarish",
+      "text": "Muayyan holatlarda pulni qaytarish mumkin. Siyosatimizni o‘qing."
     },
     "complaints": {
-      "title": "Shikoyatni ko‘rib chiqish",
-      "text": "Biz xizmat sifati uchun javobgarmiz. Har qanday muammoni hal qilish uchun biz bilan bog‘laning: publications@modestum.co.uk."
+      "title": "E’tirozlar va bahslar",
+      "text": "Biz e’tirozlarni adolatli hal qilishga harakat qilamiz. Bahs yuzasidan murojaat qiling."
     },
     "modifications": {
-      "title": "Shartlarga o‘zgartirishlar",
-      "text": "Biz ushbu shartlarni istalgan vaqtda o‘zgartirish huquqini saqlab qolamiz. Saytdan foydalanishni davom ettirish — bu rozilikni bildiradi."
+      "title": "Shartlarni o‘zgartirish",
+      "text": "Shartlar vaqti-vaqti bilan o‘zgarishi mumkin. Saytdan foydalanishni davom ettirishingiz bunga rozilik bildiradi."
     }
   },
   "privacy": {

@@ -64,14 +64,7 @@ const TermsOfUse = () => {
           {t("terms.title")}
         </motion.h2>
 
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.2 }}
-          className="text-slate-600 max-w-2xl mb-12"
-        >
-          {t("terms.subtitle")}
-        </motion.p>
+      
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {terms.map((term, index) => (

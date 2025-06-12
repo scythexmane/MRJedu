@@ -48,7 +48,7 @@ const PrivacyPolicySection = () => {
       <div className="absolute top-[40%] left-1/2 transform -translate-x-1/2 w-[240px] h-[240px] bg-cyan-50 opacity-20 rounded-full blur-3xl animate-[spin_60s_linear_infinite]" />
 
       <div className="relative z-10 max-w-7xl mx-auto">
-        <h2 className="text-5xl font-black text-center text-cyan-900 mb-16 tracking-tight leading-tight drop-shadow-md">
+        <h2 className="text-3xl md:text-5xl font-bold text-slate-800 mb-4 font-black text-center text-cyan-900 tracking-tight leading-tight drop-shadow-md">
           {t("privacy.title")}
         </h2>
 

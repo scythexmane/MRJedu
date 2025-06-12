@@ -485,60 +485,60 @@
   },
   "terms": {
     "title": "Terms of Use",
-    "subtitle": "Please read the following terms carefully before using our website.",
     "general": {
       "title": "General Terms",
-      "text": "These terms and conditions define the terms of use which are effective when you are using this website..."
+      "text": "These terms govern your use of our services and website. By using the site, you agree to these terms."
     },
     "intellectual": {
       "title": "Intellectual Property",
-      "text": "We are the rightful owner of the content displayed on websites. These materials..."
+      "text": "All content is protected by copyright. You may not use, reproduce or distribute it without permission."
     },
     "disclaimer": {
       "title": "Disclaimer",
-      "text": "While Modestum takes reasonable steps to ensure the content is accurate..."
+      "text": "We make no warranties about the accuracy or completeness of the site’s content."
     },
     "thirdParty": {
-      "title": "Third-Party Websites",
-      "text": "Our websites may contain links to third-party services that are not owned by us..."
+      "title": "Third-Party Content",
+      "text": "We are not responsible for third-party websites linked from our site."
     },
     "offensive": {
-      "title": "Offensive Use",
-      "text": "Any attempt to attack, inject viruses, or hack our systems is prohibited by law..."
+      "title": "Offensive Material",
+      "text": "Users must not upload or distribute offensive, illegal, or harmful content."
     },
     "payments": {
-      "title": "Credit Card Statements",
-      "text": "We use third-party payment processors. By using them you agree to their policies..."
+      "title": "Payments",
+      "text": "All payments are processed securely. Additional terms may apply to certain services."
     },
     "exchange": {
-      "title": "Exchange Rate Statement",
-      "text": "All payments are made in Serbian dinar (RSD). Conversion is based on current exchange rates..."
-    },
-    "privacy": {
-      "title": "Data Protection",
-      "text": "We collect only essential personal data, secured with modern encryption technology..."
+      "title": "Exchanges and Returns",
+      "text": "We accept returns under specific conditions. Please read our return policy for details."
     },
     "vat": {
-      "title": "VAT Info",
-      "text": "Prices may or may not include VAT. Final VAT is calculated at checkout where applicable..."
+      "title": "VAT and Fees",
+      "text": "Prices may include applicable VAT and other taxes depending on your location."
+    },
+    "privacy": {
+      "title": "Privacy",
+      "text": "Your data is protected according to our Privacy Policy, which you should read carefully."
     },
     "reclamation": {
-      "title": "Reclamation Policy",
-      "text": "If issues arise, you may submit a request with valid documentation for investigation..."
+      "title": "Reclamations",
+      "text": "Users may file complaints through our official contact channels."
     },
     "refund": {
       "title": "Refund Policy",
-      "text": "Refunds are issued only if we fail to publish your article due to our own fault..."
+      "text": "Refunds are available under certain conditions. See our refund policy."
     },
     "complaints": {
-      "title": "Complaint Conditions",
-      "text": "If you have complaints, please contact our support. We respond promptly to all inquiries..."
+      "title": "Complaints and Disputes",
+      "text": "We aim to resolve complaints fairly and transparently. Contact us for any disputes."
     },
     "modifications": {
-      "title": "Modifications",
-      "text": "We may change these terms without prior notice. Continued use means acceptance..."
+      "title": "Modifications to Terms",
+      "text": "We may change these terms at any time. Continued use means you accept the changes."
     }
   },
+
   "privacy": {
     "title": "Privacy Policy",
     "personal": {
@@ -609,5 +609,33 @@
       "title": "Contact us",
       "text": "If you have questions or requests about this Cookie Policy, contact Mr. Tim Heider at: info@modestum.org."
     }
+  },
+  "cookie_policy": {
+    "title": "Cookie Policy",
+    "text": "At Modestum (“Modestum”, “we”, “us” or “our”), we are committed to being transparent about the technologies and information that are used in this site and affiliated journal websites (collectively, \"Sites\"). Please read this cookie policy, as well as our “Privacy policy” and our “Terms of use” before using the sites."
+  },
+  "cookie_def": {
+    "title": "What are Cookies",
+    "text": "Cookies are small text files that may be stored on your computer by the browser during your visit to the website. Most current websites use multiple cookies for various reasons, such as improving your user experience, distinguishing you from other users, remembering your login details, monitoring how you use the website, or web analytics."
+  },
+  "cookie_types": {
+    "title": "Types of Cookies",
+    "text": "Some of these cookies are session cookies, which are stored only temporarily during the current browser session. They are deleted once the browser session expires. Others are persistent cookies, which are stored between browser sessions."
+  },
+  "cookie_use": {
+    "title": "Cookies We Use",
+    "text": "We only use temporary session cookies that are used to compile statistical usage data. They do not store any personally identifiable information."
+  },
+  "cookie_manage": {
+    "title": "Manage Cookie Preferences",
+    "text": "You may opt out of cookies through your browser settings. Please note that since we only use strictly necessary cookies, some parts of the websites may not work if you disable them."
+  },
+  "cookie_changes": {
+    "title": "Changes to Cookie Policy",
+    "text": "This policy may be updated from time to time and any change will be immediately posted on this page. You should read and understand the contents of this policy before using our websites, products and services."
+  },
+  "cookie_contact": {
+    "title": "Contact",
+    "text": "Questions, comments or requests about this policy should be addressed to Mr. Tim Heider at: info@modestum.org."
   }
 }
