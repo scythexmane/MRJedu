@@ -23,7 +23,7 @@ import PeerReviewPolicy from "./pages/authors/PeerReviewPolicy.jsx";
 import PublicationFee from "./pages/authors/PublicationFee.jsx";
 import CookieePolicySection from "./pages/Cookieee.jsx";
 import Contact from "./pages/Contact.jsx";
-
+import Profile from "./pages/Profile.jsx"
 import Terms from "./pages/Terms.jsx";
 import PrivacyPolicySection from "./pages/PrivacyPolicy.jsx";
 
@@ -80,6 +80,8 @@ export default function App() {
           <Route path="terms" element={<Terms />} />
           <Route path="privacy" element={<PrivacyPolicySection />} />
           <Route path="cookies" element={<CookieePolicySection />} />
+          <Route path="profile" element={<Profile />} />
+
 
 
           <Route path="contact" element={<Contact />} />

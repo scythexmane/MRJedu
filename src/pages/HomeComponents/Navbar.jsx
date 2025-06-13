@@ -1,11 +1,13 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { ChevronDown, Search, Menu, X } from "lucide-react";
+import { ChevronDown, Search, Menu, X, User } from "lucide-react"; // Импортируем иконку User
 import { Transition } from "@headlessui/react";
 import { useTranslation } from "react-i18next";
+import { useAuth } from '../AuthContext'; // <--- Импортируем useAuth
 
 export default function Navbar() {
   const { t, i18n } = useTranslation();
+  const { user, logout } = useAuth(); // <--- Получаем user и logout из контекста
   const [journalOpen, setJournalOpen] = useState(false);
   const [authorsOpen, setAuthorsOpen] = useState(false);
   const [languageOpen, setLanguageOpen] = useState(false);
@@ -16,12 +18,21 @@ export default function Navbar() {
   const toggleJournal = () => {
     setJournalOpen(!journalOpen);
     setAuthorsOpen(false);
+    setLanguageOpen(false); // Закрываем другие дропдауны
   };
 
   const toggleAuthors = () => {
     setAuthorsOpen(!authorsOpen);
     setJournalOpen(false);
+    setLanguageOpen(false); // Закрываем другие дропдауны
   };
+
+  const toggleLanguage = () => { // <--- Новая функция для переключения языка
+    setLanguageOpen(!languageOpen);
+    setJournalOpen(false); // Закрываем другие дропдауны
+    setAuthorsOpen(false); // Закрываем другие дропдауны
+  };
+
 
   const handleLangChange = (lang) => {
     i18n.changeLanguage(lang.toLowerCase());
@@ -45,6 +56,19 @@ export default function Navbar() {
   // Handler to close Authors dropdown
   const closeAuthorsDropdown = () => {
     setAuthorsOpen(false);
+  };
+
+  // Handler to close all dropdowns when mobile menu is closed
+  const closeAllDropdowns = () => {
+    setJournalOpen(false);
+    setAuthorsOpen(false);
+    setLanguageOpen(false);
+  };
+
+  // Close mobile menu and all dropdowns
+  const handleMobileLinkClick = () => {
+    setMobileMenuOpen(false);
+    closeAllDropdowns();
   };
 
   return (
@@ -79,7 +103,7 @@ export default function Navbar() {
         </button>
 
         {/* Навигация для десктопа */}
-        <nav className="hidden md:flex gap-6 text-gray-700 font-medium relative">
+        <nav className="hidden md:flex gap-6 text-gray-700 font-medium relative z-50">
           <Link to="/" className="hover:text-blue-600 transition">
             {t("navbar.home")}
           </Link>
@@ -135,7 +159,7 @@ export default function Navbar() {
                 >
                   {t("navbar.openAccess")}
                 </Link>
-            
+
                 <Link
                   to="/journal/archiving-policy"
                   className="block hover:text-blue-600"
@@ -246,7 +270,7 @@ export default function Navbar() {
           {/* Language Selector */}
           <div className="relative">
             <button
-              onClick={() => setLanguageOpen(!languageOpen)}
+              onClick={toggleLanguage} // <--- Используем новую функцию
               className="px-3 py-1.5 border rounded-full bg-white hover:bg-gray-100 transition flex items-center gap-1 text-sm"
             >
               {i18n.language.toUpperCase()}
@@ -275,11 +299,19 @@ export default function Navbar() {
             </Transition>
           </div>
 
-          <Link to="/login">
-            <button className="bg-gradient-to-r from-blue-500 to-cyan-500 text-white px-6 py-3 rounded-full shadow hover:scale-105 transition">
-              {t("navbar.submit")}
-            </button>
-          </Link>
+          {/* Переход в профиль или кнопка "Submit" */}
+          {user ? ( // <--- Условный рендеринг
+            <Link to="/profile" className="flex items-center gap-2 text-gray-700 hover:text-blue-600 transition" title={t("navbar.profile")}>
+              <User size={24} /> {/* Иконка профиля */}
+              <span className="font-medium">{user.firstName || t('navbar.profile')}</span> {/* Имя пользователя или "Профиль" */}
+            </Link>
+          ) : (
+            <Link to="/login">
+              <button className="bg-gradient-to-r from-blue-500 to-cyan-500 text-white px-6 py-3 rounded-full shadow hover:scale-105 transition">
+                {t("navbar.submit")}
+              </button>
+            </Link>
+          )}
         </div>
       </div>
 
@@ -293,11 +325,11 @@ export default function Navbar() {
         leaveFrom="opacity-100 translate-y-0"
         leaveTo="opacity-0 -translate-y-2"
       >
-        <nav className="md:hidden bg-white shadow-lg border-t border-gray-200 px-6 py-4 space-y-4">
+        <nav className="md:hidden bg-white shadow-lg border-t border-gray-200 px-6 py-4 space-y-4 z-30">
           <Link
             to="/"
             className="block text-gray-700 hover:text-blue-600 font-medium"
-            onClick={() => setMobileMenuOpen(false)}
+            onClick={handleMobileLinkClick}
           >
             {t("navbar.home")}
           </Link>
@@ -305,7 +337,7 @@ export default function Navbar() {
           <Link
             to="/archive"
             className="block text-gray-700 hover:text-blue-600 font-medium"
-            onClick={() => setMobileMenuOpen(false)}
+            onClick={handleMobileLinkClick}
           >
             {t("navbar.archive")}
           </Link>
@@ -340,40 +372,28 @@ export default function Navbar() {
               >
                 <Link
                   to="/journal/about"
-                  onClick={() => {
-                    setMobileMenuOpen(false);
-                    closeJournalDropdown();
-                  }}
+                  onClick={handleMobileLinkClick}
                   className="hover:text-blue-600"
                 >
                   {t("navbar.about")}
                 </Link>
                 <Link
                   to="/journal/aims-and-scope"
-                  onClick={() => {
-                    setMobileMenuOpen(false);
-                    closeJournalDropdown();
-                  }}
+                  onClick={handleMobileLinkClick}
                   className="hover:text-blue-600"
                 >
                   {t("navbar.aims")}
                 </Link>
                 <Link
                   to="/journal/editorial-board"
-                  onClick={() => {
-                    setMobileMenuOpen(false);
-                    closeJournalDropdown();
-                  }}
+                  onClick={handleMobileLinkClick}
                   className="hover:text-blue-600"
                 >
                   {t("navbar.editorialBoard")}
                 </Link>
                 <Link
                   to="/journal/indexing"
-                  onClick={() => {
-                    setMobileMenuOpen(false);
-                    closeJournalDropdown();
-                  }}
+                  onClick={handleMobileLinkClick}
                   className="hover:text-blue-600"
                 >
                   {t("navbar.indexing")}
@@ -381,50 +401,35 @@ export default function Navbar() {
                <Link
                   to="/journal/open-access-policy-and-licensing"
                   className="block hover:text-blue-600"
-                   onClick={() => {
-                    setMobileMenuOpen(false);
-                    closeJournalDropdown();
-                  }}
+                  onClick={handleMobileLinkClick}
                 >
                   {t("navbar.openAccess")}
                 </Link>
-           
+
                 <Link
                   to="/journal/archiving-policy"
-                  onClick={() => {
-                    setMobileMenuOpen(false);
-                    closeJournalDropdown();
-                  }}
+                  onClick={handleMobileLinkClick}
                   className="hover:text-blue-600"
                 >
                   {t("navbar.archiving")}
                 </Link>
                 <Link
                   to="/journal/advertisement-and-marketing"
-                  onClick={() => {
-                    setMobileMenuOpen(false);
-                    closeJournalDropdown();
-                  }}
+                  onClick={handleMobileLinkClick}
                   className="hover:text-blue-600"
                 >
                   {t("navbar.advertising")}
                 </Link>
                 <Link
                   to="/journal/journal-history"
-                  onClick={() => {
-                    setMobileMenuOpen(false);
-                    closeJournalDropdown();
-                  }}
+                  onClick={handleMobileLinkClick}
                   className="hover:text-blue-600"
                 >
                   {t("navbar.history")}
                 </Link>
                 <Link
                   to="/journal/institutional-cooperations"
-                  onClick={() => {
-                    setMobileMenuOpen(false);
-                    closeJournalDropdown();
-                  }}
+                  onClick={handleMobileLinkClick}
                   className="hover:text-blue-600"
                 >
                   {t("navbar.cooperations")}
@@ -463,50 +468,35 @@ export default function Navbar() {
               >
                 <Link
                   to="/authors/ethical-statement"
-                  onClick={() => {
-                    setMobileMenuOpen(false);
-                    closeAuthorsDropdown();
-                  }}
+                  onClick={handleMobileLinkClick}
                   className="hover:text-blue-600"
                 >
                   {t("navbar.ethical")}
                 </Link>
                 <Link
                   to="/authors/author-guidelines"
-                  onClick={() => {
-                    setMobileMenuOpen(false);
-                    closeAuthorsDropdown();
-                  }}
+                  onClick={handleMobileLinkClick}
                   className="hover:text-blue-600"
                 >
                   {t("navbar.guidelines")}
                 </Link>
                 <Link
                   to="/authors/editorial-policy"
-                  onClick={() => {
-                    setMobileMenuOpen(false);
-                    closeAuthorsDropdown();
-                  }}
+                  onClick={handleMobileLinkClick}
                   className="hover:text-blue-600"
                 >
                   {t("navbar.policy")}
                 </Link>
                 <Link
                   to="/authors/peer-review-policy"
-                  onClick={() => {
-                    setMobileMenuOpen(false);
-                    closeAuthorsDropdown();
-                  }}
+                  onClick={handleMobileLinkClick}
                   className="hover:text-blue-600"
                 >
                   {t("navbar.review")}
                 </Link>
                 <Link
                   to="/authors/publication-fee"
-                  onClick={() => {
-                    setMobileMenuOpen(false);
-                    closeAuthorsDropdown();
-                  }}
+                  onClick={handleMobileLinkClick}
                   className="hover:text-blue-600"
                 >
                   {t("navbar.fee")}
@@ -518,7 +508,7 @@ export default function Navbar() {
           <Link
             to="/contact"
             className="block text-gray-700 hover:text-blue-600 font-medium"
-            onClick={() => setMobileMenuOpen(false)}
+            onClick={handleMobileLinkClick}
           >
             {t("navbar.contact")}
           </Link>
@@ -538,7 +528,7 @@ export default function Navbar() {
           {/* Мобильный выбор языка */}
           <div className="relative mt-4">
             <button
-              onClick={() => setLanguageOpen(!languageOpen)}
+              onClick={toggleLanguage}
               className="w-full px-4 py-2 border rounded-full bg-white hover:bg-gray-100 transition flex justify-between items-center text-sm font-medium"
               aria-expanded={languageOpen}
             >
@@ -576,12 +566,26 @@ export default function Navbar() {
             </Transition>
           </div>
 
-          {/* Мобильная кнопка Submit */}
-          <Link to="/login" onClick={() => setMobileMenuOpen(false)}>
-            <button className="w-full mt-4 bg-gradient-to-r from-blue-500 to-cyan-500 text-white px-6 py-3 rounded-full shadow hover:scale-105 transition">
-              {t("navbar.submit")}
-            </button>
-          </Link>
+          {/* Мобильная ссылка на профиль или кнопка Submit */}
+          {user ? ( // <--- Условный рендеринг
+            <Link
+              to="/profile"
+              className="block text-gray-700 hover:text-blue-600 font-medium"
+              onClick={handleMobileLinkClick}
+            >
+              <div className="flex items-center gap-2">
+                <User size={20} />
+                <span>{user.firstName || t('navbar.profile')}</span>
+              </div>
+            </Link>
+          ) : (
+            <Link to="/login" onClick={handleMobileLinkClick}>
+              <button className="w-full mt-4 bg-gradient-to-r from-blue-500 to-cyan-500 text-white px-6 py-3 rounded-full shadow hover:scale-105 transition">
+                {t("navbar.submit")}
+              </button>
+            </Link>
+          )}
+
         </nav>
       </Transition>
     </header>

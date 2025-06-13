@@ -1,6 +1,8 @@
+// src/Login.js
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useTranslation } from "react-i18next";
+import { useNavigate } from "react-router-dom"; // <--- ИМПОРТ useNavigate
 import {
   Mail,
   Lock,
@@ -13,6 +15,7 @@ import {
 } from "lucide-react";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import { useAuth } from "./AuthContext";
 
 // Инициализируем AOS один-разово
 AOS.init({ once: true, duration: 700, easing: "ease-in-out" });
@@ -92,6 +95,8 @@ const LanguageSwitcher = () => {
 
 export default function Login() {
   const { t, i18n } = useTranslation();
+  const { login } = useAuth();
+  const navigate = useNavigate(); // <--- Инициализация useNavigate
 
   /* ------------ состояние формы ------------ */
   const [formType, setFormType] = useState("login");
@@ -123,15 +128,29 @@ export default function Login() {
   }, [i18n]);
 
   /* ------------ уведомление об успехе ------------ */
-  const triggerSuccess = (key) => {
+  const triggerSuccess = (key, callback) => { // <--- Добавили callback
     setSuccessMsg(t(`login.success.${key}`));
-    setTimeout(() => setSuccessMsg(null), 3500);
+    setTimeout(() => {
+      setSuccessMsg(null);
+      if (callback) callback(); // <--- Вызываем callback после исчезновения сообщения
+    }, 3500);
   };
 
   /* ------------ простая валидация & обработчики ------------ */
+  // В handleLogin
   const handleLogin = () => {
-    if (email && password) triggerSuccess("login");
+    if (email && password) {
+      login({
+        firstName: "Пользователь",
+        name: "Дефолтный Пользователь",
+        avatar: "https://cdn-icons-png.flaticon.com/512/149/149071.png",
+        status: "Исследователь",
+      });
+      triggerSuccess("login", () => navigate("/profile")); // <--- Перенаправление
+    }
   };
+
+  // В handleRegister
   const handleRegister = () => {
     if (
       email &&
@@ -141,11 +160,21 @@ export default function Login() {
       firstName &&
       lastName
     ) {
-      triggerSuccess("register");
+      login({
+        firstName: firstName,
+        name: `${firstName} ${lastName}`,
+        avatar: "https://cdn-icons-png.flaticon.com/512/149/149071.png",
+        status: "Новый пользователь",
+      });
+      triggerSuccess("register", () => navigate("/profile")); // <--- Перенаправление
     }
   };
+
   const handleReset = () => {
-    if (email) triggerSuccess("reset");
+    if (email) {
+      triggerSuccess("reset");
+      // Для сброса пароля не нужно логинить пользователя, поэтому login не вызываем
+    }
   };
 
   /* ------------ формы ------------ */
@@ -167,35 +196,45 @@ export default function Login() {
             </h2>
 
             <FormInput
-              icon={<User className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400" />}
+              icon={
+                <User className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400" />
+              }
               type="text"
               placeholder={t("login.firstNamePlaceholder")}
               value={firstName}
               onChange={(e) => setFirstName(e.target.value)}
             />
             <FormInput
-              icon={<User className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400" />}
+              icon={
+                <User className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400" />
+              }
               type="text"
               placeholder={t("login.lastNamePlaceholder")}
               value={lastName}
               onChange={(e) => setLastName(e.target.value)}
             />
             <FormInput
-              icon={<Phone className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400" />}
+              icon={
+                <Phone className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400" />
+              }
               type="tel"
               placeholder={t("login.phonePlaceholder")}
               value={phone}
               onChange={(e) => setPhone(e.target.value)}
             />
             <FormInput
-              icon={<Mail className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400" />}
+              icon={
+                <Mail className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400" />
+              }
               type="email"
               placeholder={t("login.emailPlaceholder")}
               value={email}
               onChange={(e) => setEmail(e.target.value)}
             />
             <FormInput
-              icon={<Lock className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400" />}
+              icon={
+                <Lock className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400" />
+              }
               type={showPassword ? "text" : "password"}
               placeholder={t("login.passwordPlaceholder")}
               value={password}
@@ -204,7 +243,9 @@ export default function Login() {
               showPassword={showPassword}
             />
             <FormInput
-              icon={<Lock className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400" />}
+              icon={
+                <Lock className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400" />
+              }
               type={showConfirmPassword ? "text" : "password"}
               placeholder={t("login.confirmPasswordPlaceholder")}
               value={confirmPassword}
@@ -215,7 +256,10 @@ export default function Login() {
               showPassword={showConfirmPassword}
             />
 
-            <AuthButton text={t("login.registerButton")} onClick={handleRegister} />
+            <AuthButton
+              text={t("login.registerButton")}
+              onClick={handleRegister}
+            />
 
             <button
               onClick={() => setFormType("login")}
@@ -242,7 +286,9 @@ export default function Login() {
               {t("login.resetPasswordTitle")}
             </h2>
             <FormInput
-              icon={<Mail className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400" />}
+              icon={
+                <Mail className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400" />
+              }
               type="email"
               placeholder={t("login.emailPlaceholder")}
               value={email}
@@ -274,14 +320,18 @@ export default function Login() {
               {t("login.welcomeTitle")}
             </h2>
             <FormInput
-              icon={<Mail className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400" />}
+              icon={
+                <Mail className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400" />
+              }
               type="email"
               placeholder={t("login.emailPlaceholder")}
               value={email}
               onChange={(e) => setEmail(e.target.value)}
             />
             <FormInput
-              icon={<Lock className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400" />}
+              icon={
+                <Lock className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400" />
+              }
               type={showPassword ? "text" : "password"}
               placeholder={t("login.passwordPlaceholder")}
               value={password}
@@ -333,7 +383,7 @@ export default function Login() {
       <div className="relative w-full max-w-md">
         <LanguageSwitcher />
         <div
-          key={i18n.language} // сбрасываем AOS при смене языка
+          key={i18n.language}
           className="bg-white/50 backdrop-blur-lg rounded-3xl shadow-2xl p-10"
           data-aos="fade-up"
         >
@@ -343,4 +393,3 @@ export default function Login() {
     </div>
   );
 }
-
