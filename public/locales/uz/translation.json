@@ -693,14 +693,9 @@
   "successful": "Muvaffaqiyatli",
   "requires_review": "Tekshirishni talab qiladi",
   "in_progress": "Jarayonda",
-  "next_event": "Keyingi tadbir",
   "meeting": "Yig'ilish",
   "connect_to_meeting": "Uchrashuvga ulanish",
   "tasks_for_today": "Bugungi vazifalar",
-  "run_incubator": "CO₂ inkubatorini ishga tushirish",
-  "check_cultures": "Madaniy o'sishni tekshirish",
-  "submit_conference_abstracts": "Konferensiya tezislarini topshirish",
-  "project_progress": "Loyiha bo'yicha rivojlanish",
   "progress": "Rivojlanish",
   "add_event": "Tadbir qo'shish",
   "january": "Yanvar",
@@ -760,7 +755,7 @@
   "journal": "Jurnal",
   "view_publication": "Nashrni ko'rish",
   "no_publications_found": "Nashrlar topilmadi.",
-   "settings_overview_description": "Profilingizni, xavfsizligingizni va ilova sozlamalarini boshqaring.",
+  "settings_overview_description": "Profilingizni, xavfsizligingizni va ilova sozlamalarini boshqaring.",
   "general_settings": "Umumiy sozlamalar",
   "language": "Til",
   "russian_language": "Ruscha",
@@ -787,6 +782,81 @@
     "settings": "Sozlamalar"
   },
   "logout": "Chiqish",
-  "status": "Faol"
+  "status": "Faol",
+  "next_event": "Keyingi tadbir",
+  "crispr_meeting": "'CRISPR-CAS9' loyihasi bo‘yicha yig‘ilish",
+  "project_progress": "Loyiha jarayoni",
+  "phase_2_goal": "2-bosqich: Sekvensiya maʼlumotlarini tahlil qilish",
+  "experiment_count": "Tajriba soni",
+  "rna_data_processed": "Maʼlumotlar qayta ishlangan",
+  "contamination_detected": "Ifloslanish aniqlangan",
+  "images_saved": "Tasvirlar saqlangan",
+  "initial_analysis": "Dastlabki tahlil",
+  "waiting_results": "Natijalar kutilmoqda",
+  "growth_phase_active": "O‘sish bosqichi faol",
+  "samples_ready": "Namunalarga tayyor",
+  "run_incubator": "Inkubatorni ishga tushiring",
+  "check_cultures": "Madaniyatlarni tekshiring",
+  "submit_conference_abstracts": "Konferensiya tezislarini yuboring",
+  "prepare_microscopy": "Mikroskopiyani tayyorlang",
+  "clean_lab": "Laboratoriyani tozalang",
+    "exp_001_name": "Xamirturush RNK sekvensiyalash",
+  "exp_001_details": "Yuqori sifatli sekvensiyalash maʼlumotlari olindi, gomologiya tahlili yakunlandi. Bir nechta nazorat namunalarining tozaligi tasdiqlandi. Natijalar genetik markerlarni aniqlash uchun maʼlumotlar bazalari bilan taqqoslandi. Hisobotlar yuqori ishonchlilikni ko'rsatmoqda.",
+  
+  "exp_002_name": "O‘simlik viruslari uchun PCR diagnostikasi",
+  "exp_002_details": "Namunalarda kuchli ifloslanish aniqlandi, qayta tayyorlash kerak. Bu uskunaning sterilligi yoki reaktivlarning ifloslanishi bilan bog‘liq bo‘lishi mumkin. Laboratoriyani dezinfeksiya qilish va materiallarni qayta sinash talab etiladi.",
+  
+  "exp_003_name": "Hujayra madaniyatlarining konfokal mikroskopiyasi",
+  "exp_003_details": "Hujayra tuzilmalarining aniq tasvirlari olindi, 3D rekonstruksiya tayyorlanmoqda. Organoidlarda va hujayralararo o‘zaro ta’sirlar yuqori aniqlikda. 3D modellashtirish rejalashtirilgan. Ma’lumotlar tahlil dasturiga eksport qilingan.",
+  
+  "exp_004_name": "Tuproq bakteriyalarining genom sekvensiyalash",
+  "exp_004_details": "Maʼlumot yigʻilmoqda, yakunlanishi 3 kunda kutilmoqda. Hozirgi vaqtda genetik maʼlumotlarning 70% toʻplangan. Jarayon rejadagi kabi davom etyapti, lekin xatoliklarni oldini olish uchun doimiy monitoring talab etiladi. Dastlabki tahlil bir qancha yangi genlarni aniqladi.",
+  
+  "exp_005_name": "Ferment faolligini o‘rganish",
+  "exp_005_details": "Maksimal faoliyat uchun optimal harorat va pH aniqlandi. Natijalar maʼlum sharoitlarda katalitik samaradorlikni sezilarli darajada oshirgani ko‘rsatdi. Bu maʼlumotlar sanoat rivoji uchun muhimdir. Optimallashtirish protokoli eʼlon qilinadi.",
+  
+  "exp_006_name": "Maqsadli genni klonlash",
+  "exp_006_details": "Ligirolash va transformatsiya bosqichi, koloniyalar tekshirilmoqda. PZR skrining uchun koloniyalar tanlanmoqda. Gen joylashtirilishini tasdiqlash natijalari kutilmoqda. Transformatsiya qilingan hujayralar yaxshi o‘smoqda. Ish sterillik sharoitida olib borilmoqda.",
+  
+  "exp_007_name": "Western blot orqali oqsil ekspressiyasini tahlil qilish",
+  "exp_007_details": "Maqsadli oqsil ekspressiyasi tasdiqlandi, maʼlumotlar nashrga tayyor. Yuqori sifatli blot tasvirlari oqsil mavjudligini oʻtkazib bo‘lmaydigan tarzda ko‘rsatmoqda. Ilmiy maqola loyihasi tayyor. Yakuniy maʼlumotlar tekshiruvi talab etiladi.",
+  
+  "exp_008_name": "Yangi gripp vaksinasini rivojlantirish",
+  "exp_008_details": "Vaksina prototiplari hayvon modellarda sinovdan o‘tkazilmoqda. Immun javob kuzatilmoqda, lekin uzoq muddatli effektlar qo‘shimcha o‘rganishni talab qiladi. Tadqiqot old-klinik bosqichda. Tugash keyingi chorakda kutilmoqda.",
+  
+  "exp_009_name": "Yangi dorilarning sitotoksikligini o‘rganish",
+  "exp_009_details": "Kutilmagan yon taʼsirlar aniqlangan, dozalashni qayta baholash kerak. Baʼzi hujayra liniyalari doriga yuqori sezgirlikni koʻrsatdi. Doz darajalari ko‘rib chiqilishi kerak boʻlgan holda, formula o‘zgartirilishi mumkin. Keyingi bosqich – doza‑javobning aniqligi.",
+  
+  "exp_010_name": "Biomeditsina uchun nanomateriallar sintezi",
+  "exp_010_details": "Talab qilingan xususiyatga ega nanopartikullar olingan, xarakterizatsiya boshlandi. Zarrachalar ajoyib biokompatibil va fiziologik barqarorlikni ko‘rsatmoqda. Toʻqimalarda tarqalish testlari o‘tkazilmoqda. Bu dori yetkazib berish uchun yangi imkoniyatlar ochadi.",
+  
+  "exp_011_name": "O‘simlikdan DNK ekstraktsiya protokolini optimallashtirish",
+  "exp_011_details": "Turli buflerlar va haroratlar bilan tajribalar davom etmoqda. Maqsad – keyingi sekvensiyalash uchun DNK chiqimi va tozaligini oshirish. Birinchi istiqbolli natijalar olingan. Optimallashtirish samarali reagent kombinatsiyasini aniqlash uchun davom etmoqda.",
+  
+  "exp_012_name": "Neyronlarning immunofluoresans bo‘yoqlanishi",
+  "exp_012_details": "Neyron tarmoqlarining yuqori qarama-qarshi tasvirlari olindi. Bu sinaptik bog‘lanishlar va neyron morfologiyasini batafsil oʻrganishga imkon beradi. Maʼlumotlar neyron zanjirlarini xaritalash uchun ishlatiladi. Natijalar hujayra o‘zaro taʼsir gipotезlarini qo‘llab-quvvatlaydi.",
+  
+  "exp_013_name": "Yangi bakterial shtammlarda antibiotik skriningi",
+  "exp_013_details": "Bir necha dorilarga qarshilik aniqlangan, qoʻshimcha tahlil talab etiladi. Bu hozirgi davolash metodlariga nisbatan xavotir uyg‘otadi. Qarshilik mexanizmlarini aniqlash va muqobil antibiotiklarni topish zarur. Natijalar kasallik nazorat markaziga yuboriladi.",
+  
+  "exp_014_name": "Molekulyar o‘zaro ta’sirlarni modellashtirish",
+  "exp_014_details": "Ligand-reseptor bog‘lanishi hisob-kitoblari davom etmoqda, 48 soat ichida yakunlanadi. Docking tahlili superkompyuter yordamida olib borilmoqda. Modellash bog‘lanish affinitetini bashorat qiladi va yangi dorilar dizayniga yordam beradi. Jarayon reja bo‘yicha davom etyapti.",
+  
+  "exp_015_name": "Allergenlarga tez aniqlovchi test rivojlantirish",
+  "exp_015_details": "Test prototipi yuqori sezgirlik va spetsifikasiyani ko‘rsatdi. Bir nechta keng tarqalgan allergenlarni tez va aniq aniqlay oladi. Bu diagnostikani sezilarli yengillashtiradi va davolashni tezlashtiradi. Klinika namunalarida validatsiya qilingan.",
+  
+  "exp_016_name": "Suv organizmlariga mikroplastik ta’siri o‘rganilishi",
+  "exp_016_details": "Baliqlarning xulq-atvori va salomatligi bo‘yicha uzoq davomli kuzatuvlar boshlandi. Mikroplastiklarning jami ta’siri o‘rganilmoqda. Natijalar suv ekotizimlari holatini va biologik xilma-xillikni saqlash strategiyalarini baholash uchun juda muhim bo‘ladi.",
+  
+  "exp_017_name": "Yangi biopestitsid samaradorligini baholash",
+  "exp_017_details": "Zararli hasharotlarga yuqori samarali bo‘lib, foydali hasharotlarga zarar yetkazmaydi. Bu ekologik xavfsiz yechimdir. Tashqi sinovlar turli ob-havo sharoitlariga chidamli ekanini tasdiqladi. Mahsulot tijoratga tayyor.",
+  
+  "exp_018_name": "Hujayra qarish mexanizmlarini o‘rganish",
+  "exp_018_details": "Hujayra qarishi jarayonida telomerlar va oksidativ stress rolini o‘rganish. In vitro eksperimentlar davom etmoqda. Maqsad – anti¬qarish terapiyalari uchun asosiy yo‘llarni aniqlash. Dastlabki natijalar qiziqarli korrelyatsiyalarni ko‘rsatmoqda.",
+  
+  "exp_019_name": "GMO ni tez aniqlash usuli ishlab chiqish",
+  "exp_019_details": "Yegiladigan mahsulotlarda GMOnI tez aniqlash uchun portativ to‘plam yaratildi. Yuqori sezgirlik va spetsifikasiyani bir necha daqiqada aniq natijalar beradi. Pilot sinovlar yakunlandi.",
+  
+  "exp_020_name": "Ekstremal sharoitdagi mikrob xilma‑xilligini tahlil",
+  "exp_020_details": "Chuquroq dengiz gidrotermal manbalaridan namunalar yig‘ish va sekvensiyalash boshlandi. Mikroorganizmlarning yuqori harorat va bosimga moslashuvi o‘rganilmoqda. Natijalar yangi fermentlar va metabolik yo‘llarni aniqlashi mumkin."
 }
-

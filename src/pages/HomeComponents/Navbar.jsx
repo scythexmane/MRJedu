@@ -76,14 +76,19 @@ export default function Navbar() {
   return (
     <header
       className={`bg-[#F8F8FF] sticky top-0 z-50 transition-all duration-300 ${
-        isScrolled ? "bg-white/50 backdrop-blur-lg shadow p-[10px]" : "bg-transparent"
+        isScrolled
+          ? "bg-white/50 backdrop-blur-lg shadow p-[10px]"
+          : "bg-transparent"
       }`}
     >
       <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-        <Link to="/" className="flex items-center gap-2 hover:opacity-90 transition">
+        <Link
+          to="/"
+          className="flex items-center gap-2 hover:opacity-90 transition"
+        >
           <img src="/logo.svg" alt="MRJedu" className="h-12 w-auto" />
           <span className="font-semibold text-xl text-gray-800">
-            {t("navbar.titleLine1")} <br /> {t("navbar.titleLine2")}
+            Medical <br /> Research Journal
           </span>
         </Link>
 
@@ -92,7 +97,11 @@ export default function Navbar() {
           className="md:hidden p-2 rounded-md hover:bg-gray-200 transition"
           aria-label="Toggle menu"
         >
-          {mobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+          {mobileMenuOpen ? (
+            <X className="h-6 w-6" />
+          ) : (
+            <Menu className="h-6 w-6" />
+          )}
         </button>
 
         <nav className="hidden md:flex gap-6 text-gray-700 font-medium relative z-50">
@@ -118,7 +127,11 @@ export default function Navbar() {
             </button>
             <Transition show={journalOpen} {...transitionProps}>
               <div className="absolute top-full left-0 mt-2 w-64 bg-white shadow-lg rounded-lg p-4 space-y-2 z-50">
-                <Link to="/journal/about" className="block hover:text-blue-600" onClick={closeJournalDropdown}>
+                <Link
+                  to="/journal/about"
+                  className="block hover:text-blue-600"
+                  onClick={closeJournalDropdown}
+                >
                   {t("navbar.about")}
                 </Link>
                 <Link

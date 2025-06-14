@@ -1,8 +1,8 @@
-import React from 'react';
-import { motion } from 'framer-motion';
-import { useTranslation } from 'react-i18next';
-import { useNavigate } from 'react-router-dom';
-import { useAuth } from '../../context/AuthContext';
+import React from "react";
+import { motion } from "framer-motion";
+import { useTranslation } from "react-i18next";
+import { useNavigate } from "react-router-dom";
+import { useAuth } from "../../context/AuthContext";
 import {
   LayoutDashboard,
   FolderKanban,
@@ -12,9 +12,9 @@ import {
   Settings,
   LogOut,
   Upload,
-} from 'lucide-react';
-import NavItem from './NavItem';
-import { userData } from '../../data/mockData';
+} from "lucide-react";
+import NavItem from "./NavItem";
+import { userData } from "../../data/mockData";
 
 const navItems = [
   { path: "/profile/dashboard", icon: LayoutDashboard, labelKey: "dashboard" },
@@ -39,7 +39,7 @@ const Sidebar = ({ isOpen, setOpen }) => {
 
   const handleLogout = () => {
     logout(); // Вызываем существующую функцию logout
-    navigate('/'); // Перенаправляем на главную страницу
+    navigate("/"); // Перенаправляем на главную страницу
   };
 
   return (
@@ -52,7 +52,10 @@ const Sidebar = ({ isOpen, setOpen }) => {
       <div className="flex flex-col items-center p-4 border-b border-slate-200/80">
         <div className="relative group cursor-pointer">
           <motion.img
-            src={user?.avatar || 'https://img.freepik.com/premium-vector/default-avatar-profile-icon-social-media-user-image-gray-avatar-icon-blank-profile-silhouette-vector-illustration_561158-3485.jpg?w=360'}
+            src={
+              
+              "https://www.svgrepo.com/show/382109/male-avatar-boy-face-man-user-7.svg"
+            }
             alt="User Avatar"
             className="w-24 h-24 rounded-full object-cover"
             whileHover={{ scale: 1.05, filter: "brightness(75%)" }}
@@ -61,7 +64,9 @@ const Sidebar = ({ isOpen, setOpen }) => {
             <Upload className="text-white" size={28} />
           </motion.div>
         </div>
-        <h2 className="font-bold text-xl mt-3 text-slate-800">{user?.firstName || 'User Name'}</h2>
+        <h2 className="font-bold text-xl mt-3 text-slate-800">
+          {user?.firstName || "User Name"}
+        </h2>
         <p className="mt-1 text-sm text-slate-500 bg-indigo-100 text-indigo-600 px-3 py-1 rounded-full">
           {userData.status}
         </p>

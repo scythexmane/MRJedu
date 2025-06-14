@@ -48,6 +48,7 @@ const Dashboard = () => {
       exit={{ opacity: 0, y: -20 }}
       transition={{ duration: 0.3, ease: "easeInOut" }}
     >
+      <br />
       <div className="grid grid-cols-1 xl:grid-cols-[1fr_auto] gap-8">
         <div className="flex flex-col gap-8">
           <div className="flex flex-wrap justify-between items-start gap-4">

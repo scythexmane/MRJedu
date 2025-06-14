@@ -70,10 +70,11 @@ const ProjectCard = ({ project }) => {
       }}
       transition={{ type: 'spring', stiffness: 300, damping: 20 }}
     >
-      <div className="flex justify-between items-start mb-4">
+        
+      <div className="flex justify-between items-start mb-4  ">
         <div className="flex items-center">
           <FolderKanban size={24} className="text-brand-blue mr-3" />
-          <h3 className="font-bold text-slate-800 text-xl leading-snug">{project.name}</h3> {/* Название пока не переводим */}
+          <h3 className="font-bold text-slate-800 text-xl leading-snug"> {project.name}</h3> {/* Название пока не переводим */}
         </div>
         <span className={`flex items-center text-xs font-semibold px-3 py-1.5 rounded-full ${statusColors[project.statusKey]}`}>
           {statusIcons[project.statusKey]}

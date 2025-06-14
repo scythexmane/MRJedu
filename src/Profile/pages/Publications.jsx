@@ -29,6 +29,8 @@ const PublicationsContent = () => {
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6, ease: "easeOut" }}
     >
+        <br />
+        <br />
       <h1 className="text-3xl font-bold text-slate-900 mb-6 flex items-center">
         <FileText size={32} className="mr-3 text-brand-blue" />
         {t('publications')}
