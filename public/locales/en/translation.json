@@ -638,7 +638,6 @@
     "title": "Contact",
     "text": "Questions, comments or requests about this policy should be addressed to Mr. Tim Heider at: info@modestum.org."
   },
-  "greeting": "Good day, {{name}}!",
   "summary_research": "Here's a summary of your current research.",
   "lab_status": "Lab Status: Online",
   "dashboard": "Dashboard",
@@ -814,6 +813,8 @@
   "genomic_sequencing": "Genomic Sequencing",
   "qpcr_analysis": "qPCR Analysis",
   "culture_growth": "Culture Growth",
-  "genomics_group": "Genomics Group"
+  "genomics_group": "Genomics Group",
+  "greeting": "Hello",
+  "user": "User"
 }
 

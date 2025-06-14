@@ -24,9 +24,21 @@ export const AuthProvider = ({ children }) => {
 
   // Функция login теперь принимает объект user с firstName (и другими полями, если нужно)
   const login = (userData) => {
-    // userData ожидается как { firstName: '...', name: '...', etc. }
-    setUser(userData);
+  const defaultName = {
+    en: "User",
+    ru: "Пользователь",
+    uz: "Foydalanuvchi",
   };
+
+  const normalizedUser = {
+    ...userData,
+    name:
+      typeof userData.name === "object"
+        ? userData.name
+        : defaultName, // если name — не объект, подставляем переводы
+  };
+
+  setUser(normalizedUser);
 
   const logout = () => {
     setUser(null);

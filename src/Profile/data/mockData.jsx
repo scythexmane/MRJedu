@@ -6,13 +6,12 @@ export const userData = {
 };
 
 export const recentExperiments = [
-  { id: 1, type: "sequencing", name: "Секвенирование РНК", resultKey: "rna_data_processed", date: "12 июня 2025", statusKey: "successful" },
-  { id: 2, type: "pcr", name: "ПЦР-тестирование", resultKey: "contamination_detected", date: "11 июня 2025", statusKey: "requires_review" },
-  { id: 3, type: "microscopy", name: "Конфокальная микроскопия", resultKey: "images_saved", date: "09 июня 2025", statusKey: "successful" },
-  { id: 4, type: "sequencing", name: "Геномное секвенирование", resultKey: "initial_analysis", date: "08 июня 2025", statusKey: "in_progress" },
-  { id: 5, type: "pcr", name: "qPCR анализ", resultKey: "waiting_results", date: "07 июня 2025", statusKey: "in_progress" },
-  { id: 6, type: "culture", name: "Выращивание культур", resultKey: "growth_phase_active", date: "06 июня 2025", statusKey: "successful" },
-  { id: 7, type: "microscopy", name: "Флуоресцентная микроскопия", resultKey: "samples_ready", date: "05 июня 2025", statusKey: "requires_review" },
+  { id: 1, type: "sequencing", name: "Секвенирование РНК", date: "12 июня 2025", statusKey: "successful" },
+  { id: 2, type: "pcr", name: "ПЦР-тестирование",  date: "11 июня 2025", statusKey: "requires_review" },
+  { id: 3, type: "microscopy", name: "Конфокальная микроскопия",  date: "09 июня 2025", statusKey: "successful" },
+  { id: 4, type: "sequencing", name: "Геномное секвенирование",  date: "08 июня 2025", statusKey: "in_progress" },
+  { id: 5, type: "pcr", name: "qPCR анализ",  date: "07 июня 2025", statusKey: "in_progress" },
+  { id: 6, type: "culture", name: "Выращивание культур", date: "06 июня 2025", statusKey: "successful" },
 ];
 
 export const nextEventData = {

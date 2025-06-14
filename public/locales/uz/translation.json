@@ -679,8 +679,7 @@
     "note1": "I-tur: Asosiy tadqiqotlar, sharh maqolalari",
     "note2": "II-tur: Kichik xabarlar, Kasus tahlillari va boshqalar"
   },
-
-  "greeting": "Xayrli kun, {{name}}!",
+"user": "Foydalanuvchi",
   "summary_research": "Mana sizning joriy tadqiqotlaringiz haqida qisqacha ma'lumot.",
   "lab_status": "Laboratoriya holati: Onlayn",
   "dashboard": "Bosh sahifa",
@@ -858,5 +857,6 @@
   "exp_019_details": "Yegiladigan mahsulotlarda GMOnI tez aniqlash uchun portativ to‘plam yaratildi. Yuqori sezgirlik va spetsifikasiyani bir necha daqiqada aniq natijalar beradi. Pilot sinovlar yakunlandi.",
   
   "exp_020_name": "Ekstremal sharoitdagi mikrob xilma‑xilligini tahlil",
-  "exp_020_details": "Chuquroq dengiz gidrotermal manbalaridan namunalar yig‘ish va sekvensiyalash boshlandi. Mikroorganizmlarning yuqori harorat va bosimga moslashuvi o‘rganilmoqda. Natijalar yangi fermentlar va metabolik yo‘llarni aniqlashi mumkin."
+  "exp_020_details": "Chuquroq dengiz gidrotermal manbalaridan namunalar yig‘ish va sekvensiyalash boshlandi. Mikroorganizmlarning yuqori harorat va bosimga moslashuvi o‘rganilmoqda. Natijalar yangi fermentlar va metabolik yo‘llarni aniqlashi mumkin.",
+   "greeting": "Salom"
 }

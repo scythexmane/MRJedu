@@ -42,7 +42,7 @@ const Dashboard = () => {
 
   return (
     <motion.div
-      className="w-full min-h-screen bg-[#f5f6fa] pt-[80px] pb-6 pr-6 transition-all duration-300" // Добавлен pt-[80px]
+      className="w-full min-h-screen bg-[f8f8ff] pt-[80px] pb-6 pr-6 transition-all duration-300" // Добавлен pt-[80px]
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, y: -20 }}

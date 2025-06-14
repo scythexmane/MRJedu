@@ -3,17 +3,27 @@ import React, { createContext, useContext, useState, useEffect } from 'react';
 
 const AuthContext = createContext(null);
 
+const defaultName = {
+  uz: "Foydalanuvchi",
+  ru: "Пользователь",
+  en: "User",
+};
+
 export function AuthProvider({ children }) {
   const [user, setUser] = useState(null);
 
   const login = (userData) => {
-    setUser(userData);
-    localStorage.setItem('user', JSON.stringify(userData)); // Сохраняем в localStorage
+    const userWithDefaultName = {
+      ...userData,
+      name: defaultName,
+    };
+    setUser(userWithDefaultName);
+    localStorage.setItem('user', JSON.stringify(userWithDefaultName));
   };
 
   const logout = () => {
     setUser(null);
-    localStorage.removeItem('user'); // Удаляем из localStorage
+    localStorage.removeItem('user');
   };
 
   useEffect(() => {

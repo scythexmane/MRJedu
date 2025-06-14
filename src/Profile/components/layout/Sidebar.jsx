@@ -26,36 +26,33 @@ const navItems = [
 ];
 
 const Sidebar = ({ isOpen, setOpen }) => {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
   const { user, logout } = useAuth();
   const navigate = useNavigate();
 
   const handleLinkClick = () => {
-    // Закрываем только на мобилках
     if (window.innerWidth < 768 && setOpen) {
       setOpen(false);
     }
   };
 
   const handleLogout = () => {
-    logout(); // Вызываем существующую функцию logout
-    navigate("/"); // Перенаправляем на главную страницу
+    logout();
+    navigate("/");
   };
+
 
   return (
     <motion.aside
       initial={false}
       animate={{ x: isOpen || window.innerWidth >= 768 ? 0 : "-100%" }}
       transition={{ duration: 0.3, ease: "easeInOut" }}
-      className="fixed md:static top-0 left-0 z-40 md:z-10 flex flex-col w-72 h-screen bg-white/80 backdrop-blur-lg border-r border-slate-200/80 transition-transform duration-300"
+      className="fixed md:static top-0 left-0 z-40 md:z-10 flex flex-col w-72 h-screen bg-[#F8F8FF] backdrop-blur-lg border-r border-slate-200/80 transition-transform duration-300"
     >
       <div className="flex flex-col items-center p-4 border-b border-slate-200/80">
         <div className="relative group cursor-pointer">
           <motion.img
-            src={
-              
-              "https://www.svgrepo.com/show/382109/male-avatar-boy-face-man-user-7.svg"
-            }
+            src="https://www.svgrepo.com/show/382109/male-avatar-boy-face-man-user-7.svg"
             alt="User Avatar"
             className="w-24 h-24 rounded-full object-cover"
             whileHover={{ scale: 1.05, filter: "brightness(75%)" }}
@@ -65,7 +62,7 @@ const Sidebar = ({ isOpen, setOpen }) => {
           </motion.div>
         </div>
         <h2 className="font-bold text-xl mt-3 text-slate-800">
-          {user?.firstName || "User Name"}
+          {t("user")}
         </h2>
         <p className="mt-1 text-sm text-slate-500 bg-indigo-100 text-indigo-600 px-3 py-1 rounded-full">
           {userData.status}

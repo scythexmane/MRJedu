@@ -72,7 +72,6 @@ export default function Navbar() {
     setMobileMenuOpen(false);
     closeAllDropdowns();
   };
-
   return (
     <header
       className={`bg-[#F8F8FF] sticky top-0 z-50 transition-all duration-300 ${
@@ -298,10 +297,10 @@ export default function Navbar() {
               <Link
                 to="/profile"
                 className="flex items-center gap-2 text-gray-700 hover:text-blue-600 transition"
-                title={t("navbar.profile")}
+                title={t("user")}
               >
                 <User size={24} />
-                <span className="font-medium">{user.firstName}</span>
+                <span className="font-medium">{t("user")}</span>
               </Link>
             </div>
           ) : (
@@ -561,14 +560,16 @@ export default function Navbar() {
               >
                 <div className="flex items-center gap-2">
                   <User size={20} />
-                  <span>{user.firstName}</span>
+                  <h2>
+                    {t("user")}
+                  </h2>
                 </div>
               </Link>
               <button
                 onClick={handleLogout}
                 className="block text-gray-700 hover:text-blue-600 font-medium"
               >
-                {t("navbar.logout")}
+                {t("user")}
               </button>
             </>
           ) : (
