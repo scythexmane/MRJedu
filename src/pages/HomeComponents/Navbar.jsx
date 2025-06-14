@@ -569,7 +569,7 @@ export default function Navbar() {
                 onClick={handleLogout}
                 className="block text-gray-700 hover:text-blue-600 font-medium"
               >
-                {t("user")}
+                {t("logout")}
               </button>
             </>
           ) : (
