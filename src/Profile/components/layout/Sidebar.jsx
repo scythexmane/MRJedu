@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { useTranslation } from "react-i18next";
 import { useNavigate } from "react-router-dom";
@@ -12,6 +12,7 @@ import {
   Settings,
   LogOut,
   Upload,
+  X,
 } from "lucide-react";
 import NavItem from "./NavItem";
 import { userData } from "../../data/mockData";
@@ -26,29 +27,69 @@ const navItems = [
 ];
 
 const Sidebar = ({ isOpen, setOpen }) => {
-  const { t, i18n } = useTranslation();
+  const { t } = useTranslation();
   const { user, logout } = useAuth();
   const navigate = useNavigate();
+  const [isMobile, setIsMobile] = useState(false);
 
   const handleLinkClick = () => {
-    if (window.innerWidth < 768 && setOpen) {
-      setOpen(false);
-    }
+    if (isMobile && setOpen) setOpen(false);
   };
 
   const handleLogout = () => {
     logout();
     navigate("/");
+    if (setOpen) setOpen(false);
   };
 
+  // Проверка ширины экрана
+  useEffect(() => {
+    const checkMobile = () => setIsMobile(window.innerWidth < 768);
+    checkMobile();
+    window.addEventListener("resize", checkMobile);
+    return () => window.removeEventListener("resize", checkMobile);
+  }, []);
+
+  // Блокировка скролла при открытом сайдбаре на мобильных
+  useEffect(() => {
+    if (isMobile && isOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "auto";
+    }
+    return () => {
+      document.body.style.overflow = "auto";
+    };
+  }, [isMobile, isOpen]);
 
   return (
     <motion.aside
       initial={false}
-      animate={{ x: isOpen || window.innerWidth >= 768 ? 0 : "-100%" }}
+      animate={{
+        x: isMobile ? (isOpen ? 0 : "-100%") : 0, // Сайдбар уезжает влево на мобильных
+        width: isMobile ? (isOpen ? "100%" : 0) : "18rem", // Полная ширина на мобильных
+      }}
       transition={{ duration: 0.3, ease: "easeInOut" }}
-      className="fixed md:static top-0 left-0 z-40 md:z-10 flex flex-col w-72 h-screen bg-[#F8F8FF] backdrop-blur-lg border-r border-slate-200/80 transition-transform duration-300"
+      className={`${
+        isMobile
+          ? "fixed top-0 left-0 w-full h-full z-50" // Полный экран на мобильных
+          : "static w-72 h-full z-30"
+      } flex flex-col bg-[#F8F8FF] border-r border-slate-200/80 overflow-y-auto`}
     >
+      {/* Кнопка закрытия для мобильных */}
+      {isMobile && isOpen && (
+        <div className="p-4 flex justify-end">
+          <motion.button
+            onClick={() => setOpen(false)}
+            className="p-2 rounded-full bg-slate-200 hover:bg-slate-300 transition"
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.9 }}
+          >
+            <X size={24} className="text-slate-600" />
+          </motion.button>
+        </div>
+      )}
+
       <div className="flex flex-col items-center p-4 border-b border-slate-200/80">
         <div className="relative group cursor-pointer">
           <motion.img
@@ -61,9 +102,7 @@ const Sidebar = ({ isOpen, setOpen }) => {
             <Upload className="text-white" size={28} />
           </motion.div>
         </div>
-        <h2 className="font-bold text-xl mt-3 text-slate-800">
-          {t("user")}
-        </h2>
+        <h2 className="font-bold text-xl mt-3 text-slate-800">{t("user")}</h2>
         <p className="mt-1 text-sm text-slate-500 bg-indigo-100 text-indigo-600 px-3 py-1 rounded-full">
           {userData.status}
         </p>

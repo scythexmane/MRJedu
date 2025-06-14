@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { ChevronDown, Search, Menu, X, User } from "lucide-react";
 import { Transition } from "@headlessui/react";
 import { useTranslation } from "react-i18next";
 import { useAuth } from "../../Profile/context/AuthContext";
 
-export default function Navbar() {
+export default function Navbar({ toggleSidebar, isSidebarOpen }) {
   const { t, i18n } = useTranslation();
   const auth = useAuth() || { user: null, logout: () => {} };
   const { user, logout } = auth;
@@ -15,6 +15,14 @@ export default function Navbar() {
   const [search, setSearch] = useState("");
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const { pathname } = useLocation();
+
+  // Закрытие мобильного меню при открытии сайдбара
+  useEffect(() => {
+    if (isSidebarOpen) {
+      setMobileMenuOpen(false);
+    }
+  }, [isSidebarOpen]);
 
   const toggleJournal = () => {
     setJournalOpen(!journalOpen);
@@ -43,18 +51,12 @@ export default function Navbar() {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
     };
-
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const closeJournalDropdown = () => {
-    setJournalOpen(false);
-  };
-
-  const closeAuthorsDropdown = () => {
-    setAuthorsOpen(false);
-  };
+  const closeJournalDropdown = () => setJournalOpen(false);
+  const closeAuthorsDropdown = () => setAuthorsOpen(false);
 
   const closeAllDropdowns = () => {
     setJournalOpen(false);
@@ -72,36 +74,49 @@ export default function Navbar() {
     setMobileMenuOpen(false);
     closeAllDropdowns();
   };
+
+  const handleSidebarToggle = () => {
+    console.log("Sidebar toggle clicked, isSidebarOpen:", isSidebarOpen);
+    toggleSidebar();
+  };
+
+  // Проверяем, что мы на странице профиля
+  const isProfilePage = pathname.startsWith("/profile");
+
   return (
     <header
-      className={`bg-[#F8F8FF] sticky top-0 z-50 transition-all duration-300 ${
-        isScrolled
-          ? "bg-white/50 backdrop-blur-lg shadow p-[10px]"
-          : "bg-transparent"
-      }`}
+      className={`bg-[#F8F8FF] w-full z-40 transition-all duration-300 
+        ${isScrolled ? "bg-white/50 backdrop-blur-lg shadow p-[10px]" : "bg-transparent"} 
+        md:sticky md:top-0 static ${isSidebarOpen ? "hidden" : "block"}`}
     >
       <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-        <Link
-          to="/"
-          className="flex items-center gap-2 hover:opacity-90 transition"
-        >
+        <Link to="/" className="flex items-center gap-2 hover:opacity-90 transition">
           <img src="/logo.svg" alt="MRJedu" className="h-12 w-auto" />
           <span className="font-semibold text-xl text-gray-800">
             Medical <br /> Research Journal
           </span>
         </Link>
 
-        <button
-          onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-          className="md:hidden p-2 rounded-md hover:bg-gray-200 transition"
-          aria-label="Toggle menu"
-        >
-          {mobileMenuOpen ? (
-            <X className="h-6 w-6" />
-          ) : (
-            <Menu className="h-6 w-6" />
+        <div className="flex items-center gap-3 md:hidden">
+          {/* Кнопка открытия сайдбара (только для авторизованных и на страницах профиля) */}
+          {user && isProfilePage && toggleSidebar && (
+            <button
+              onClick={handleSidebarToggle}
+              className="p-2 rounded-full bg-green-100 hover:bg-green-200 transition"
+              aria-label="Toggle sidebar"
+            >
+              <User className="h-6 w-6 text-green-600" />
+            </button>
           )}
-        </button>
+          {/* Кнопка мобильного меню */}
+          <button
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            className="p-2 rounded-full hover:bg-gray-200 transition"
+            aria-label="Toggle menu"
+          >
+            {mobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+          </button>
+        </div>
 
         <nav className="hidden md:flex gap-6 text-gray-700 font-medium relative z-50">
           <Link to="/" className="hover:text-blue-600 transition">
@@ -124,7 +139,15 @@ export default function Navbar() {
                 }`}
               />
             </button>
-            <Transition show={journalOpen} {...transitionProps}>
+            <Transition
+              show={journalOpen}
+              enter="transition ease-out duration-200"
+              enterFrom="opacity-0 translate-y-2"
+              enterTo="opacity-100 translate-y-0"
+              leave="transition ease-in duration-150"
+              leaveFrom="opacity-100 translate-y-0"
+              leaveTo="opacity-0 translate-y-2"
+            >
               <div className="absolute top-full left-0 mt-2 w-64 bg-white shadow-lg rounded-lg p-4 space-y-2 z-50">
                 <Link
                   to="/journal/about"
@@ -206,7 +229,15 @@ export default function Navbar() {
                 }`}
               />
             </button>
-            <Transition show={authorsOpen} {...transitionProps}>
+            <Transition
+              show={authorsOpen}
+              enter="transition ease-out duration-200"
+              enterFrom="opacity-0 translate-y-2"
+              enterTo="opacity-100 translate-y-0"
+              leave="transition ease-in duration-150"
+              leaveFrom="opacity-100 translate-y-0"
+              leaveTo="opacity-0 translate-y-2"
+            >
               <div className="absolute top-full left-0 mt-2 w-64 bg-white shadow-lg rounded-lg p-4 space-y-2 z-50">
                 <Link
                   to="/authors/ethical-statement"
@@ -274,16 +305,22 @@ export default function Navbar() {
                 }`}
               />
             </button>
-            <Transition show={languageOpen} {...transitionProps}>
+            <Transition
+              show={languageOpen}
+              enter="transition ease-out duration-200"
+              enterFrom="opacity-0 translate-y-2"
+              enterTo="opacity-100 translate-y-0"
+              leave="transition ease-in duration-150"
+              leaveFrom="opacity-100 translate-y-0"
+              leaveTo="opacity-0 translate-y-2"
+            >
               <div className="absolute right-0 mt-2 w-28 bg-white shadow-lg rounded-lg py-2 text-sm z-50">
                 {["EN", "RU", "UZ"].map((lang) => (
                   <button
                     key={lang}
                     onClick={() => handleLangChange(lang)}
                     className={`block w-full px-4 py-2 text-left hover:bg-blue-100 ${
-                      i18n.language.toUpperCase() === lang
-                        ? "font-semibold text-blue-600"
-                        : ""
+                      i18n.language.toUpperCase() === lang ? "font-semibold text-blue-600" : ""
                     }`}
                   >
                     {lang}
@@ -540,9 +577,7 @@ export default function Navbar() {
                     key={lang}
                     onClick={() => handleLangChange(lang)}
                     className={`block w-full px-4 py-2 text-left hover:bg-blue-100 ${
-                      i18n.language.toUpperCase() === lang
-                        ? "font-semibold text-blue-600"
-                        : ""
+                      i18n.language.toUpperCase() === lang ? "font-semibold text-blue-600" : ""
                     }`}
                   >
                     {lang}
@@ -560,9 +595,7 @@ export default function Navbar() {
               >
                 <div className="flex items-center gap-2">
                   <User size={20} />
-                  <h2>
-                    {t("user")}
-                  </h2>
+                  <h2>{t("user")}</h2>
                 </div>
               </Link>
               <button
@@ -590,6 +623,6 @@ const transitionProps = {
   enterFrom: "opacity-0 translate-y-2",
   enterTo: "opacity-100 translate-y-0",
   leave: "transition ease-in duration-150",
-  leaveFrom: "opacity-100 translate-y-0",
-  leaveTo: "opacity-0 translate-y-2",
+  leaveFrom:"opacity-100 translate-y-0",
+  leaveTo:"opacity-0 translate-y-2",
 };
