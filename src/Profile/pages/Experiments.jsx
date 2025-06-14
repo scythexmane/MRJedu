@@ -225,7 +225,7 @@ const ExperimentDetailCard = ({ experiment }) => {
 
   return (
     <motion.div
-      className="bg-white p-6 rounded-3xl shadow-lg border border-transparent cursor-pointer flex flex-col h-full overflow-hidden mt-[74px]"
+      className="bg-white p-6 rounded-3xl shadow-lg border border-transparent cursor-pointer flex flex-col h-full overflow-hidden  "
       whileHover={{
         scale: 1.03,
         boxShadow: "0 12px 25px rgba(0, 0, 0, 0.15)",

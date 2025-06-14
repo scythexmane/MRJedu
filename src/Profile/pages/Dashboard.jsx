@@ -42,13 +42,12 @@ const Dashboard = () => {
 
   return (
     <motion.div
-      className="w-full min-h-screen bg-[#f5f6fa] pt-6 pb-6 pr-6 transition-all duration-300"
+      className="w-full min-h-screen bg-[#f5f6fa] pt-[80px] pb-6 pr-6 transition-all duration-300" // Добавлен pt-[80px]
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, y: -20 }}
       transition={{ duration: 0.3, ease: "easeInOut" }}
     >
-      <br />
       <div className="grid grid-cols-1 xl:grid-cols-[1fr_auto] gap-8">
         <div className="flex flex-col gap-8">
           <div className="flex flex-wrap justify-between items-start gap-4">

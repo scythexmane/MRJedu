@@ -789,13 +789,7 @@
   "exp_019_details": "Screening for mutations in specific genetic loci.",
   "exp_020_name": "Antibiotic Resistance Test",
   "exp_020_details": "Testing bacterial resistance to antibiotics.",
-  "elena_novak": "Elena Novak",
-  "ivan_petrov": "Ivan Petrov",
-  "sergey_koval": "Sergey Koval",
-  "marina_sokolova": "Marina Sokolova",
-  "dmitry_volkov": "Dmitry Volkov",
-  "olga_kuznetsova": "Olga Kuznetsova",
-  "artem_lebedev": "Artem Lebedev",
+
   "researcher": "Researcher",
   "rna_data_processed": "RNA data processed",
   "contamination_detected": "Contamination detected",
@@ -819,6 +813,7 @@
   "confocal_microscopy": "Confocal Microscopy",
   "genomic_sequencing": "Genomic Sequencing",
   "qpcr_analysis": "qPCR Analysis",
-  "culture_growth": "Culture Growth"
+  "culture_growth": "Culture Growth",
+  "genomics_group": "Genomics Group"
 }
 

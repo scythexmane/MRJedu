@@ -12,6 +12,7 @@ export const recentExperiments = [
   { id: 4, type: "sequencing", name: "Геномное секвенирование", resultKey: "initial_analysis", date: "08 июня 2025", statusKey: "in_progress" },
   { id: 5, type: "pcr", name: "qPCR анализ", resultKey: "waiting_results", date: "07 июня 2025", statusKey: "in_progress" },
   { id: 6, type: "culture", name: "Выращивание культур", resultKey: "growth_phase_active", date: "06 июня 2025", statusKey: "successful" },
+  { id: 7, type: "microscopy", name: "Флуоресцентная микроскопия", resultKey: "samples_ready", date: "05 июня 2025", statusKey: "requires_review" },
 ];
 
 export const nextEventData = {
