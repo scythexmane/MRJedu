@@ -211,7 +211,7 @@
 
     "statsTitle": "Maqola turlari bo‘yicha taqsimoti (2024)"
   },
-  "journal": {
+  "journal1": {
     "title": "Atrof-muhit va fan taʼlimi bo‘yicha fanlararo jurnal",
     "description1": "Atrof-muhit va fan taʼlimi bo‘yicha fanlararo jurnal (ISSN: 2633‑6537) butun dunyodagi original ilmiy maqolalarni nashr etadi.",
     "description2": "IJESE Budapest ochiq kirish tashabbusi (BOAI) taʼrifiga muvofiq ochiq kirish siyosatini qabul qiladi va Modestum DOO (Serbiya) tomonidan chorakda bir marotaba nashr qilinadi. Barcha nashr qilingan maqolalar Creative Commons Attribution 4.0 International litsenziyasi asosida tarqatiladi.",
@@ -689,7 +689,6 @@
   "events": "Tadbirlar",
   "publications": "Nashrlar",
   "settings": "Sozlamalar",
-  "logout": "Chiqish",
   "latest_experiments": "So'nggi tajribalar",
   "successful": "Muvaffaqiyatli",
   "requires_review": "Tekshirishni talab qiladi",
@@ -778,6 +777,16 @@
   "push_notifications": "Push-bildirishnomalar",
   "welcome_to_lab_app": "Laboratoriya boshqaruvi ilovasiga xush kelibsiz!",
   "login_to_continue": "Davom etish uchun tizimga kiring.",
-  "fake_login": "Soxta kirish (Demo)"
+  "fake_login": "Soxta kirish (Demo)",
+  "profile": {
+    "dashboard": "Boshqaruv paneli",
+    "my_projects": "Mening loyihalarim",
+    "experiments": "Tajribalar",
+    "events": "Tadbirlar",
+    "publications": "Nashrlar",
+    "settings": "Sozlamalar"
+  },
+  "logout": "Chiqish",
+  "status": "Faol"
 }
 

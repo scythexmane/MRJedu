@@ -647,7 +647,6 @@
   "events": "Events",
   "publications": "Publications",
   "settings": "Settings",
-  "logout": "Logout",
   "latest_experiments": "Latest Experiments",
   "successful": "Successful",
   "requires_review": "Requires Review",
@@ -736,5 +735,15 @@
   "push_notifications": "Push Notifications",
     "welcome_to_lab_app": "Welcome to the Lab Management App!",
   "login_to_continue": "Please log in to continue.",
-  "fake_login": "Fake Login (Demo)"
+  "fake_login": "Fake Login (Demo)",
+  "profile": {
+    "dashboard": "Dashboard",
+    "my_projects": "My Projects",
+    "experiments": "Experiments",
+    "events": "Events",
+    "publications": "Publications",
+    "settings": "Settings"
+  },
+  "logout": "Logout",
+  "status": "Active"
 }

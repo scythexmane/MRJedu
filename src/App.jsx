@@ -2,7 +2,6 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Layout from "./pages/layout.jsx";
-// Страницы
 import Home from "./pages/Home.jsx";
 import Archive from "./pages/Archive.jsx";
 import Login from "./pages/login.jsx";
@@ -15,28 +14,26 @@ import ArchivingPolicy from "./pages/journal/ArchivingPolicy.jsx";
 import AdvertisementAndMarketing from "./pages/journal/AdvertisementAndMarketing.jsx";
 import JournalHistory from "./pages/journal/JournalHistory.jsx";
 import InstitutionalCooperations from "./pages/journal/InstitutionalCooperations.jsx";
-
 import EthicalStatement from "./pages/authors/EthicalStatement.jsx";
 import AuthorGuidelines from "./pages/authors/AuthorGuidelines.jsx";
 import EditorialPolicy from "./pages/authors/EditorialPolicy.jsx";
 import PeerReviewPolicy from "./pages/authors/PeerReviewPolicy.jsx";
 import PublicationFee from "./pages/authors/PublicationFee.jsx";
-import CookieePolicySection from "./pages/Cookieee.jsx";
+import CookiePolicySection from "./pages/Cookieee.jsx"; // Исправлен импорт
 import Contact from "./pages/Contact.jsx";
-import Profile from "./pages/Profile.jsx"
 import Terms from "./pages/Terms.jsx";
 import PrivacyPolicySection from "./pages/PrivacyPolicy.jsx";
+import ProfileRoutes from "./Profile/routers/ProfileRoutes";
+import MainLayout from "./Profile/components/layout/MainLayout"; // добавь это
+import NotFound from "./pages/NotFound.jsx"; // Предполагаемый компонент для 404
 
 export default function App() {
   return (
     <Router>
       <Routes>
-        <Route path="login" element={<Login />} />
+        <Route path="/login" element={<Login />} />
         <Route path="/" element={<Layout />}>
-          {/* Home */}
           <Route index element={<Home />} />
-
-          {/* Journal */}
           <Route path="archive" element={<Archive />} />
           <Route path="journal/about" element={<About />} />
           <Route path="journal/aims-and-scope" element={<AimsAndScope />} />
@@ -63,7 +60,6 @@ export default function App() {
             path="authors/ethical-statement"
             element={<EthicalStatement />}
           />
-
           <Route
             path="authors/author-guidelines"
             element={<AuthorGuidelines />}
@@ -79,12 +75,13 @@ export default function App() {
           <Route path="authors/publication-fee" element={<PublicationFee />} />
           <Route path="terms" element={<Terms />} />
           <Route path="privacy" element={<PrivacyPolicySection />} />
-          <Route path="cookies" element={<CookieePolicySection />} />
-          <Route path="profile" element={<Profile />} />
-
-
-
+          <Route path="cookies" element={<CookiePolicySection />} />
           <Route path="contact" element={<Contact />} />
+          <Route path="profile/*" element={<MainLayout />}>
+            {ProfileRoutes}
+          </Route>
+          {/* Вложенные маршруты профиля */}
+          <Route path="*" element={<NotFound />} /> {/* Обработка 404 */}
         </Route>
       </Routes>
     </Router>

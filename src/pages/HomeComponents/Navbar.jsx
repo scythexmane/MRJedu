@@ -1,13 +1,14 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { ChevronDown, Search, Menu, X, User } from "lucide-react"; // Импортируем иконку User
+import { ChevronDown, Search, Menu, X, User } from "lucide-react";
 import { Transition } from "@headlessui/react";
 import { useTranslation } from "react-i18next";
-import { useAuth } from '../AuthContext'; // <--- Импортируем useAuth
+import { useAuth } from "../../Profile/context/AuthContext";
 
 export default function Navbar() {
   const { t, i18n } = useTranslation();
-  const { user, logout } = useAuth(); // <--- Получаем user и logout из контекста
+  const auth = useAuth() || { user: null, logout: () => {} };
+  const { user, logout } = auth;
   const [journalOpen, setJournalOpen] = useState(false);
   const [authorsOpen, setAuthorsOpen] = useState(false);
   const [languageOpen, setLanguageOpen] = useState(false);
@@ -18,21 +19,20 @@ export default function Navbar() {
   const toggleJournal = () => {
     setJournalOpen(!journalOpen);
     setAuthorsOpen(false);
-    setLanguageOpen(false); // Закрываем другие дропдауны
+    setLanguageOpen(false);
   };
 
   const toggleAuthors = () => {
     setAuthorsOpen(!authorsOpen);
     setJournalOpen(false);
-    setLanguageOpen(false); // Закрываем другие дропдауны
+    setLanguageOpen(false);
   };
 
-  const toggleLanguage = () => { // <--- Новая функция для переключения языка
+  const toggleLanguage = () => {
     setLanguageOpen(!languageOpen);
-    setJournalOpen(false); // Закрываем другие дропдауны
-    setAuthorsOpen(false); // Закрываем другие дропдауны
+    setJournalOpen(false);
+    setAuthorsOpen(false);
   };
-
 
   const handleLangChange = (lang) => {
     i18n.changeLanguage(lang.toLowerCase());
@@ -48,25 +48,27 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // Handler to close Journal dropdown
   const closeJournalDropdown = () => {
     setJournalOpen(false);
   };
 
-  // Handler to close Authors dropdown
   const closeAuthorsDropdown = () => {
     setAuthorsOpen(false);
   };
 
-  // Handler to close all dropdowns when mobile menu is closed
   const closeAllDropdowns = () => {
     setJournalOpen(false);
     setAuthorsOpen(false);
     setLanguageOpen(false);
   };
 
-  // Close mobile menu and all dropdowns
   const handleMobileLinkClick = () => {
+    setMobileMenuOpen(false);
+    closeAllDropdowns();
+  };
+
+  const handleLogout = () => {
+    logout();
     setMobileMenuOpen(false);
     closeAllDropdowns();
   };
@@ -78,31 +80,21 @@ export default function Navbar() {
       }`}
     >
       <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-        {/* Логотип */}
-        <Link
-          to="/"
-          className="flex items-center gap-2 hover:opacity-90 transition"
-        >
+        <Link to="/" className="flex items-center gap-2 hover:opacity-90 transition">
           <img src="/logo.svg" alt="MRJedu" className="h-12 w-auto" />
           <span className="font-semibold text-xl text-gray-800">
             {t("navbar.titleLine1")} <br /> {t("navbar.titleLine2")}
           </span>
         </Link>
 
-        {/* Кнопка гамбургера для мобилки */}
         <button
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           className="md:hidden p-2 rounded-md hover:bg-gray-200 transition"
           aria-label="Toggle menu"
         >
-          {mobileMenuOpen ? (
-            <X className="h-6 w-6" />
-          ) : (
-            <Menu className="h-6 w-6" />
-          )}
+          {mobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
         </button>
 
-        {/* Навигация для десктопа */}
         <nav className="hidden md:flex gap-6 text-gray-700 font-medium relative z-50">
           <Link to="/" className="hover:text-blue-600 transition">
             {t("navbar.home")}
@@ -110,8 +102,6 @@ export default function Navbar() {
           <Link to="/archive" className="hover:text-blue-600 transition">
             {t("navbar.archive")}
           </Link>
-
-          {/* Journal Info Dropdown */}
           <div className="relative">
             <button
               onClick={toggleJournal}
@@ -159,7 +149,6 @@ export default function Navbar() {
                 >
                   {t("navbar.openAccess")}
                 </Link>
-
                 <Link
                   to="/journal/archiving-policy"
                   className="block hover:text-blue-600"
@@ -191,8 +180,6 @@ export default function Navbar() {
               </div>
             </Transition>
           </div>
-
-          {/* For Authors Dropdown */}
           <div className="relative">
             <button
               onClick={toggleAuthors}
@@ -247,15 +234,12 @@ export default function Navbar() {
               </div>
             </Transition>
           </div>
-
           <Link to="/contact" className="hover:text-blue-600 transition">
             {t("navbar.contact")}
           </Link>
         </nav>
 
-        {/* Инструменты справа для десктопа */}
         <div className="hidden md:flex items-center gap-4">
-          {/* Search */}
           <div className="relative">
             <input
               type="text"
@@ -266,11 +250,9 @@ export default function Navbar() {
             />
             <Search className="absolute right-3 top-2.5 h-4 w-4 text-gray-400" />
           </div>
-
-          {/* Language Selector */}
           <div className="relative">
             <button
-              onClick={toggleLanguage} // <--- Используем новую функцию
+              onClick={toggleLanguage}
               className="px-3 py-1.5 border rounded-full bg-white hover:bg-gray-100 transition flex items-center gap-1 text-sm"
             >
               {i18n.language.toUpperCase()}
@@ -298,13 +280,17 @@ export default function Navbar() {
               </div>
             </Transition>
           </div>
-
-          {/* Переход в профиль или кнопка "Submit" */}
-          {user ? ( // <--- Условный рендеринг
-            <Link to="/profile" className="flex items-center gap-2 text-gray-700 hover:text-blue-600 transition" title={t("navbar.profile")}>
-              <User size={24} /> {/* Иконка профиля */}
-              <span className="font-medium">{user.firstName || t('navbar.profile')}</span> {/* Имя пользователя или "Профиль" */}
-            </Link>
+          {user ? (
+            <div className="relative">
+              <Link
+                to="/profile"
+                className="flex items-center gap-2 text-gray-700 hover:text-blue-600 transition"
+                title={t("navbar.profile")}
+              >
+                <User size={24} />
+                <span className="font-medium">{user.firstName}</span>
+              </Link>
+            </div>
           ) : (
             <Link to="/login">
               <button className="bg-gradient-to-r from-blue-500 to-cyan-500 text-white px-6 py-3 rounded-full shadow hover:scale-105 transition">
@@ -315,7 +301,6 @@ export default function Navbar() {
         </div>
       </div>
 
-      {/* Мобильное меню */}
       <Transition
         show={mobileMenuOpen}
         enter="transition ease-out duration-200"
@@ -333,7 +318,6 @@ export default function Navbar() {
           >
             {t("navbar.home")}
           </Link>
-
           <Link
             to="/archive"
             className="block text-gray-700 hover:text-blue-600 font-medium"
@@ -341,8 +325,6 @@ export default function Navbar() {
           >
             {t("navbar.archive")}
           </Link>
-
-          {/* Journal Info Collapsible */}
           <div>
             <button
               onClick={toggleJournal}
@@ -398,14 +380,13 @@ export default function Navbar() {
                 >
                   {t("navbar.indexing")}
                 </Link>
-               <Link
+                <Link
                   to="/journal/open-access-policy-and-licensing"
-                  className="block hover:text-blue-600"
                   onClick={handleMobileLinkClick}
+                  className="hover:text-blue-600"
                 >
                   {t("navbar.openAccess")}
                 </Link>
-
                 <Link
                   to="/journal/archiving-policy"
                   onClick={handleMobileLinkClick}
@@ -437,8 +418,6 @@ export default function Navbar() {
               </div>
             </Transition>
           </div>
-
-          {/* For Authors Collapsible */}
           <div>
             <button
               onClick={toggleAuthors}
@@ -504,7 +483,6 @@ export default function Navbar() {
               </div>
             </Transition>
           </div>
-
           <Link
             to="/contact"
             className="block text-gray-700 hover:text-blue-600 font-medium"
@@ -512,8 +490,6 @@ export default function Navbar() {
           >
             {t("navbar.contact")}
           </Link>
-
-          {/* Мобильный поиск */}
           <div className="relative mt-4">
             <input
               type="text"
@@ -524,8 +500,6 @@ export default function Navbar() {
             />
             <Search className="absolute right-3 top-3 h-5 w-5 text-gray-400" />
           </div>
-
-          {/* Мобильный выбор языка */}
           <div className="relative mt-4">
             <button
               onClick={toggleLanguage}
@@ -565,19 +539,25 @@ export default function Navbar() {
               </div>
             </Transition>
           </div>
-
-          {/* Мобильная ссылка на профиль или кнопка Submit */}
-          {user ? ( // <--- Условный рендеринг
-            <Link
-              to="/profile"
-              className="block text-gray-700 hover:text-blue-600 font-medium"
-              onClick={handleMobileLinkClick}
-            >
-              <div className="flex items-center gap-2">
-                <User size={20} />
-                <span>{user.firstName || t('navbar.profile')}</span>
-              </div>
-            </Link>
+          {user ? (
+            <>
+              <Link
+                to="/profile"
+                className="block text-gray-700 hover:text-blue-600 font-medium"
+                onClick={handleMobileLinkClick}
+              >
+                <div className="flex items-center gap-2">
+                  <User size={20} />
+                  <span>{user.firstName}</span>
+                </div>
+              </Link>
+              <button
+                onClick={handleLogout}
+                className="block text-gray-700 hover:text-blue-600 font-medium"
+              >
+                {t("navbar.logout")}
+              </button>
+            </>
           ) : (
             <Link to="/login" onClick={handleMobileLinkClick}>
               <button className="w-full mt-4 bg-gradient-to-r from-blue-500 to-cyan-500 text-white px-6 py-3 rounded-full shadow hover:scale-105 transition">
@@ -585,7 +565,6 @@ export default function Navbar() {
               </button>
             </Link>
           )}
-
         </nav>
       </Transition>
     </header>

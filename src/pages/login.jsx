@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useTranslation } from "react-i18next";
-import { useNavigate } from "react-router-dom"; // <--- ИМПОРТ useNavigate
+import { useNavigate } from "react-router-dom";
 import {
   Mail,
   Lock,
@@ -15,9 +15,9 @@ import {
 } from "lucide-react";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import { useAuth } from "./AuthContext";
+import { useAuth } from "../Profile/context/AuthContext";
 
-// Инициализируем AOS один-разово
+// Инициализируем AOS
 AOS.init({ once: true, duration: 700, easing: "ease-in-out" });
 
 /* ------------------------- ВСПОМОГАТЕЛЬНЫЕ КОМПОНЕНТЫ ---------------------- */
@@ -96,7 +96,7 @@ const LanguageSwitcher = () => {
 export default function Login() {
   const { t, i18n } = useTranslation();
   const { login } = useAuth();
-  const navigate = useNavigate(); // <--- Инициализация useNavigate
+  const navigate = useNavigate();
 
   /* ------------ состояние формы ------------ */
   const [formType, setFormType] = useState("login");
@@ -110,7 +110,7 @@ export default function Login() {
   /* ------------ вспомогательное состояние ------------ */
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
-  const [successMsg, setSuccessMsg] = useState(null); // текст уведомления
+  const [successMsg, setSuccessMsg] = useState(null);
 
   /* ------------ анимационные варианты ------------ */
   const formVariants = {
@@ -128,29 +128,27 @@ export default function Login() {
   }, [i18n]);
 
   /* ------------ уведомление об успехе ------------ */
-  const triggerSuccess = (key, callback) => { // <--- Добавили callback
+  const triggerSuccess = (key, callback) => {
     setSuccessMsg(t(`login.success.${key}`));
     setTimeout(() => {
       setSuccessMsg(null);
-      if (callback) callback(); // <--- Вызываем callback после исчезновения сообщения
+      if (callback) callback();
     }, 3500);
   };
 
   /* ------------ простая валидация & обработчики ------------ */
-  // В handleLogin
   const handleLogin = () => {
     if (email && password) {
       login({
-        firstName: "Пользователь",
+        firstName: "Пользователь", // Можно заменить на введенное имя, если добавить поле в форму логина
         name: "Дефолтный Пользователь",
         avatar: "https://cdn-icons-png.flaticon.com/512/149/149071.png",
         status: "Исследователь",
       });
-      triggerSuccess("login", () => navigate("/profile")); // <--- Перенаправление
+      triggerSuccess("login", () => navigate("/")); // Перенаправление на главную
     }
   };
 
-  // В handleRegister
   const handleRegister = () => {
     if (
       email &&
@@ -161,19 +159,18 @@ export default function Login() {
       lastName
     ) {
       login({
-        firstName: firstName,
+        firstName: firstName, // Используем введенное имя
         name: `${firstName} ${lastName}`,
         avatar: "https://cdn-icons-png.flaticon.com/512/149/149071.png",
         status: "Новый пользователь",
       });
-      triggerSuccess("register", () => navigate("/profile")); // <--- Перенаправление
+      triggerSuccess("register", () => navigate("/")); // Перенаправление на главную
     }
   };
 
   const handleReset = () => {
     if (email) {
       triggerSuccess("reset");
-      // Для сброса пароля не нужно логинить пользователя, поэтому login не вызываем
     }
   };
 
@@ -194,7 +191,6 @@ export default function Login() {
             <h2 className="text-center text-3xl font-bold text-gray-800">
               {t("login.createAccountTitle")}
             </h2>
-
             <FormInput
               icon={
                 <User className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400" />
@@ -255,12 +251,10 @@ export default function Login() {
               }
               showPassword={showConfirmPassword}
             />
-
             <AuthButton
               text={t("login.registerButton")}
               onClick={handleRegister}
             />
-
             <button
               onClick={() => setFormType("login")}
               className="flex items-center justify-center text-gray-500 hover:text-blue-600 transition"
@@ -362,7 +356,6 @@ export default function Login() {
   /* ---------------------------- Рендер ---------------------------- */
   return (
     <div className="min-h-screen flex items-center justify-center p-4 animate-gradient">
-      {/* Уведомление */}
       <AnimatePresence>
         {successMsg && (
           <motion.div
@@ -378,8 +371,6 @@ export default function Login() {
           </motion.div>
         )}
       </AnimatePresence>
-
-      {/* Форма */}
       <div className="relative w-full max-w-md">
         <LanguageSwitcher />
         <div
