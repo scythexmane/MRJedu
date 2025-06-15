@@ -359,7 +359,7 @@ export default function Navbar({ toggleSidebar, isSidebarOpen }) {
         leaveFrom="opacity-100 translate-y-0"
         leaveTo="opacity-0 -translate-y-2"
       >
-        <nav className="md:hidden bg-white shadow-lg border-t border-gray-200 px-6 py-4 space-y-4 z-30">
+        <nav className="md:hidden bg-white shadow-lg border-t border-gray-200 px-6 py-4 space-y-4 z-50">
           <Link
             to="/"
             className="block text-gray-700 hover:text-blue-600 font-medium"

@@ -61,8 +61,10 @@ const ProjectCard = ({ project }) => {
   };
 
   return (
+    
     <motion.div
-      className="bg-white p-6 rounded-3xl shadow-soft border border-transparent cursor-pointer flex flex-col h-full"
+    
+      className="bg-white p-6 rounded-3xl shadow-soft border border-transparent cursor-pointer flex flex-col h-full pt-10"
       whileHover={{ 
         scale: 1.02, 
         boxShadow: '0 8px 20px rgba(0, 0, 0, 0.1)', 
@@ -70,7 +72,6 @@ const ProjectCard = ({ project }) => {
       }}
       transition={{ type: 'spring', stiffness: 300, damping: 20 }}
     >
-        
       <div className="flex justify-between items-start mb-4  ">
         <div className="flex items-center">
           <FolderKanban size={24} className="text-brand-blue mr-3" />
