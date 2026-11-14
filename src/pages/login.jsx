@@ -141,7 +141,6 @@ export default function Login() {
     if (email && password) {
       login({
         firstName: "Пользователь", // Можно заменить на введенное имя, если добавить поле в форму логина
-        name: "Дефолтный Пользователь",
         avatar: "https://cdn-icons-png.flaticon.com/512/149/149071.png",
         status: "Исследователь",
       });

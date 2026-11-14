@@ -8,7 +8,6 @@ export default function ProfileLayout() {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
   const toggleSidebar = () => {
-    console.log("Toggling sidebar, new state:", !isSidebarOpen);
     setIsSidebarOpen(!isSidebarOpen);
   };
 
