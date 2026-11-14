@@ -13,12 +13,12 @@ export function AuthProvider({ children }) {
   const [user, setUser] = useState(null);
 
   const login = (userData) => {
-    const userWithDefaultName = {
+    const userWithName = {
       ...userData,
-      name: defaultName,
+      name: userData.name || defaultName,
     };
-    setUser(userWithDefaultName);
-    localStorage.setItem('user', JSON.stringify(userWithDefaultName));
+    setUser(userWithName);
+    localStorage.setItem('user', JSON.stringify(userWithName));
   };
 
   const logout = () => {
