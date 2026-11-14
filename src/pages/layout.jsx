@@ -1,6 +1,5 @@
-import React, { useState } from "react";
+import React from "react";
 import Navbar from "../pages/HomeComponents/Navbar";
-
 import Footer from "../pages/HomeComponents/Footer";
 import Hero from "../pages/HomeComponents/Hero";
 import { Outlet, useLocation } from "react-router-dom";
@@ -11,13 +10,10 @@ import IntroOverlay from "../IntroOverlay";
 export default function Layout() {
   const { pathname } = useLocation();
   const { i18n } = useTranslation();
-  const [isSidebarOpen, setIsSidebarOpen] = useState(false); // Добавлено состояние
-
-
 
   return (
     <>
-      <IntroOverlay /> {/* Оставляем как есть */}
+      <IntroOverlay />
       <AnimatePresence mode="wait" initial={false}>
         <motion.div
           key={i18n.language}
@@ -28,7 +24,6 @@ export default function Layout() {
         >
           <Navbar />
           <div className="flex flex-1">
-            
             <div className="flex-1">
               {pathname === "/" && <Hero />}
               <main className="min-h-screen">

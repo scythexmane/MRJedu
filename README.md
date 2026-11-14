@@ -1,41 +1,52 @@
-Медициплiнарный журнал экологического и научного образования
-The website aims to provide a platform where universities and individuals can easily publish and share medical and interdisciplinary environmental and science education articles. With a clean interface and open-access support, it’s perfect for researchers, students, and educators. 🌟📚
+# MRJedu
 
-Project Overview 🎉
-This is an online platform called "Медициплiнарный журнал экологического и научного образования" (Interdisciplinary Journal of Environmental and Science Education). It’s built to foster knowledge sharing in the medical and scientific community. 🩺🌱
+MRJedu is a React + Vite frontend demo for a medical research journal website. The project presents a journal landing page, editorial content, author information, and a simple profile area with demo authentication.
 
+## Project purpose
 
-Image: Example of medical research illustration from open-access sources.
+This repository is a front-end demo for a journal website focused on medical and interdisciplinary research education. It includes static informational pages, multilingual UI, and a mock user profile experience for demonstration purposes.
 
-Purpose 🎯
-Allow universities to showcase their research and educational content. 🏫
-Enable individuals to publish articles freely. ✍️
-Promote open access to medical and science education resources. 🔓
-Features 🚀
-Article Submission: Easy upload and review process for authors. 📝
-Search Functionality: Find articles by keywords or categories. 🔍
-Open Access: All content available under Budapest Open Access Initiative (BOAI). 🌐
-Multilingual Support: Currently supports Russian and English. 🌍
-Getting Started 🛠️
-Clone the Repository: Use git clone to get the project.
-Install Dependencies: Ensure you have a web server (e.g., Node.js or Python) set up.
-Run Locally: Start the server and visit http://localhost:3000.
-Contribute: Submit pull requests with new articles or features! 🤝
-How to Contribute 🌼
-Fork the repo and create a new branch. 🍴
-Add your article in Markdown format under the articles/ directory. 📄
-Submit a pull request with a description of your contribution. 🎊
-Sticker: 🎉 You’re now part of the community!
-Future Plans 🌟
-Add a peer-review system for article quality. ✅
-Support more languages and non-Latin scripts. 🌐
-Integrate a citation generator. 📑
-Contact Us 📞
-For questions or support, reach out via the "Контакты" section on the site. We’d love to hear from you! 😄
+## Tech stack
 
-Sticker: 🥳 Happy publishing!
+- React 19
+- Vite
+- Tailwind CSS 4
+- JavaScript (no TypeScript)
+- React Router
+- Framer Motion
+- i18next
+- lucide-react
 
-Notes:
-The image URL (https://openi.nlm.nih.gov/img/PMC3/id/40470996/200/200/1/figure/F1.jpg) is from the National Library of Medicine's Open-i, an open-access biomedical image search engine, suitable for educational purposes.
-Always ensure the images you use are from sources that allow free use (e.g., public domain or Creative Commons) and check their specific licensing terms.
-You can replace the URL with other valid online image links from similar open-access medical or science education resources (e.g., PubMed Central, HEAL, or CDC PHIL).
+## Supported languages
+
+- English
+- Russian
+- Uzbek
+
+## Local development
+
+1. Install dependencies:
+   npm install
+2. Start the development server:
+   npm run dev
+3. Open the app in the browser at the default Vite URL:
+   http://localhost:5173
+
+## Production build
+
+npm run build
+
+## Authentication note
+
+Authentication is a demo only. Any email and password combination will be accepted for the mock login flow, and the user data is static and stored locally in the browser for demonstration purposes.
+
+## Data note
+
+The content in this project is static demo data. It is not connected to a real backend, database, or production publication system.
+
+## Scripts
+
+- npm run dev — start the Vite development server
+- npm run build — build the production bundle
+- npm run lint — run ESLint checks
+- npm run preview — preview the production build

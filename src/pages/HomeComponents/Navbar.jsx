@@ -17,7 +17,6 @@ export default function Navbar({ toggleSidebar, isSidebarOpen }) {
   const [isScrolled, setIsScrolled] = useState(false);
   const { pathname } = useLocation();
 
-  // Закрытие мобильного меню при открытии сайдбара
   useEffect(() => {
     if (isSidebarOpen) {
       setMobileMenuOpen(false);
@@ -76,11 +75,9 @@ export default function Navbar({ toggleSidebar, isSidebarOpen }) {
   };
 
   const handleSidebarToggle = () => {
-    console.log("Sidebar toggle clicked, isSidebarOpen:", isSidebarOpen);
     toggleSidebar();
   };
 
-  // Проверяем, что мы на странице профиля
   const isProfilePage = pathname.startsWith("/profile");
 
   return (
@@ -98,7 +95,6 @@ export default function Navbar({ toggleSidebar, isSidebarOpen }) {
         </Link>
 
         <div className="flex items-center gap-3 md:hidden">
-          {/* Кнопка открытия сайдбара (только для авторизованных и на страницах профиля) */}
           {user && isProfilePage && toggleSidebar && (
             <button
               onClick={handleSidebarToggle}
@@ -108,7 +104,6 @@ export default function Navbar({ toggleSidebar, isSidebarOpen }) {
               <User className="h-6 w-6 text-green-600" />
             </button>
           )}
-          {/* Кнопка мобильного меню */}
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             className="p-2 rounded-full hover:bg-gray-200 transition"
@@ -149,67 +144,31 @@ export default function Navbar({ toggleSidebar, isSidebarOpen }) {
               leaveTo="opacity-0 translate-y-2"
             >
               <div className="absolute top-full left-0 mt-2 w-64 bg-white shadow-lg rounded-lg p-4 space-y-2 z-50">
-                <Link
-                  to="/journal/about"
-                  className="block hover:text-blue-600"
-                  onClick={closeJournalDropdown}
-                >
+                <Link to="/journal/about" className="block hover:text-blue-600" onClick={closeJournalDropdown}>
                   {t("navbar.about")}
                 </Link>
-                <Link
-                  to="/journal/aims-and-scope"
-                  className="block hover:text-blue-600"
-                  onClick={closeJournalDropdown}
-                >
+                <Link to="/journal/aims-and-scope" className="block hover:text-blue-600" onClick={closeJournalDropdown}>
                   {t("navbar.aims")}
                 </Link>
-                <Link
-                  to="/journal/editorial-board"
-                  className="block hover:text-blue-600"
-                  onClick={closeJournalDropdown}
-                >
+                <Link to="/journal/editorial-board" className="block hover:text-blue-600" onClick={closeJournalDropdown}>
                   {t("navbar.editorialBoard")}
                 </Link>
-                <Link
-                  to="/journal/indexing"
-                  className="block hover:text-blue-600"
-                  onClick={closeJournalDropdown}
-                >
+                <Link to="/journal/indexing" className="block hover:text-blue-600" onClick={closeJournalDropdown}>
                   {t("navbar.indexing")}
                 </Link>
-                <Link
-                  to="/journal/open-access-policy-and-licensing"
-                  className="block hover:text-blue-600"
-                  onClick={closeJournalDropdown}
-                >
+                <Link to="/journal/open-access-policy-and-licensing" className="block hover:text-blue-600" onClick={closeJournalDropdown}>
                   {t("navbar.openAccess")}
                 </Link>
-                <Link
-                  to="/journal/archiving-policy"
-                  className="block hover:text-blue-600"
-                  onClick={closeJournalDropdown}
-                >
+                <Link to="/journal/archiving-policy" className="block hover:text-blue-600" onClick={closeJournalDropdown}>
                   {t("navbar.archiving")}
                 </Link>
-                <Link
-                  to="/journal/advertisement-and-marketing"
-                  className="block hover:text-blue-600"
-                  onClick={closeJournalDropdown}
-                >
+                <Link to="/journal/advertisement-and-marketing" className="block hover:text-blue-600" onClick={closeJournalDropdown}>
                   {t("navbar.advertising")}
                 </Link>
-                <Link
-                  to="/journal/journal-history"
-                  className="block hover:text-blue-600"
-                  onClick={closeJournalDropdown}
-                >
+                <Link to="/journal/journal-history" className="block hover:text-blue-600" onClick={closeJournalDropdown}>
                   {t("navbar.history")}
                 </Link>
-                <Link
-                  to="/journal/institutional-cooperations"
-                  className="block hover:text-blue-600"
-                  onClick={closeJournalDropdown}
-                >
+                <Link to="/journal/institutional-cooperations" className="block hover:text-blue-600" onClick={closeJournalDropdown}>
                   {t("navbar.cooperations")}
                 </Link>
               </div>
@@ -239,39 +198,19 @@ export default function Navbar({ toggleSidebar, isSidebarOpen }) {
               leaveTo="opacity-0 translate-y-2"
             >
               <div className="absolute top-full left-0 mt-2 w-64 bg-white shadow-lg rounded-lg p-4 space-y-2 z-50">
-                <Link
-                  to="/authors/ethical-statement"
-                  className="block hover:text-blue-600"
-                  onClick={closeAuthorsDropdown}
-                >
+                <Link to="/authors/ethical-statement" className="block hover:text-blue-600" onClick={closeAuthorsDropdown}>
                   {t("navbar.ethical")}
                 </Link>
-                <Link
-                  to="/authors/author-guidelines"
-                  className="block hover:text-blue-600"
-                  onClick={closeAuthorsDropdown}
-                >
+                <Link to="/authors/author-guidelines" className="block hover:text-blue-600" onClick={closeAuthorsDropdown}>
                   {t("navbar.guidelines")}
                 </Link>
-                <Link
-                  to="/authors/editorial-policy"
-                  className="block hover:text-blue-600"
-                  onClick={closeAuthorsDropdown}
-                >
+                <Link to="/authors/editorial-policy" className="block hover:text-blue-600" onClick={closeAuthorsDropdown}>
                   {t("navbar.policy")}
                 </Link>
-                <Link
-                  to="/authors/peer-review-policy"
-                  className="block hover:text-blue-600"
-                  onClick={closeAuthorsDropdown}
-                >
+                <Link to="/authors/peer-review-policy" className="block hover:text-blue-600" onClick={closeAuthorsDropdown}>
                   {t("navbar.review")}
                 </Link>
-                <Link
-                  to="/authors/publication-fee"
-                  className="block hover:text-blue-600"
-                  onClick={closeAuthorsDropdown}
-                >
+                <Link to="/authors/publication-fee" className="block hover:text-blue-600" onClick={closeAuthorsDropdown}>
                   {t("navbar.fee")}
                 </Link>
               </div>
@@ -315,7 +254,7 @@ export default function Navbar({ toggleSidebar, isSidebarOpen }) {
               leaveTo="opacity-0 translate-y-2"
             >
               <div className="absolute right-0 mt-2 w-28 bg-white shadow-lg rounded-lg py-2 text-sm z-50">
-                {["EN", "RU", "UZ"].map((lang) => (
+                {['EN', 'RU', 'UZ'].map((lang) => (
                   <button
                     key={lang}
                     onClick={() => handleLangChange(lang)}
@@ -331,11 +270,7 @@ export default function Navbar({ toggleSidebar, isSidebarOpen }) {
           </div>
           {user ? (
             <div className="relative">
-              <Link
-                to="/profile"
-                className="flex items-center gap-2 text-gray-700 hover:text-blue-600 transition"
-                title={t("user")}
-              >
+              <Link to="/profile" className="flex items-center gap-2 text-gray-700 hover:text-blue-600 transition" title={t("user")}>
                 <User size={24} />
                 <span className="font-medium">{t("user")}</span>
               </Link>
@@ -360,18 +295,10 @@ export default function Navbar({ toggleSidebar, isSidebarOpen }) {
         leaveTo="opacity-0 -translate-y-2"
       >
         <nav className="md:hidden bg-white shadow-lg border-t border-gray-200 px-6 py-4 space-y-4 z-50">
-          <Link
-            to="/"
-            className="block text-gray-700 hover:text-blue-600 font-medium"
-            onClick={handleMobileLinkClick}
-          >
+          <Link to="/" className="block text-gray-700 hover:text-blue-600 font-medium" onClick={handleMobileLinkClick}>
             {t("navbar.home")}
           </Link>
-          <Link
-            to="/archive"
-            className="block text-gray-700 hover:text-blue-600 font-medium"
-            onClick={handleMobileLinkClick}
-          >
+          <Link to="/archive" className="block text-gray-700 hover:text-blue-600 font-medium" onClick={handleMobileLinkClick}>
             {t("navbar.archive")}
           </Link>
           <div>
@@ -397,71 +324,32 @@ export default function Navbar({ toggleSidebar, isSidebarOpen }) {
               leaveFrom="opacity-100 max-h-screen"
               leaveTo="opacity-0 max-h-0"
             >
-              <div
-                id="mobile-journal-menu"
-                className="pl-4 mt-2 flex flex-col space-y-2 border-l border-gray-300"
-              >
-                <Link
-                  to="/journal/about"
-                  onClick={handleMobileLinkClick}
-                  className="hover:text-blue-600"
-                >
+              <div id="mobile-journal-menu" className="pl-4 mt-2 flex flex-col space-y-2 border-l border-gray-300">
+                <Link to="/journal/about" onClick={handleMobileLinkClick} className="hover:text-blue-600">
                   {t("navbar.about")}
                 </Link>
-                <Link
-                  to="/journal/aims-and-scope"
-                  onClick={handleMobileLinkClick}
-                  className="hover:text-blue-600"
-                >
+                <Link to="/journal/aims-and-scope" onClick={handleMobileLinkClick} className="hover:text-blue-600">
                   {t("navbar.aims")}
                 </Link>
-                <Link
-                  to="/journal/editorial-board"
-                  onClick={handleMobileLinkClick}
-                  className="hover:text-blue-600"
-                >
+                <Link to="/journal/editorial-board" onClick={handleMobileLinkClick} className="hover:text-blue-600">
                   {t("navbar.editorialBoard")}
                 </Link>
-                <Link
-                  to="/journal/indexing"
-                  onClick={handleMobileLinkClick}
-                  className="hover:text-blue-600"
-                >
+                <Link to="/journal/indexing" onClick={handleMobileLinkClick} className="hover:text-blue-600">
                   {t("navbar.indexing")}
                 </Link>
-                <Link
-                  to="/journal/open-access-policy-and-licensing"
-                  onClick={handleMobileLinkClick}
-                  className="hover:text-blue-600"
-                >
+                <Link to="/journal/open-access-policy-and-licensing" onClick={handleMobileLinkClick} className="hover:text-blue-600">
                   {t("navbar.openAccess")}
                 </Link>
-                <Link
-                  to="/journal/archiving-policy"
-                  onClick={handleMobileLinkClick}
-                  className="hover:text-blue-600"
-                >
+                <Link to="/journal/archiving-policy" onClick={handleMobileLinkClick} className="hover:text-blue-600">
                   {t("navbar.archiving")}
                 </Link>
-                <Link
-                  to="/journal/advertisement-and-marketing"
-                  onClick={handleMobileLinkClick}
-                  className="hover:text-blue-600"
-                >
+                <Link to="/journal/advertisement-and-marketing" onClick={handleMobileLinkClick} className="hover:text-blue-600">
                   {t("navbar.advertising")}
                 </Link>
-                <Link
-                  to="/journal/journal-history"
-                  onClick={handleMobileLinkClick}
-                  className="hover:text-blue-600"
-                >
+                <Link to="/journal/journal-history" onClick={handleMobileLinkClick} className="hover:text-blue-600">
                   {t("navbar.history")}
                 </Link>
-                <Link
-                  to="/journal/institutional-cooperations"
-                  onClick={handleMobileLinkClick}
-                  className="hover:text-blue-600"
-                >
+                <Link to="/journal/institutional-cooperations" onClick={handleMobileLinkClick} className="hover:text-blue-600">
                   {t("navbar.cooperations")}
                 </Link>
               </div>
@@ -490,53 +378,26 @@ export default function Navbar({ toggleSidebar, isSidebarOpen }) {
               leaveFrom="opacity-100 max-h-screen"
               leaveTo="opacity-0 max-h-0"
             >
-              <div
-                id="mobile-authors-menu"
-                className="pl-4 mt-2 flex flex-col space-y-2 border-l border-gray-300"
-              >
-                <Link
-                  to="/authors/ethical-statement"
-                  onClick={handleMobileLinkClick}
-                  className="hover:text-blue-600"
-                >
+              <div id="mobile-authors-menu" className="pl-4 mt-2 flex flex-col space-y-2 border-l border-gray-300">
+                <Link to="/authors/ethical-statement" onClick={handleMobileLinkClick} className="hover:text-blue-600">
                   {t("navbar.ethical")}
                 </Link>
-                <Link
-                  to="/authors/author-guidelines"
-                  onClick={handleMobileLinkClick}
-                  className="hover:text-blue-600"
-                >
+                <Link to="/authors/author-guidelines" onClick={handleMobileLinkClick} className="hover:text-blue-600">
                   {t("navbar.guidelines")}
                 </Link>
-                <Link
-                  to="/authors/editorial-policy"
-                  onClick={handleMobileLinkClick}
-                  className="hover:text-blue-600"
-                >
+                <Link to="/authors/editorial-policy" onClick={handleMobileLinkClick} className="hover:text-blue-600">
                   {t("navbar.policy")}
                 </Link>
-                <Link
-                  to="/authors/peer-review-policy"
-                  onClick={handleMobileLinkClick}
-                  className="hover:text-blue-600"
-                >
+                <Link to="/authors/peer-review-policy" onClick={handleMobileLinkClick} className="hover:text-blue-600">
                   {t("navbar.review")}
                 </Link>
-                <Link
-                  to="/authors/publication-fee"
-                  onClick={handleMobileLinkClick}
-                  className="hover:text-blue-600"
-                >
+                <Link to="/authors/publication-fee" onClick={handleMobileLinkClick} className="hover:text-blue-600">
                   {t("navbar.fee")}
                 </Link>
               </div>
             </Transition>
           </div>
-          <Link
-            to="/contact"
-            className="block text-gray-700 hover:text-blue-600 font-medium"
-            onClick={handleMobileLinkClick}
-          >
+          <Link to="/contact" className="block text-gray-700 hover:text-blue-600 font-medium" onClick={handleMobileLinkClick}>
             {t("navbar.contact")}
           </Link>
           <div className="relative mt-4">
@@ -572,7 +433,7 @@ export default function Navbar({ toggleSidebar, isSidebarOpen }) {
               leaveTo="opacity-0 max-h-0"
             >
               <div className="mt-2 bg-white shadow-lg rounded-lg py-2 text-sm z-50">
-                {["EN", "RU", "UZ"].map((lang) => (
+                {['EN', 'RU', 'UZ'].map((lang) => (
                   <button
                     key={lang}
                     onClick={() => handleLangChange(lang)}
@@ -588,20 +449,13 @@ export default function Navbar({ toggleSidebar, isSidebarOpen }) {
           </div>
           {user ? (
             <>
-              <Link
-                to="/profile"
-                className="block text-gray-700 hover:text-blue-600 font-medium"
-                onClick={handleMobileLinkClick}
-              >
+              <Link to="/profile" className="block text-gray-700 hover:text-blue-600 font-medium" onClick={handleMobileLinkClick}>
                 <div className="flex items-center gap-2">
                   <User size={20} />
                   <h2>{t("user")}</h2>
                 </div>
               </Link>
-              <button
-                onClick={handleLogout}
-                className="block text-gray-700 hover:text-blue-600 font-medium"
-              >
+              <button onClick={handleLogout} className="block text-gray-700 hover:text-blue-600 font-medium">
                 {t("logout")}
               </button>
             </>
@@ -617,12 +471,3 @@ export default function Navbar({ toggleSidebar, isSidebarOpen }) {
     </header>
   );
 }
-
-const transitionProps = {
-  enter: "transition ease-out duration-200",
-  enterFrom: "opacity-0 translate-y-2",
-  enterTo: "opacity-100 translate-y-0",
-  leave: "transition ease-in duration-150",
-  leaveFrom:"opacity-100 translate-y-0",
-  leaveTo:"opacity-0 translate-y-2",
-};
